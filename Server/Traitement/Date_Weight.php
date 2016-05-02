@@ -6,7 +6,7 @@
  * Time: 16:10
  */
 ### Conversion du CSV en tableau PHP ###
-var_dump(parse_csv_file('C:\Cours_ingesup\B2\Rmoocstats\dataBorris.csv', true, ';')); /* selection du fichier */
+var_dump(parse_csv_file('..\data\data.csv', true, ';')); /* selection du fichier */
 function parse_csv_file($file, $columnheadings = false, $delimiter = ',', $enclosure = "\"") {
 
     $row = 1;

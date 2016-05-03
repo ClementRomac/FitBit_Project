@@ -49,12 +49,12 @@ h1{
 
 .Squarre-1{
    float: left;
-    margin-left: 6%;
+   margin-left: 6%;
 }
 
 .Squarre-2{
    float: right;
-    margin-right: 6%;
+   margin-right: 6%;
 }
 
 .Rectangle{
@@ -75,6 +75,6 @@ h1{
 
 .Img-rectangle {
     margin: auto;
-    width: 40%;
+    height: 50%;
     margin-top: 20px;
 }

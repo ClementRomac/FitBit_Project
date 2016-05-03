@@ -37,13 +37,13 @@ $app->get('/', function ($request, $response, $args) {
 });
 
 $app->get('/weight', function ($request, $response, $args) {
+	$json = array();
 	for ($i=1; $i < 11; $i++) { 
-		$json[$i]['date'] = $i.'-'.$i.'-2016';
-		$json[$i]['weight'] = 60+rand($i, 10);
+		$json[$i] = array('date' => $i.'-'.$i.'-2016', 'weight'=> 60+rand($i, 10));
 	}
 
-	$jso_response = json_encode($json);
-	return $response->write($jso_response);
+	$json_response = json_encode($json);
+	return $response->write($json_response);
 
 });
 

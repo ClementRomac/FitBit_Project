@@ -8,11 +8,7 @@
 ### Conversion du CSV en tableau PHP ###
 $dataSet = parse_csv_file('..\data\data.csv', true, ';');
 
-$subject = $dataSet[2]["date"];
-
-print_r($matches);
-
-
+meanDateWeight($dataSet);
 
 //print_r($dataSet[1]);
 
@@ -47,21 +43,53 @@ function meanDateWeight($dataSet){
     $week = array();
     $twoMonths = array();
     $year = array();
-    for ($i=0; $i<count($dataSet)+1;$i++){
+    $monthNow=0;
+    $numberOfDayForTwoMonth=0;
+    $incrementWeek =6;
+    for ($i=0; $i<+count($dataSet);$i++){
+      //  echo $dataSet[$i]["weight"]." ";
         $sumWeek+=$dataSet[$i]["weight"];
         $sumTwoMonths+=$dataSet[$i]["weight"];
         $sumYear+=$dataSet[$i]["weight"];
+        $numberOfDayForTwoMonth++;
 
         //------------------------------Traitement semaine
-        if ($i%7 == 0){
-            $weight =$week/7; //poids chaque semaine
-            $date = $dataSet[$i]["weight"];//date rentrée chaque semaine
+        if ($i == 0)
+            $modulo = 6;
+        else{
+            $modulo= 7;
+        }
+        if ($i  == $incrementWeek){
+
+            $weight =$sumWeek/7; //poids chaque semaine
+            $date = $dataSet[$i]["date"];//date rentrée chaque semaine
             $week[]= array("date"=> $date, "weight" => $weight); //ajout des données chaque semaine
             $sumWeek=0;
+            $incrementWeek +=7;
         }
-        //------------------------------------------------
+        //------------------------------Traitement deux mois
+        if(explode('-',$dataSet[$i]["date"])[2] =="01"//tout les débuts
+            && explode('-',$dataSet[$i]["date"])[1] %2!=0// de chaque mois impairs
+            && $dataSet[$i]["date"] != "2010-01-01"){  //sauf si c est le premier jour du DataSet
 
+            $weight =$sumTwoMonths/$numberOfDayForTwoMonth; //poids chaque semaine
+            $date = $dataSet[$i]["date"];//date rentrée chaque semaine
+            $twoMonths[]= array("date"=> $date, "weight" => $weight); //ajout des données chaque semaine
+            $sumTwoMonths=0;
+            $numberOfDayForTwoMonth=0;
+        }
+        
+        if(explode('-',$dataSet[$i]["date"])[1] =="01"//tout les débuts
+            && explode('-',$dataSet[$i]["date"])[1] %2!=0// de chaque mois impairs
+            && $dataSet[$i]["date"] != "2010-01-01"){  //sauf si c est le premier jour du DataSet
 
+            $weight =$sumTwoMonths/$numberOfDayForTwoMonth; //poids chaque semaine
+            $date = $dataSet[$i]["date"];//date rentrée chaque semaine
+            $twoMonths[]= array("date"=> $date, "weight" => $weight); //ajout des données chaque semaine
+            $sumTwoMonths=0;
+            $numberOfDayForTwoMonth=0;
+        }
     }
+    var_dump($twoMonths);
 }
 ?>

@@ -28,8 +28,8 @@
       <file leaf-file-name="Date_Weight.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Weight.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
+            <state relative-caret-position="366">
+              <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
               </folding>
@@ -220,7 +220,7 @@
       <workItem from="1462198172104" duration="398000" />
       <workItem from="1462199860417" duration="121000" />
       <workItem from="1462260025582" duration="43000" />
-      <workItem from="1462260164023" duration="15878000" />
+      <workItem from="1462260164023" duration="16620000" />
     </task>
     <task id="LOCAL-00001" summary="Traitement Date_Weight">
       <created>1462198431083</created>
@@ -233,7 +233,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16440000" />
+    <option name="totallyTimeSpent" value="17182000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -316,8 +316,8 @@
     <entry file="file://$PROJECT_DIR$/../Date_Weight.php" />
     <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Weight.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
+        <state relative-caret-position="366">
+          <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
           </folding>

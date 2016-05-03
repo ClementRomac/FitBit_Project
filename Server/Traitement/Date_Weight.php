@@ -74,22 +74,23 @@ function meanDateWeight($dataSet){
 
             $weight =$sumTwoMonths/$numberOfDayForTwoMonth; //poids chaque semaine
             $date = $dataSet[$i]["date"];//date rentrée chaque semaine
-            $twoMonths[]= array("date"=> $date, "weight" => $weight); //ajout des données chaque semaine
+            $twoMonths[]= array("date"=> $date, "weight" => $weight); //ajout des données chaque mois
             $sumTwoMonths=0;
             $numberOfDayForTwoMonth=0;
         }
-        
+        //------------------------------Traitement année
         if(explode('-',$dataSet[$i]["date"])[1] =="01"//tout les débuts
-            && explode('-',$dataSet[$i]["date"])[1] %2!=0// de chaque mois impairs
-            && $dataSet[$i]["date"] != "2010-01-01"){  //sauf si c est le premier jour du DataSet
+            && explode('-',$dataSet[$i]["date"])[2] =="01"// de chaque mois impairs
+            && explode('-',$dataSet[$i]["date"])[0] !="2010"){  //sauf si c est le premier jour du DataSet
 
-            $weight =$sumTwoMonths/$numberOfDayForTwoMonth; //poids chaque semaine
-            $date = $dataSet[$i]["date"];//date rentrée chaque semaine
-            $twoMonths[]= array("date"=> $date, "weight" => $weight); //ajout des données chaque semaine
-            $sumTwoMonths=0;
-            $numberOfDayForTwoMonth=0;
+            $numberOfDayForYear = 365;
+            if ( explode('-',$dataSet[$i]["date"])[0] % 4 ==0) $numberOfDayForYear++; //si année bisextille ajout d'un jour
+            $weight =$sumYear/$numberOfDayForYear; //poids chaque semaine
+            $date = $dataSet[$i]["date"];//date rentrée chaque année
+            $year[]= array("date"=> $date, "weight" => $weight); //ajout des données chaque semaine
+            $sumYear=0;
         }
     }
-    var_dump($twoMonths);
+    var_dump($year);
 }
 ?>

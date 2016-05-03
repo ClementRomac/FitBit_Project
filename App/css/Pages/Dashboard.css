@@ -13,7 +13,7 @@ body{
 }
 
 
-#Header {
+#header {
     background-color: #2980b9;
     height: 160px;
     text-align: center;
@@ -27,27 +27,27 @@ h1{
     padding-top: 2%
 }
 
-#Center {
+#center {
 }
 
-#Small-tile{
+#small-tile{
     margin: 0 auto;
     width: 100%
 }
 
-#Large-tile{
+#large-tile{
     margin: 0 auto;
     width: 100%;
 }
 
-.Date{
+.date{
     color: white;
     text-align: center;
     margin-top: 2%;
     font-size: 2em;
 }
 
-[class*='Squarre-']{
+[class*='squarre-']{
     text-align: center;
     height: 400px;
     width: 45%;
@@ -56,18 +56,18 @@ h1{
     border-radius: 4px;  
 }
 
-.Squarre-1{
+.squarre-1{
     float: left;
     margin-left: 3%;
 }
 
-.Squarre-2{
+.squarre-2{
     float: right;
     margin-right: 3%;
     
 }
 
-.Rectangle{
+.rectangle{
     float: left;
     height: 300px;
     width: 94%;
@@ -77,48 +77,48 @@ h1{
     border-radius: 4px;
 }
 
-.Img-squarre {
+.img-squarre {
     margin: auto;
     height:40%;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.Img-rectangle {
+.img-rectangle {
     float: left;
     height: 50%;
     margin-top: 20px;
     margin-left: 20px;
 }
 
-[class*='Text-']{
+[class*='text-']{
     margin-bottom: 10px;
     font-size: 3em;
     font-weight: bold;
 }
 
-[class*='Text-1']{
+[class*='text-1']{
     color: #e67e22;
 }
 
-[class*='Text-2']{
+[class*='text-2']{
     color: #27ae60;
 }
 
-.Text-2-2{
+.text-2-2{
     font-size: 2em;
 }
 
-[class*='Text-3']{
+[class*='text-3']{
     color: #34495e;
 }
 
-.Text-3{
+.text-3{
     margin-top: 100;
     margin-left: 185px;
 }
 
-[class*='Text-3-']{
+[class*='text-3-']{
     float: left;
     margin-left: 100;
     margin-top: 20;

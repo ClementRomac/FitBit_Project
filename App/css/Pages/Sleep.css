@@ -12,7 +12,7 @@ body{
     font-family: "roboto_fin";
 }
 
-#Header {
+#header {
     background-color: #34495e;
     height: 160px;
     font-size: 100%;
@@ -20,18 +20,44 @@ body{
     line-height: 150px;
     font-size: 2em;
 }
+
 h1{
     float: left;
 }
-[class*='Img-']{
+
+h2{
+    padding-top: 30px;
+    margin: 30px;
+    font-size: 3em;
+    color: #262626;
+}
+
+[class*='img-']{
     margin-top: 40px;
     height: 50%;
 }
 
-.Img-back{
+.img-back{
     float: left;
 }
 
-.Img-moon{
+.img-moon{
     float: right;
+    margin-right: 10;
+}
+
+#conteneur {
+    background-color: white;
+    margin: 10px;
+    height: 80%;
+}
+
+[class*='span-']{
+    margin: 30;
+    font-size: 2em;
+}
+
+p{
+    margin-top: 30;
+    color: #262626;
 }

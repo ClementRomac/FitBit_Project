@@ -3,6 +3,15 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'roboto_fin';
+    src: url('../font/roboto/Roboto-Thin.ttf');
+}
+@font-face {
+    font-family: 'roboto_bold';
+    src: url('../font/roboto/Roboto-Bold.ttf');
+}
+
 {
     box-sizing: border-box;
 }
@@ -12,7 +21,6 @@
 }
 
 body{
-    
 }
 
 #Homepage-Top{
@@ -21,23 +29,34 @@ body{
     font-size: 600%;
     transform: translateY(30%);
     width: 100%;
-
+}
+#homepage-Top h1{
+    font-family: "roboto_bold";
 }
 
 #Homepage-Footer{
     height: 50%;
-    background-color: aquamarine;
-    padding-top: 50;
+    background-color: #2980b9;
     width: 100%;
-    
+    -moz-box-shadow: 0px -5px 10px 0px #777777;
+    -webkit-box-shadow: 0px -5px 10px 0px #777777;
+    -o-box-shadow: 0px -5px 10px 0px #777777;
+    box-shadow: 0px -5px 10px 0px #777777;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#777777, Direction=90, Strength=10);
 }
-
-.connexion{
+form{
+    margin-left: 20%;
+    padding-top: 15%;
+}
+input{
     height: 15%;
-    margin-left: 25%;
-    margin-right: 25%;
-    width: 50%;
-    background-color: aliceblue;
-    margin-top: 50;
-    border-radius: 10px;
+    width: 75%;
+    background-color: #FFF;
+    border-radius: 4px;
+    border: none;
+    margin: 10px;
+    padding: 0 20px;
+}
+input[type="submit"]{
+    padding: 0 20px;
 }

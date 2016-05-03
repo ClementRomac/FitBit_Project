@@ -6,7 +6,7 @@
  * Time: 16:10
  */
 
-// $dataSet is available with tih include
+// $dataSet is available with this include
 include 'include.php';
 
 function meanDateWeight($dataSet){

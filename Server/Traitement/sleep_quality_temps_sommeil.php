@@ -16,3 +16,5 @@ function get_sleeping_time($dataset, $nbr_days = 20) {
     return $sleeping_time;
 }
 
+$dump = get_sleeping_time($dataSet, 10);
+print_r($dump[4]);

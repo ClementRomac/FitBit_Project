@@ -6,85 +6,122 @@
     font-family: 'roboto_fin';
     src: url('../../font/roboto/Roboto-Thin.ttf');
 }
-@font-face {
-    font-family: 'roboto_bold';
-    src: url('../../font/roboto/Roboto-Bold.ttf');
-}
+
 body{
     background-color: #262626;
     font-family: "roboto_fin";
 }
 
 
-#Header {
+#header {
     background-color: #2980b9;
     height: 160px;
     text-align: center;
     font-size: 100%;
     color: white; 
     line-height: 120px;
-    font-size: 30px;
+    font-size: 2em;
 }
 
 h1{
     padding-top: 2%
 }
 
-#Center {
+#center {
 }
 
-#Small-tile{
+#small-tile{
     margin: 0 auto;
-    width: 80%
+    width: 100%
 }
 
-#Large-tile{
+#large-tile{
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
 }
 
-.Date{
+.date{
+    color: white;
     text-align: center;
     margin-top: 2%;
+    font-size: 2em;
 }
 
-[class*='Squarre-']{
+[class*='squarre-']{
     text-align: center;
-    height: 250px;
-    width: 40%;
+    height: 400px;
+    width: 45%;
     background-color: white;
     margin-top: 3%;  
     border-radius: 4px;  
 }
 
-.Squarre-1{
-   float: left;
-    margin-left: 6%;
-}
-
-.Squarre-2{
-   float: right;
-    margin-right: 6%;
-}
-
-.Rectangle{
+.squarre-1{
     float: left;
-    height: 250px;
-    width: 88%;
+    margin-left: 3%;
+}
+
+.squarre-2{
+    float: right;
+    margin-right: 3%;
+    
+}
+
+.rectangle{
+    float: left;
+    height: 300px;
+    width: 94%;
     margin-top: 3%;
     background-color: white;
-    margin-left: 6%;
+    margin-left: 3%;
     border-radius: 4px;
 }
 
-.Img-squarre {
+.img-squarre {
     margin: auto;
-    height:30%;
+    height:40%;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.Img-rectangle {
-    margin: auto;
-    height: 40%;
+.img-rectangle {
+    float: left;
+    height: 50%;
     margin-top: 20px;
+    margin-left: 20px;
 }
+
+[class*='text-']{
+    margin-bottom: 10px;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+[class*='text-1']{
+    color: #e67e22;
+}
+
+[class*='text-2']{
+    color: #27ae60;
+}
+
+.text-2-2{
+    font-size: 2em;
+}
+
+[class*='text-3']{
+    color: #34495e;
+}
+
+.text-3{
+    margin-top: 100;
+    margin-left: 185px;
+}
+
+[class*='text-3-']{
+    float: left;
+    margin-left: 100;
+    margin-top: 20;
+    font-size: 4em;
+}
+

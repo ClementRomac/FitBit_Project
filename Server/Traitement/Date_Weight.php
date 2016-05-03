@@ -28,11 +28,7 @@ function meanDateWeight($dataSet){
         $numberOfDayForTwoMonth++;
 
         //------------------------------Traitement semaine
-        if ($i == 0)
-            $modulo = 6;
-        else{
-            $modulo= 7;
-        }
+      
         if ($i  == $incrementWeek){
 
             $weight =$sumWeek/7; //poids chaque semaine

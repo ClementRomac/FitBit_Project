@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: gray
+}
+
+
+#Header {
+    background-color: cadetblue;
+    height: 10%;
+    text-align: center;
+    font-size: 100%;
+    color: white;
+        
+}
+
+h1{
+    padding-top: 2%
+}
+
+#Center {
+    
+}
+
+.Date{
+    text-align: center;
+    margin-top: 2%;
+}
+
+.Squarre{
+    height: 200;
+    float: left;
+    width: 46%;
+    margin: 2%;
+    
+}
+
+.Rectangle{
+    float: left;
+    width: 100%;
+    margin: 2%;
+    
+}
+
+.img-squarre {
+    display: block;S
+}

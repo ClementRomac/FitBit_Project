@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4edccab25c1bc638b5d1e0df74ee2adc",
-    "content-hash": "a2bb80d0ebb94c90446495b01b2cf43d",
+    "hash": "3031c3d3a3b5b200a399218304600a3d",
+    "content-hash": "1c43ed234795cf7492c04d30e713049c",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -76,6 +76,53 @@
                 "routing"
             ],
             "time": "2015-06-18 19:15:47"
+        },
+        {
+            "name": "palanik/corsslim",
+            "version": "dev-slim3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/palanik/CorsSlim.git",
+                "reference": "e84cb944ca73aace3ea92f6ec0b68de1619eea62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/palanik/CorsSlim/zipball/e84cb944ca73aace3ea92f6ec0b68de1619eea62",
+                "reference": "e84cb944ca73aace3ea92f6ec0b68de1619eea62",
+                "shasum": ""
+            },
+            "require": {
+                "slim/slim": ">=3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CorsSlim\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "palanik"
+                }
+            ],
+            "description": "Cross-origin resource sharing (CORS) middleware for PHP Slim.",
+            "homepage": "https://github.com/palanik/CorsSlim",
+            "keywords": [
+                "cors",
+                "corsslim",
+                "cross-origin",
+                "preflight",
+                "slim",
+                "slimphp"
+            ],
+            "time": "2016-01-15 04:37:35"
         },
         {
             "name": "pimple/pimple",
@@ -289,7 +336,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "palanik/corsslim": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

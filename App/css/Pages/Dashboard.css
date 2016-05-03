@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'roboto_fin';
+    src: url('../../font/roboto/Roboto-Thin.ttf');
+}
+@font-face {
+    font-family: 'roboto_bold';
+    src: url('../../font/roboto/Roboto-Bold.ttf');
+}
+body{
+    background-color: #262626;
+    font-family: "roboto_fin";
+}
+
+
+#Header {
+    background-color: #2980b9;
+    height: 160px;
+    text-align: center;
+    font-size: 100%;
+    color: white; 
+    line-height: 120px;
+    font-size: 30px;
+}
+
+h1{
+    padding-top: 2%
+}
+
+#Center {
+}
+
+#Small-tile{
+    margin: 0 auto;
+    width: 80%
+}
+
+#Large-tile{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.Date{
+    text-align: center;
+    margin-top: 2%;
+}
+
+[class*='Squarre-']{
+    text-align: center;
+    height: 250px;
+    width: 40%;
+    background-color: white;
+    margin-top: 3%;  
+    border-radius: 4px;  
+}
+
+.Squarre-1{
+   float: left;
+    margin-left: 6%;
+}
+
+.Squarre-2{
+   float: right;
+    margin-right: 6%;
+}
+
+.Rectangle{
+    float: left;
+    height: 250px;
+    width: 88%;
+    margin-top: 3%;
+    background-color: white;
+    margin-left: 6%;
+    border-radius: 4px;
+}
+
+.Img-squarre {
+    margin: auto;
+    height:30%;
+    margin-top: 20px;
+}
+
+.Img-rectangle {
+    margin: auto;
+    height: 40%;
+    margin-top: 20px;
+}

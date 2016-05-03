@@ -1,7 +1,7 @@
 <?php
 
 // $dataSet is available with tih include
-include 'parse_csv.php';
+include 'include.php';
 
 // Get imc by the last day until the nbr_jour given by parameter
 function get_imc($dataset, $nbr_days = 20) {

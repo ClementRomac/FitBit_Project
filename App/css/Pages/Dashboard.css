@@ -2,19 +2,25 @@
     margin: 0;
     padding: 0;
 }
+@font-face {
+    font-family: 'roboto_fin';
+    src: url('../../font/roboto/Roboto-Thin.ttf');
+}
 
 body{
-    background-color: gray
+    background-color: #262626;
+    font-family: "roboto_fin";
 }
 
 
 #Header {
-    background-color: cadetblue;
-    height: 10%;
+    background-color: #2980b9;
+    height: 160px;
     text-align: center;
     font-size: 100%;
-    color: white;
-        
+    color: white; 
+    line-height: 120px;
+    font-size: 2em;
 }
 
 h1{
@@ -26,55 +32,96 @@ h1{
 
 #Small-tile{
     margin: 0 auto;
-    width: 80%
+    width: 100%
 }
 
 #Large-tile{
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
 }
 
 .Date{
+    color: white;
     text-align: center;
     margin-top: 2%;
+    font-size: 2em;
 }
 
 [class*='Squarre-']{
     text-align: center;
-    height: 250;
-    width: 40%;
+    height: 400px;
+    width: 45%;
     background-color: white;
-    margin-top: 3%;    
+    margin-top: 3%;  
+    border-radius: 4px;  
 }
 
 .Squarre-1{
-   float: left;
-   margin-left: 6%;
+    float: left;
+    margin-left: 3%;
 }
 
 .Squarre-2{
-   float: right;
-   margin-right: 6%;
+    float: right;
+    margin-right: 3%;
+    
 }
 
 .Rectangle{
-
     float: left;
-    height: 250px;
-    width: 88%;
+    height: 300px;
+    width: 94%;
     margin-top: 3%;
     background-color: white;
-    margin-left: 6%;
+    margin-left: 3%;
+    border-radius: 4px;
 }
 
 .Img-squarre {
     margin: auto;
-    height:30%;
+    height:40%;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .Img-rectangle {
-    margin: auto;
+    float: left;
     height: 50%;
     margin-top: 20px;
+    margin-left: 20px;
 }
+
+[class*='Text-']{
+    margin-bottom: 10px;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+[class*='Text-1']{
+    color: #e67e22;
+}
+
+[class*='Text-2']{
+    color: #27ae60;
+}
+
+.Text-2-2{
+    font-size: 2em;
+}
+
+[class*='Text-3']{
+    color: #34495e;
+}
+
+.Text-3{
+    margin-top: 100;
+    margin-left: 185px;
+}
+
+[class*='Text-3-']{
+    float: left;
+    margin-left: 100;
+    margin-top: 20;
+    font-size: 4em;
+}
+

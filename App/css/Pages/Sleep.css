@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'roboto_fin';
+    src: url('../../font/roboto/Roboto-Thin.ttf');
+}
+
+body{
+    background-color: #262626;
+    font-family: "roboto_fin";
+}
+
+#Header {
+    background-color: #34495e;
+    height: 160px;
+    font-size: 100%;
+    color: white; 
+    line-height: 150px;
+    font-size: 2em;
+}
+h1{
+    float: left;
+}
+[class*='Img-']{
+    margin-top: 40px;
+    height: 50%;
+}
+
+.Img-back{
+    float: left;
+}
+
+.Img-moon{
+    float: right;
+}

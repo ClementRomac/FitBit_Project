@@ -5,39 +5,9 @@
  * Date: 02/05/2016
  * Time: 16:10
  */
-### Conversion du CSV en tableau PHP ###
-$dataSet = parse_csv_file('..\data\data.csv', true, ';');
 
-$subject = $dataSet[2]["date"];
-
-print_r($matches);
-
-
-
-//print_r($dataSet[1]);
-
-function parse_csv_file($file, $columnheadings = false, $delimiter = ',', $enclosure = "\"") {
-
-    $row = 1;
-    $rows = array();
-    $handle = fopen($file, 'r');
-
-    while (($data = fgetcsv($handle, 1000, $delimiter, $enclosure )) !== FALSE) {
-        if (!($columnheadings == false) && ($row == 1)) {
-            $headingTexts = $data;
-        } elseif (!($columnheadings == false)) {
-            foreach ($data as $key => $value) {
-                unset($data[$key]);
-                $data[$headingTexts[$key]] = $value;
-            }
-        }
-        $rows[] = $data;
-        $row++;
-    }
-
-    fclose($handle);
-    return $rows;
-}
+// $dataSet is available with tih include
+include 'parse_csv.php';
 
 function meanDateWeight($dataSet){
     array_shift($dataSet);

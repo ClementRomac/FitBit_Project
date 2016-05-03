@@ -22,7 +22,16 @@ h1{
 }
 
 #Center {
-    
+}
+
+#Small-tile{
+    margin: 0 auto;
+    width: 80%
+}
+
+#Large-tile{
+    margin: 0 auto;
+    width: 80%;
 }
 
 .Date{
@@ -30,21 +39,42 @@ h1{
     margin-top: 2%;
 }
 
-.Squarre{
-    height: 200;
-    float: left;
-    width: 46%;
-    margin: 2%;
-    
+[class*='Squarre-']{
+    text-align: center;
+    height: 250;
+    width: 40%;
+    background-color: white;
+    margin-top: 3%;    
+}
+
+.Squarre-1{
+   float: left;
+    margin-left: 6%;
+}
+
+.Squarre-2{
+   float: right;
+    margin-right: 6%;
 }
 
 .Rectangle{
+
     float: left;
-    width: 100%;
-    margin: 2%;
-    
+    height: 250px;
+    width: 88%;
+    margin-top: 3%;
+    background-color: white;
+    margin-left: 6%;
 }
 
-.img-squarre {
-    display: block;S
+.Img-squarre {
+    margin: auto;
+    height:30%;
+    margin-top: 20px;
+}
+
+.Img-rectangle {
+    margin: auto;
+    width: 40%;
+    margin-top: 20px;
 }

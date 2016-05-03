@@ -23,18 +23,18 @@
 body{
 }
 
-#Homepage-Top{
+#homepage-Top{
     height: 50%;
     text-align: center;
     font-size: 600%;
     transform: translateY(30%);
     width: 100%;
 }
-#homepage-Top h1{
+h1{
     font-family: "roboto_bold";
 }
 
-#Homepage-Footer{
+#homepage-Footer{
     height: 50%;
     background-color: #2980b9;
     width: 100%;

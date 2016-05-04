@@ -23,10 +23,11 @@ function meanDateColumnHeadings($dataSet, $column_headings){
     for ($i=0; $i<+count($dataSet);$i++){
         $sumWeek+=$dataSet[$i][$column_headings];
         $sumMonth+=$dataSet[$i][$column_headings];
+        $date = $dataSet[$i]["date"];
         if ($isConvertible)
-            $day[] = convert_min_into_array($dataSet[$i][$column_headings]);
+            $day[] = array("date"=> $date, $column_headings => convert_min_into_array($dataSet[$i][$column_headings]));
         else
-            $day[] = $dataSet[$i][$column_headings];
+            $day[] = array("date"=> $date, $column_headings => $dataSet[$i][$column_headings]);
         $numberOfDayForMonth++;
 
         //------------------------------Traitement semaine
@@ -61,3 +62,4 @@ function meanDateColumnHeadings($dataSet, $column_headings){
         'month' => $month);
     return $return;
 }
+

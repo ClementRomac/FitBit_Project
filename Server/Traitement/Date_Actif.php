@@ -7,8 +7,12 @@
  */
 include 'include.php';
 include 'Date_ColumnHeadings.php';
-meanDateColumnHeadings($dataSet,"sedentary");
+$dump = meanDateColumnHeadings($dataSet,"sedentary");
 meanDateColumnHeadings($dataSet,"mobile");
 meanDateColumnHeadings($dataSet,"active");
 meanDateColumnHeadings($dataSet,"very_active");
 meanDateColumnHeadings($dataSet,"calories");
+
+print_r($dump["week"][0]);
+print_r($dump["month"][0]);
+print_r($dump["day"][1]);

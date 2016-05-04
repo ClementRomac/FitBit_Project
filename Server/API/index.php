@@ -25,6 +25,7 @@ $app->get('/', function ($request, $response, $args) {
  	return $response->write("SLIM OK");
 });
 
+	/******* WEIGHT *******/
 $app->get('/weight', function ($request, $response, $args) {
 	global $pdo;
 	$stt = $pdo->select(array('date', 'round(weight, 2) AS weight'))->from('WeightWeek')->orderBy('date', 'DESC')->limit(8)->execute();

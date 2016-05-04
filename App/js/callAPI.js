@@ -1,11 +1,11 @@
 var url = "http://localhost:8080/";
 
 function getData(location){
-    if (localStorage[''+location+'']){ 
-        renderChart()
+    if (localStorage[''+location+'']){ //if json for this location is in cache
+        renderChart();
     }else{
-        $.get(url+location).done(function(data) {
-            localStorage[''+location+''] = data;
+        $.get(url+location).done(function(data) {  // request data from url 
+            localStorage[''+location+''] = data; // put it in cache
             renderChart();
         })
         .fail(function() {

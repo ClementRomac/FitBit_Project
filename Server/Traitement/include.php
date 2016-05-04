@@ -30,9 +30,8 @@ function parse_csv_file($file, $column_headings = false, $delimiter = ',', $encl
 function convert_min_into_array($minutes) {
     $modulo_hours = 60;
     $minutes_left = $minutes % $modulo_hours;
-    $hours_left = ($minutes-$minutes_left) / $modulo_hours;
+    $hours_left = intval(($minutes-$minutes_left) / $modulo_hours);
     $array = array("hours" => $hours_left,
         "minutes" => $minutes_left);
     return $array;
 }
-

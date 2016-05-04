@@ -6,8 +6,9 @@
  * Time: 16:10
  */
 
-// $dataSet is available with tih include
+// $dataSet is available with this include
 include 'include.php';
+include '../BDD.php';
 
 function meanDateWeight($dataSet){
     array_shift($dataSet);
@@ -17,11 +18,9 @@ function meanDateWeight($dataSet){
     $week = array();
     $twoMonths = array();
     $year = array();
-    $monthNow=0;
     $numberOfDayForTwoMonth=0;
     $incrementWeek =6;
     for ($i=0; $i<+count($dataSet);$i++){
-      //  echo $dataSet[$i]["weight"]." ";
         $sumWeek+=$dataSet[$i]["weight"];
         $sumTwoMonths+=$dataSet[$i]["weight"];
         $sumYear+=$dataSet[$i]["weight"];
@@ -33,7 +32,7 @@ function meanDateWeight($dataSet){
 
             $weight =$sumWeek/7; //poids chaque semaine
             $date = $dataSet[$i]["date"];//date rentrée chaque semaine
-            $week[]= array("date"=> $date, "weight" => $weight); //ajout des données chaque semaine
+            $week[]= array("date"=> $date, "weight" => round($weight, 2)); //ajout des données chaque semaine
             $sumWeek=0;
             $incrementWeek +=7;
         }
@@ -44,7 +43,7 @@ function meanDateWeight($dataSet){
 
             $weight =$sumTwoMonths/$numberOfDayForTwoMonth; //poids chaque semaine
             $date = $dataSet[$i]["date"];//date rentrée chaque semaine
-            $twoMonths[]= array("date"=> $date, "weight" => $weight); //ajout des données chaque mois
+            $twoMonths[]= array("date"=> $date, "weight" => round($weight, 2)); //ajout des données chaque mois
             $sumTwoMonths=0;
             $numberOfDayForTwoMonth=0;
         }
@@ -57,10 +56,12 @@ function meanDateWeight($dataSet){
             if ( explode('-',$dataSet[$i]["date"])[0] % 4 ==0) $numberOfDayForYear++; //si année bisextille ajout d'un jour
             $weight =$sumYear/$numberOfDayForYear; //poids chaque semaine
             $date = $dataSet[$i]["date"];//date rentrée chaque année
-            $year[]= array("date"=> $date, "weight" => $weight); //ajout des données chaque semaine
+            $year[]= array("date"=> $date, "weight" => round($weight, 2)); //ajout des données chaque semaine
             $sumYear=0;
         }
     }
-    var_dump($year);
+    $return = array("week" => $week,
+        "twoMonths" => $twoMonths,
+        'year' => $year);
+    return $return;
 }
-?>

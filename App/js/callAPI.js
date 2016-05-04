@@ -5,7 +5,7 @@ $(function(){
     if (stored){ 
         renderChart()
     }else{
-        $.get( url).done(function(data) {
+        $.get(url).done(function(data) {
             localStorage['weight_weeks'] = data;
             renderChart();
         })
@@ -14,5 +14,18 @@ $(function(){
         });
     }
 });
+
+ 
+  /*function myFunction(arr) {
+     arr = JSON.parse(arr);
+     console.log(arr);
+     var out = "";
+     var i;
+     for(i = 1; i < Object.keys(arr).length; i++) {
+         out += '<p> Date:' + arr[''+i+''].date + '   Poids:' + 
+         arr[''+i+''].weight + '</p><br>';
+     }
+     document.getElementById("container").innerHTML = out;
+  }*/
 
  

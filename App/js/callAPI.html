@@ -12,20 +12,26 @@
 <script type="text/javascript">
 function renderChart() {
     var weights = JSON.parse(localStorage['weight_weeks']);
-    var weights_length = Object.keys(weights).length;
+    console.log(weights);
+    var weights_length = Object.keys(weights).length - 1;
+
+    var myCategories = [];
+    for (var i = 0; i <= weights_length; i++) {
+        myCategories[i] = weights[''+weights_length-i+''].date;
+    };
+    
+    var myData = [];
+    for (var i = 0; i <= weights_length; i++) {
+        myData[i] = weights[''+weights_length-i+''].weight;
+    };
+
     $('#container').highcharts({
         title: {
             text: 'Poids',
             x: -20 //center
         },
         xAxis: {
-            categories: [weights[''+(weights_length-6)+''].date,
-                weights[''+(weights_length-5)+''].date, 
-                weights[''+(weights_length-4)+''].date,
-                weights[''+(weights_length-3)+''].date, 
-                weights[''+(weights_length-2)+''].date, 
-                weights[''+(weights_length-1)+''].date, 
-                weights[''+weights_length+''].date]
+            categories: myCategories
         },
         yAxis: {
             title: {
@@ -38,14 +44,11 @@ function renderChart() {
             }]
         },
         tooltip: {
-            valueSuffix: 'Kg'
+            valueSuffix: ' Kg'
         },
         series: [{
             name: 'Poids',
-            data: [weights[''+(weights_length-6)+''].weight, weights[''+(weights_length-5)+''].weight,
-                weights[''+(weights_length-4)+''].weight, weights[''+(weights_length-3)+''].weight,
-                weights[''+(weights_length-2)+''].weight, weights[''+(weights_length-1)+''].weight,
-                weights[''+weights_length+''].weight]
+            data: myData
         }]
     });
 }

@@ -10,7 +10,8 @@ function get_sleeping_time($dataset, $nbr_days = 20) {
     $sleeping_time = array();
     for ($i =1; $i < $nbr_days+1; $i++){
         $daily_sleeping_time = $dataset[$i][$column_sleeping];
-        $sleeping_time[] = convert_min_into_array($daily_sleeping_time);
+        $sleeping_time[] = array("date" => $dataset[$i]["date"],
+            $dataset[0][$index_sleeping] => convert_min_into_array($daily_sleeping_time));
     }
     return $sleeping_time;
 }

@@ -10,7 +10,9 @@ function get_imc($dataset, $nbr_days = 20) {
     $imc = array();
     for ($i = 1; $i < $nbr_days+1; $i++){
         $daily_imc = $dataset[$i][$column_imc];
-        $imc[] = $daily_imc;
+        $imc[] = array("date" => $dataset[$i]["date"],
+            $dataset[0][$index_imc] => $daily_imc);
     }
     return $imc;
 }
+

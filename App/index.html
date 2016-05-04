@@ -1,19 +1,25 @@
 <html>
     <head>
-        <title>FitiBit</title></colspan="2"d >
+        <title>FitBit</title></colspan="2"d >
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     </head>
     <body>
         <div id="homepage-Top">
             <h1>FitBit</h1>
         </div>
+        <div id="resultat">
+            <!-- Nous allons afficher un retour en jQuery au visiteur -->
+        </div>
         <div id="homepage-Footer">
-            <form action="" method="POST">
-                <input name="username" type="text" placeholder="Nom d'utilisateur">
-                <input name="password" type="text" placeholder="Mot de passe">
-                <input name="submit" type="submit" value="Connexion"/>
+            <form >
+                <input name="username" id="username" type="text" placeholder="Nom d'utilisateur">
+                <input name="password" id="password" type="password" placeholder="Mot de passe">
+                <input name="submit" type="submit" id="submit" value="Connexion"/>
             </form>
         </div>
+        <script type="text/javascript" src="js/Login.js"></script>
+
     </body>
 </html>

@@ -10,7 +10,8 @@
 include 'include.php';
 include '../BDD.php';
 
-function meanDateWeight($dataSet){
+function meanDateWeight(){
+    global $dataSet;
     array_shift($dataSet);
     $sumWeek=0;
     $sumTwoMonths=0;
@@ -65,3 +66,23 @@ function meanDateWeight($dataSet){
         'year' => $year);
     return $return;
 }
+
+function feed_bdd_weight($table, $column)
+{
+    global $bdd;
+    $weight_column = meanDateWeight();
+    $weight_column = $weight_column[$column];
+    for ($i = 0; $i < count($weight_column); $i++)
+        $bdd->query('INSERT INTO '.$table.' (date, weight) VALUES ("' . $weight_column[$i]["date"] . '", ' . $weight_column[$i]["weight"] . ')');
+}
+
+
+/*
+ * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+ * feed_bdd_weight("Weight_weeks", "week");
+ * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+ * feed_bdd_weight("Weight_two_months", "twoMonths");
+ * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+ * feed_bdd_weight("Weight_Year", "year");
+ * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+*/

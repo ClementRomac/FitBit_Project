@@ -8,8 +8,14 @@
         <script type="text/javascript" src="../js/callAPI.js"></script>
     </head>
     <body>
+    <?php
+    session_start();
+    if (!isset($_SESSION['user'])){
+        header('Location: ../index.html');
+    }
+    ?>
         <div id="header-weight">
-            <a href="Dashboard.html"><img src="../maquettes/sprite/back.png" class="img-back"></a>
+            <a href="Dashboard.php"><img src="../maquettes/sprite/back.png" class="img-back"></a>
             <h1>Comment t'es gros wesh</h1>
             <img src="../maquettes/sprite/iconW.png" class="img-moon">
         </div>

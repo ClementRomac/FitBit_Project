@@ -9,7 +9,8 @@
 // $dataSet is available with this include
 include 'include.php';
 include '../BDD.php';
-
+include 'FormatDateMonth.php';
+meanDateWeight($dataSet);
 function meanDateWeight(){
     global $dataSet;
     array_shift($dataSet);
@@ -43,8 +44,9 @@ function meanDateWeight(){
             && $dataSet[$i]["date"] != "2010-01-01"){  //sauf si c est le premier jour du DataSet
 
             $weight =$sumTwoMonths/$numberOfDayForTwoMonth; //poids chaque semaine
-            $date = explode('-',$dataSet[$i]["date"])[0]."-"."0".(explode('-',$dataSet[$i]["date"])[1]-1).
-                "/".explode('-',$dataSet[$i]["date"])[1];
+
+            $date = fromatDateMonth($dataSet, $i, "twoMonths");
+
             //date rentrée chaque semaine
             $twoMonths[]= array("date"=> $date, "weight" => round($weight, 2)); //ajout des données chaque mois
             $sumTwoMonths=0;
@@ -63,6 +65,7 @@ function meanDateWeight(){
             $sumYear=0;
         }
     }
+    var_dump($twoMonths);
     $return = array("week" => $week,
         "twoMonths" => $twoMonths,
         'year' => $year);

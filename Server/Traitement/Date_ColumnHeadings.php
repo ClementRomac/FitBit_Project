@@ -32,7 +32,6 @@ function meanDateColumnHeadings($dataSet, $column_headings){
         //------------------------------Traitement semaine
 
         if ($i  == $incrementWeek){
-
             $dataColumn_headings =$sumWeek/7; //poids chaque semaine
             $date = $dataSet[$i]["date"];//date rentrée chaque semaine
             if ($isConvertible)
@@ -48,12 +47,13 @@ function meanDateColumnHeadings($dataSet, $column_headings){
             $sumWeek=0;
             $incrementWeek +=7;
         }
-        //------------------------------Traitement deux mois
+        //------------------------------Traitement chaque mois
         if(explode('-',$dataSet[$i]["date"])[2] =="01"//tout les débuts
             && $dataSet[$i]["date"] != "2010-01-01"){  //sauf si c'est le premier jour du DataSet
 
             $dataColumn_headings =$sumMonth/$numberOfDayForMonth; //poids chaque semaine
-            $date = $dataSet[$i]["date"];//date rentrée chaque semaine
+            $date = explode('-',$dataSet[$i]["date"])[0]."-"."0".(explode('-',$dataSet[$i]["date"])[1]-1);
+           // $date = $dataSet[$i]["date"];//date rentrée chaque semaine
             if ($isConvertible)
                 $month[]= array("date"=> $date, $column_headings => convert_min_into_array($dataColumn_headings)); //ajout des données chaque mois
             else {
@@ -67,6 +67,7 @@ function meanDateColumnHeadings($dataSet, $column_headings){
             $sumMonth=0;
             $numberOfDayForMonth=0;
         }
+
     }
     $return = array("day" => $day,
         "week" => $week,

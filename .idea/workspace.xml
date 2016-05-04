@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="95bc8ff2-c978-4c2c-91c1-2fd894f52750" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Connexion.php" afterPath="$PROJECT_DIR$/App/Connexion.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/index.html" afterPath="$PROJECT_DIR$/App/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/js/Login.js" afterPath="$PROJECT_DIR$/App/js/Login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Traitement/Date_ColumnHeadings.php" afterPath="$PROJECT_DIR$/Server/Traitement/Date_ColumnHeadings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Traitement/Date_Weight.php" afterPath="$PROJECT_DIR$/Server/Traitement/Date_Weight.php" />
     </list>
     <ignored path="FitBit_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,17 +33,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="Date_Weight.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Weight.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="564">
+              <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="29" />
+              <folding>
+                <element signature="e#6#87#0#PHP" expanded="true" />
+                <marker date="1462363622655" expanded="true" signature="2954:3075" placeholder="INSERT INTO ${$table}... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" column="52" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="52" />
+            <state relative-caret-position="440">
+              <caret line="20" column="14" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Connexion.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Date_Time_Sleep.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Time_Sleep.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding>
+                <marker date="1462362801169" expanded="true" signature="603:792" placeholder="INSERT INTO ${$table}... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Date_Actif.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Actif.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+              <folding>
+                <marker date="1462364366981" expanded="true" signature="604:793" placeholder="INSERT INTO ${$table}... " />
+                <marker date="1462364366981" expanded="true" signature="1087:1211" placeholder="INSERT INTO ${$table}... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Connexion.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Connexion.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
@@ -64,6 +101,40 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Date_ColumnHeadings.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_ColumnHeadings.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="590">
+              <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Date_Distance.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Distance.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <marker date="1462362801167" expanded="true" signature="568:691" placeholder="INSERT INTO ${$table}... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IMC.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/Traitement/IMC.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1462362801170" expanded="true" signature="674:778" placeholder="INSERT INTO Imc... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -73,17 +144,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Traitement/Date_Weight.php" />
-        <option value="$PROJECT_DIR$/Server/Traitement/Date_Weight.php" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/Server/Traitement/Date_ColumnHeadings.php" />
         <option value="$PROJECT_DIR$/Server/Traitement/Date_Time_Sleep.php" />
-        <option value="$PROJECT_DIR$/Server/Traitement/Date_Actif.php" />
         <option value="$PROJECT_DIR$/Server/Traitement/Date_Distance.php" />
         <option value="$PROJECT_DIR$/App/js/time.js" />
         <option value="$PROJECT_DIR$/App/Login.js" />
         <option value="$PROJECT_DIR$/App/index.html" />
         <option value="$PROJECT_DIR$/App/Connexion.php" />
         <option value="$PROJECT_DIR$/App/js/Login.js" />
+        <option value="$PROJECT_DIR$/Server/Traitement/Date_Weight.php" />
+        <option value="$PROJECT_DIR$/Server/Traitement/Date_ColumnHeadings.php" />
+        <option value="$PROJECT_DIR$/Server/Traitement/Date_Actif.php" />
       </list>
     </option>
   </component>
@@ -94,9 +165,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="1341" />
-    <option name="height" value="1084" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1098" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -139,6 +211,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="FitBit_Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FitBit_Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FitBit_Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FitBit_Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FitBit_Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Traitement" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -249,13 +353,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24578000" />
+    <option name="totallyTimeSpent" value="26682000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1341" height="1084" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3157064" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21459228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -383,7 +487,7 @@
           <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1462355804036" expanded="true" signature="2818:2939" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1462363622655" expanded="true" signature="2954:3075" placeholder="INSERT INTO ${$table}... " />
           </folding>
         </state>
       </provider>
@@ -438,7 +542,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1462355804036" expanded="true" signature="2818:2939" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1462363622655" expanded="true" signature="2954:3075" placeholder="INSERT INTO ${$table}... " />
           </folding>
         </state>
       </provider>
@@ -450,7 +554,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1462355804036" expanded="true" signature="2818:2939" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1462363622655" expanded="true" signature="2954:3075" placeholder="INSERT INTO ${$table}... " />
           </folding>
         </state>
       </provider>
@@ -462,7 +566,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1462355804036" expanded="true" signature="2818:2939" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1462363622655" expanded="true" signature="2954:3075" placeholder="INSERT INTO ${$table}... " />
           </folding>
         </state>
       </provider>
@@ -525,7 +629,7 @@
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1462355804036" expanded="true" signature="2818:2939" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1462363622655" expanded="true" signature="2954:3075" placeholder="INSERT INTO ${$table}... " />
           </folding>
         </state>
       </provider>
@@ -536,7 +640,7 @@
           <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1462355804036" expanded="true" signature="2818:2939" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1462363622655" expanded="true" signature="2954:3075" placeholder="INSERT INTO ${$table}... " />
           </folding>
         </state>
       </provider>
@@ -591,7 +695,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1462355804036" expanded="true" signature="2818:2939" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1462363622655" expanded="true" signature="2954:3075" placeholder="INSERT INTO ${$table}... " />
           </folding>
         </state>
       </provider>
@@ -602,7 +706,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1462355804036" expanded="true" signature="2818:2939" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1462363622655" expanded="true" signature="2954:3075" placeholder="INSERT INTO ${$table}... " />
           </folding>
         </state>
       </provider>
@@ -613,7 +717,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1462355804036" expanded="true" signature="2818:2939" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1462363622655" expanded="true" signature="2954:3075" placeholder="INSERT INTO ${$table}... " />
           </folding>
         </state>
       </provider>
@@ -625,39 +729,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Weight.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1462355804036" expanded="true" signature="2818:2939" placeholder="INSERT INTO ${$table}... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/js/time.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Time_Sleep.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Actif.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,24 +742,6 @@
           <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
           <folding>
             <element signature="e#7#119#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Distance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_ColumnHeadings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="11" column="31" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -713,18 +770,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Traitement/IMC.php">
+    <entry file="file://$PROJECT_DIR$/App/Connexion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="52" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="52" />
+        <state relative-caret-position="88">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -737,11 +786,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Connexion.php">
+    <entry file="file://$PROJECT_DIR$/App/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        <state relative-caret-position="440">
+          <caret line="20" column="14" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Traitement/IMC.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1462362801170" expanded="true" signature="674:778" placeholder="INSERT INTO Imc... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Time_Sleep.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <marker date="1462362801169" expanded="true" signature="603:792" placeholder="INSERT INTO ${$table}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_ColumnHeadings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Actif.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <marker date="1462364366981" expanded="true" signature="604:793" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1462364366981" expanded="true" signature="1087:1211" placeholder="INSERT INTO ${$table}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Distance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <marker date="1462362801167" expanded="true" signature="568:691" placeholder="INSERT INTO ${$table}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Traitement/Date_Weight.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="29" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <marker date="1462363622655" expanded="true" signature="2954:3075" placeholder="INSERT INTO ${$table}... " />
+          </folding>
         </state>
       </provider>
     </entry>

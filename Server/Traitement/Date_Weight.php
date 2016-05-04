@@ -43,7 +43,9 @@ function meanDateWeight(){
             && $dataSet[$i]["date"] != "2010-01-01"){  //sauf si c est le premier jour du DataSet
 
             $weight =$sumTwoMonths/$numberOfDayForTwoMonth; //poids chaque semaine
-            $date = $dataSet[$i]["date"];//date rentrée chaque semaine
+            $date = explode('-',$dataSet[$i]["date"])[0]."-"."0".(explode('-',$dataSet[$i]["date"])[1]-1).
+                "/".explode('-',$dataSet[$i]["date"])[1];
+            //date rentrée chaque semaine
             $twoMonths[]= array("date"=> $date, "weight" => round($weight, 2)); //ajout des données chaque mois
             $sumTwoMonths=0;
             $numberOfDayForTwoMonth=0;

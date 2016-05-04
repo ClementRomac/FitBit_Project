@@ -8,10 +8,9 @@
 
 function meanDateColumnHeadings($dataSet, $column_headings){
     $where_minutes = array("sleeping", "awake", "awakening", "in_bed", "sedentary", "mobile", "active", "very_active");
+    $isConvertible = false;
     if (in_array($column_headings, $where_minutes))
         $isConvertible = true;
-    else
-        $isConvertible = false;
     array_shift($dataSet);
     $sumWeek=0;
     $sumMonth=0;
@@ -38,21 +37,33 @@ function meanDateColumnHeadings($dataSet, $column_headings){
             $date = $dataSet[$i]["date"];//date rentrée chaque semaine
             if ($isConvertible)
                 $week[]= array("date"=> $date, $column_headings => convert_min_into_array($dataColumn_headings)); //ajout des données chaque semaine
-            else
-                $week[]= array("date"=> $date, $column_headings => $dataColumn_headings); //ajout des données chaque semaine
+            else {
+                if ($column_headings == "steps")
+                    $week[] = array("date" => $date, $column_headings => round($dataColumn_headings, 0)); //ajout des données chaque semaine
+                else if ($column_headings == "floors")
+                    $week[] = array("date" => $date, $column_headings => round($dataColumn_headings, 1)); //ajout des données chaque semaine
+                else
+                    $week[] = array("date" => $date, $column_headings => round($dataColumn_headings, 2)); //ajout des données chaque semaine
+            }
             $sumWeek=0;
             $incrementWeek +=7;
         }
         //------------------------------Traitement deux mois
         if(explode('-',$dataSet[$i]["date"])[2] =="01"//tout les débuts
-            && $dataSet[$i]["date"] != "2010-01-01"){  //sauf si c est le premier jour du DataSet
+            && $dataSet[$i]["date"] != "2010-01-01"){  //sauf si c'est le premier jour du DataSet
 
             $dataColumn_headings =$sumMonth/$numberOfDayForMonth; //poids chaque semaine
             $date = $dataSet[$i]["date"];//date rentrée chaque semaine
             if ($isConvertible)
                 $month[]= array("date"=> $date, $column_headings => convert_min_into_array($dataColumn_headings)); //ajout des données chaque mois
-            else
-                $month[]= array("date"=> $date, $column_headings => $dataColumn_headings); //ajout des données chaque mois
+            else {
+                if ($column_headings == "steps")
+                    $month[] = array("date" => $date, $column_headings => round($dataColumn_headings, 0)); //ajout des données chaque mois
+                else if ($column_headings == "floors")
+                    $month[] = array("date" => $date, $column_headings => round($dataColumn_headings, 1)); //ajout des données chaque mois
+                else
+                    $month[] = array("date" => $date, $column_headings => round($dataColumn_headings, 2)); //ajout des données chaque mois
+            }
             $sumMonth=0;
             $numberOfDayForMonth=0;
         }

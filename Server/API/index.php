@@ -27,7 +27,7 @@ $app->get('/', function ($request, $response, $args) {
 
 $app->get('/weight', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'round(weight, 2) AS weight'))->from('Weight_Weeks')->orderBy('date', 'DESC')->limit(8)->execute();
+	$stt = $pdo->select(array('date', 'round(weight, 2) AS weight'))->from('WeightWeek')->orderBy('date', 'DESC')->limit(8)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);
@@ -35,9 +35,9 @@ $app->get('/weight', function ($request, $response, $args) {
 
 });
 
-$app->get('/weight/months', function ($request, $response, $args) {
+$app->get('/weight/month', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'round(weight, 2) AS weight'))->from('Weight_Two_Months')->orderBy('date', 'DESC')->limit(6)->execute();
+	$stt = $pdo->select(array('date', 'round(weight, 2) AS weight'))->from('WeightTwoMonth')->orderBy('date', 'DESC')->limit(6)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);
@@ -45,9 +45,9 @@ $app->get('/weight/months', function ($request, $response, $args) {
 
 });
 
-$app->get('/weight/years', function ($request, $response, $args) {
+$app->get('/weight/year', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'round(weight, 2) AS weight'))->from('Weight_Year')->orderBy('date', 'DESC')->limit(6)->execute();
+	$stt = $pdo->select(array('date', 'round(weight, 2) AS weight'))->from('WeightYear')->orderBy('date', 'DESC')->limit(6)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);

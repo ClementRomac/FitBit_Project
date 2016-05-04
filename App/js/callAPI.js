@@ -1,31 +1,17 @@
-var url = "http://localhost:8080/weight";
-var stored = localStorage['weight_weeks'];
+var url = "http://localhost:8080/";
 
-$(function(){
-    if (stored){ 
+function getData(location){
+    if (localStorage[''+location+'']){ 
         renderChart()
     }else{
-        $.get(url).done(function(data) {
-            localStorage['weight_weeks'] = data;
+        $.get(url+location).done(function(data) {
+            localStorage[''+location+''] = data;
             renderChart();
         })
         .fail(function() {
             $("#error_message").text("Une erreur est survenue");
         });
     }
-});
-
- 
-  /*function myFunction(arr) {
-     arr = JSON.parse(arr);
-     console.log(arr);
-     var out = "";
-     var i;
-     for(i = 1; i < Object.keys(arr).length; i++) {
-         out += '<p> Date:' + arr[''+i+''].date + '   Poids:' + 
-         arr[''+i+''].weight + '</p><br>';
-     }
-     document.getElementById("container").innerHTML = out;
-  }*/
+}
 
  

@@ -81,10 +81,12 @@ function feed_bdd_weight($table, $column)
 
 /*
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_weight("Weight_weeks", "week");
+ * feed_bdd_weight("WeightWeek", "week");
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_weight("Weight_two_months", "twoMonths");
+ * feed_bdd_weight("WeightTwoMonth", "twoMonths");
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_weight("Weight_Year", "year");
+ * feed_bdd_weight("WeightYear", "year");
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
 */
+
+feed_bdd_weight("WeightTwoMonth", "twoMonths");

@@ -8,22 +8,28 @@
         <script type="text/javascript" src="../js/callAPI.js"></script>
     </head>
     <body>
-        <div id="header-weight">
+
+        <header class="weight">
             <a href="Dashboard.html"><img src="../maquettes/sprite/back.png" class="img-back"></a>
-            <h1>Comment t'es gros wesh</h1>
+            <h1>Poids</h1>
             <img src="../maquettes/sprite/iconW.png" class="img-moon">
-        </div>
+        </header>
+
+
         <div id="conteneur">
-            <h2 class="h-weight"> Aujourd'hui </h2>
-            <p><span class="span-1-1">Dormir pendant : </span><span class="span-1-2"> 6h 52min </span></p>
-            <p><span class="span-2-1">Qualité de sommeil : </span><span class="span-2-2"> Bon | 8.5/10 </span></p>
-            <h2 class="h-weight">Graphique</h2>
-            <div>
-                <button class="button-weight" onclick="changeLocation('weight')">Semaines</button>
-                <button class="button-weight" onclick="changeLocation('weight/month')">Deux mois</button>
-                <button class="button-weight" onclick="changeLocation('weight/year')">Années</button>
-            </div>
-            <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+            <h2>Aujourd'hui</h2>
+                <p>Dormir pendant :<span class="space"></span>6h 52min</p>
+                <p>Qualité de sommeil :<span class="space"></span>Bon | 8.5/10</p>
+
+            <h2>Graphique</h2>
+
+                <div>
+                    <button class="button-weight active-weight" onclick="changeLocation('weight')">Semaines</button>
+                    <button class="button-weight" onclick="changeLocation('weight/month')">Deux mois</button>
+                    <button class="button-weight" onclick="changeLocation('weight/year')">Années</button>
+                </div>
+                <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
 
         <script type="text/javascript">

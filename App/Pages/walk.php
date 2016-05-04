@@ -5,9 +5,15 @@
         <link rel="stylesheet" media="screen" type="text/css" href="../css/Pages/style.css">
     </head>
     <body>
+    <?php
+    session_start();
+    if (!isset($_SESSION['user'])){
+        header('Location: ../index.html');
+    }
+    ?>
 
         <header class="walk">
-            <a href="Dashboard.html"><img src="../maquettes/sprite/back.png" class="img-back"></a>
+            <a href="Dashboard.php"><img src="../maquettes/sprite/back.png" class="img-back"></a>
             <h1>Activité</h1>
             <img src="../maquettes/sprite/footsteps-silhouette-variantW.png" class="img-moon">
         </header>

@@ -18,16 +18,16 @@ function feed_bdd_distance($activity, $table, $column)
     $activity_column = meanDateColumnHeadings($dataSet, $activity);
     $activity_column = $activity_column[$column];
     for ($i = 0; $i < count($activity_column); $i++)
-        $bdd->query('INSERT INTO '.$table.' (date, steps) VALUES ("' . $activity_column[$i]["date"] . '", "'.$activity_column[$i][$activity].'")');
+        $bdd->query('INSERT INTO '.$table.' (date, '.$activity.') VALUES ("' . $activity_column[$i]["date"] . '", "'.$activity_column[$i][$activity].'")');
 }
 
 /*
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_distance("distance", "kmDay", "day");
+ * feed_bdd_distance("distance", "DistanceDay", "day");
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_distance("distance", "kmWeek", "week");
+ * feed_bdd_distance("distance", "DistanceWeek", "week");
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_distance("distance", "kmMonth", "month");
+ * feed_bdd_distance("distance", "DistanceMonth", "month");
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
  * feed_bdd_distance("steps", "StepsDay", "day");
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
@@ -37,3 +37,5 @@ function feed_bdd_distance($activity, $table, $column)
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
  * */
 
+feed_bdd_distance("distance", "DistanceMonth", "month");
+feed_bdd_distance("steps", "StepsMonth", "month");

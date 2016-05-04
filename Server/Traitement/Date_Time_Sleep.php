@@ -31,3 +31,5 @@ function feed_bdd_sleeping($activity, $table, $column)
  * feed_bdd_sleeping("sleeping", "SleepMonth", "month");
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
  * */
+
+feed_bdd_sleeping("sleeping", "SleepMonth", "month");

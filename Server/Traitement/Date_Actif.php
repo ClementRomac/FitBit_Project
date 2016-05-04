@@ -45,9 +45,9 @@ function feed_bdd_calories($activity, $table, $column)
  * feed_bdd_activity("sedentary", "SedentaryWeek", "week");
  * feed_bdd_activity("sedentary", "SedentaryMonth", "month");
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_activity("very_active", "Very_ActiveDay", "day");
- * feed_bdd_activity("very_active", "Very_ActiveWeek", "week");
- * feed_bdd_activity("very_active", "Very_ActiveMonth", "month");
+ * feed_bdd_activity("very_active", "VeryActiveDay", "day");
+ * feed_bdd_activity("very_active", "VeryActiveWeek", "week");
+ * feed_bdd_activity("very_active", "VeryActiveMonth", "month");
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
  * feed_bdd_calories("calories", "CaloriesDay", "day");
  * feed_bdd_calories("calories", "CaloriesWeek", "week");
@@ -55,3 +55,8 @@ function feed_bdd_calories($activity, $table, $column)
  * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
 */
 
+feed_bdd_activity("active", "ActiveMonth", "month");
+feed_bdd_activity("mobile", "MobileMonth", "month");
+feed_bdd_activity("sedentary", "SedentaryMonth", "month");
+feed_bdd_activity("very_active", "VeryActiveMonth", "month");
+feed_bdd_calories("calories", "CaloriesMonth", "month");

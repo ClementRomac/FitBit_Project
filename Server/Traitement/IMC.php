@@ -7,11 +7,11 @@ include 'include.php';
 function get_imc($dataset, $nbr_days = 20) {
     $index_imc = 2;
     $column_imc = $dataset[0][$index_imc];
-    $length_dataset = count($dataset)-1;
     $imc = array();
-    for ($i =$length_dataset; $i > $length_dataset-$nbr_days; $i--){
+    for ($i = 1; $i < $nbr_days+1; $i++){
         $daily_imc = $dataset[$i][$column_imc];
-        $imc[] = $daily_imc;
+        $imc[] = array("date" => $dataset[$i]["date"],
+            $dataset[0][$index_imc] => $daily_imc);
     }
     return $imc;
 }

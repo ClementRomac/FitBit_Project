@@ -22,9 +22,6 @@ $container = $app->getContainer();
 // Define app routes
 
 $app->get('/', function ($request, $response, $args) {
-	// global $pdo;
-	// $stt = $pdo->select()->from('jeu_video')->execute();
-	// $jeux = $stt->fetchAll(PDO::FETCH_OBJ);
 // 	$rows = array('<table');
 // 	$rows[] = '<tr><th>ID</th><th>Nom</th></tr>';
 // 	while ($rw = $stt->fetch(PDO::FETCH_OBJ)){
@@ -37,6 +34,11 @@ $app->get('/', function ($request, $response, $args) {
 });
 
 $app->get('/weight', function ($request, $response, $args) {
+	// global $pdo;
+	// $stt = $pdo->select()->from('Weight_weeks')->execute();
+	// $weight = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+
 	$json = array();
 	for ($i=1; $i < 11; $i++) { 
 		$json[$i] = array('date' => $i.'-'.$i.'-2016', 'weight'=> 60+rand($i, 10));

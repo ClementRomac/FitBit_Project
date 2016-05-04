@@ -1,10 +1,54 @@
 <html>
 <head>
     <title>Test API</title>
-
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
-    <div id="id01"></div>
+    <div id="error_message"></div>
     <script type="text/javascript" src="callAPI.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<script type="text/javascript">
+function renderChart() {
+    var weights = JSON.parse(localStorage['weight_weeks']);
+    var weights_length = Object.keys(weights).length;
+    $('#container').highcharts({
+        title: {
+            text: 'Poids',
+            x: -20 //center
+        },
+        xAxis: {
+            categories: [weights[''+(weights_length-6)+''].date,
+                weights[''+(weights_length-5)+''].date, 
+                weights[''+(weights_length-4)+''].date,
+                weights[''+(weights_length-3)+''].date, 
+                weights[''+(weights_length-2)+''].date, 
+                weights[''+(weights_length-1)+''].date, 
+                weights[''+weights_length+''].date]
+        },
+        yAxis: {
+            title: {
+                text: 'Poids (Kg)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: 'Kg'
+        },
+        series: [{
+            name: 'Poids',
+            data: [weights[''+(weights_length-6)+''].weight, weights[''+(weights_length-5)+''].weight,
+                weights[''+(weights_length-4)+''].weight, weights[''+(weights_length-3)+''].weight,
+                weights[''+(weights_length-2)+''].weight, weights[''+(weights_length-1)+''].weight,
+                weights[''+weights_length+''].weight]
+        }]
+    });
+}
+</script>
 </body>
 </html>

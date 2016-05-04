@@ -8,12 +8,6 @@
 include 'include.php';
 include '../BDD.php';
 include 'Date_ColumnHeadings.php';
-$dump = meanDateColumnHeadings($dataSet,"sedentary");
-meanDateColumnHeadings($dataSet,"mobile");
-meanDateColumnHeadings($dataSet,"active");
-meanDateColumnHeadings($dataSet,"very_active");
-meanDateColumnHeadings($dataSet,"calories");
-
 
 //$activity = (sedentary | mobile | active | very_active | calories) // $column = (day | week | month)
 // $table = table corresponding to th insert

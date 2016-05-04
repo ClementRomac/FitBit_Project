@@ -1,10 +1,67 @@
 <html>
 <head>
     <title>Test API</title>
-
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="callAPI.js"></script>
 </head>
 <body>
-    <div id="id01"></div>
-    <script type="text/javascript" src="callAPI.js"></script>
+    <div id="error_message"></div>
+    <button onclick="changeLocation('weight')">Semaines</button>
+    <button onclick="changeLocation('weight/months')">Deux mois</button>
+    <button onclick="changeLocation('weight/years')">Années</button>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<script type="text/javascript">
+var myLocation = "weight";
+getData(myLocation);
+
+function changeLocation(newLocation){
+    myLocation = newLocation;
+    getData(myLocation);
+}
+
+function renderChart() {
+    var weights = JSON.parse(localStorage[''+myLocation+'']);
+    var weights_length = Object.keys(weights).length - 1;
+
+    var myCategories = [];
+    for (var i = 0; i <= weights_length; i++) {
+        myCategories[i] = weights[''+weights_length-i+''].date;
+    };
+    
+    var myData = [];
+    for (var i = 0; i <= weights_length; i++) {
+        myData[i] = weights[''+weights_length-i+''].weight;
+    };
+
+    $('#container').highcharts({
+        title: {
+            text: 'Poids',
+            x: -20 //center
+        },
+        xAxis: {
+            categories: myCategories
+        },
+        yAxis: {
+            title: {
+                text: 'Poids (Kg)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ' Kg'
+        },
+        series: [{
+            name: 'Poids',
+            data: myData
+        }]
+    });
+}
+</script>
 </body>
 </html>

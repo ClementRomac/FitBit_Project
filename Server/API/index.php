@@ -22,25 +22,33 @@ $container = $app->getContainer();
 // Define app routes
 
 $app->get('/', function ($request, $response, $args) {
-	// global $pdo;
-	// $stt = $pdo->select()->from('jeu_video')->execute();
-	// $jeux = $stt->fetchAll(PDO::FETCH_OBJ);
-// 	$rows = array('<table');
-// 	$rows[] = '<tr><th>ID</th><th>Nom</th></tr>';
-// 	while ($rw = $stt->fetch(PDO::FETCH_OBJ)){
-// 		$rows[] = '<tr><td>'.$rw->ID.'</td><td><a href=jeux/'.$rw->ID.'>'.$rw->nom.'</a></td></tr>';
-// 	}
-// 	$rows[] = '</table>';
-// 	$content = file_get_contents("pages/jeu.html");
-// 	$content = str_replace('{{jeux}}', implode(PHP_EOL, $rows), $content);
  	return $response->write("SLIM OK");
 });
 
 $app->get('/weight', function ($request, $response, $args) {
-	$json = array();
-	for ($i=1; $i < 11; $i++) { 
-		$json[$i] = array('date' => $i.'-'.$i.'-2016', 'weight'=> 60+rand($i, 10));
-	}
+	global $pdo;
+	$stt = $pdo->select(array('date', 'round(weight, 2) AS weight'))->from('WeightWeek')->orderBy('date', 'DESC')->limit(8)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/weight/month', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'round(weight, 2) AS weight'))->from('WeightTwoMonth')->orderBy('date', 'DESC')->limit(6)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/weight/year', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'round(weight, 2) AS weight'))->from('WeightYear')->orderBy('date', 'DESC')->limit(6)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);
 	return $response->write($json_response);

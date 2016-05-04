@@ -63,7 +63,7 @@ h2{
     background-color: white;
     width: 85%;
     margin: 30px auto;
-    height: 80%;
+    height: auto;
     padding: 30px;
     border-radius: 4px;
 }

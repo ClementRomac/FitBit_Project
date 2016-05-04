@@ -5,6 +5,8 @@
         <link rel="stylesheet" media="screen" type="text/css" href="../css/Pages/style.css">
         <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
         <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
     </head>
     <body>
@@ -25,26 +27,36 @@
             <h2>Graphique</h2>
 
                 <div>
-                    <button id ="1" class="button-weight active-weight" onclick="changeLocation('weight', 1)">Semaines</button>
-                    <button id ="2" class="button-weight" onclick="changeLocation('weight/month', 2)">Deux mois</button>
-                    <button id ="3" class="button-weight" onclick="changeLocation('weight/year', 3)">Années</button>
+                    <button id ="1" class="button-weight active-weight" onclick="changeWeightLocation('weight', 1)">Semaines</button>
+                    <button id ="2" class="button-weight" onclick="changeWeightLocation('weight/month', 2)">Deux mois</button>
+                    <button id ="3" class="button-weight" onclick="changeWeightLocation('weight/year', 3)">Années</button>
                 </div>
-                <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                <div id="container_weight" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                <div id="container_imc" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
 
         <script type="text/javascript">
-        var myLocation = "weight"; //default location
-        getData(myLocation); //get data for default location
+        //var myLocation = "weight"; //default location
+        getData("weight"); //get data for default location
+        getData("imc"); //get data for default location
 
-        function changeLocation(newLocation, id){
-            myLocation = newLocation;
-            getData(myLocation);
+        function changeWeightLocation(newLocation, id){
+            getData(newLocation);
             $('button').removeClass("active-weight");
             $('#'+id).addClass("active-weight")
         }
 
-        function renderChart() {
-            var weights = JSON.parse(localStorage[''+myLocation+'']);
+        function renderChart(location) {
+            if(location == "weight" || location == "weight/month" || location == "weight/year"){
+                renderWeight(location);
+            }
+            else if(location == "imc"){
+                renderImc(location);
+            }
+        }
+
+        function renderWeight(weightLocation){
+            var weights = JSON.parse(localStorage[''+weightLocation+'']);
             var weights_length = Object.keys(weights).length - 1;
 
             var myCategories = [];
@@ -57,7 +69,7 @@
                 myData[i] = weights[''+weights_length-i+''].weight;
             };
 
-            $('#container').highcharts({
+            $('#container_weight').highcharts({
                 title: {
                     text: 'Poids',
                     x: -20 //center
@@ -83,6 +95,95 @@
                     data: myData
                 }]
             });
+        }
+
+        function renderImc(imcLocation){
+            var imc = (JSON.parse(localStorage[''+imcLocation+'']))[0].imc
+
+            var gaugeOptions = {
+
+                chart: {
+                    type: 'solidgauge'
+                },
+
+                title: null,
+
+                pane: {
+                    center: ['50%', '85%'],
+                    size: '140%',
+                    startAngle: -90,
+                    endAngle: 90,
+                    background: {
+                        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || '#EEE',
+                        innerRadius: '60%',
+                        outerRadius: '100%',
+                        shape: 'arc'
+                    }
+                },
+
+                tooltip: {
+                    enabled: false
+                },
+
+                // the value axis
+                yAxis: {
+                    stops: [
+                        [0, '#2980b9'], // green
+                        [0.50, '#2ecc71'], // yellow
+                        [0.60, '#f1c40f'], // yellow
+                        [0.80, '#e74c3c'] // red
+                    ],
+                    lineWidth: 0,
+                    minorTickInterval: null,
+                    tickPixelInterval: 190,
+                    tickWidth: 0,
+                    title: {
+                        y: -70
+                    },
+                    labels: {
+                        y: 16
+                    }
+                },
+
+                plotOptions: {
+                    solidgauge: {
+                        dataLabels: {
+                            y: 5,
+                            borderWidth: 0,
+                            useHTML: true
+                        }
+                    }
+                }
+            };
+
+            // The speed gauge
+            $('#container_imc').highcharts(Highcharts.merge(gaugeOptions, {
+                yAxis: {
+                    min: 0,
+                    max: 40,
+                    title: {
+                        text: 'IMC'
+                    }
+                },
+
+                credits: {
+                    enabled: false
+                },
+
+                series: [{
+                    name: 'Speed',
+                    data: [imc],
+                    dataLabels: {
+                        format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+                            ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
+                               '<span style="font-size:12px;color:silver">IMC</span></div>'
+                    },
+                    tooltip: {
+                        valueSuffix: ' IMC'
+                    }
+                }]
+
+            }));
         }
         </script>
     </body>

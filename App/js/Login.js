@@ -14,7 +14,7 @@ $(document).ready(function(){
                 console.log(data + "feqda");
                 if(data == 'ok'){
                     // Le membre est connecté. Ajoutons lui un message dans la page HTML.
-                    document.location.href="Pages/Dashboard.html"
+                    document.location.href="Pages/dashboard.php"
                 }
                 else{
                     // Le membre n'a pas été connecté. (data vaut ici "failed")

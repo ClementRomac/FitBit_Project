@@ -6,6 +6,7 @@
  * Time: 15:33
  */
 
+include 'FormatDateMonth.php';
 function meanDateColumnHeadings($dataSet, $column_headings){
     $where_minutes = array("sleeping", "awake", "awakening", "in_bed", "sedentary", "mobile", "active", "very_active");
     $isConvertible = false;
@@ -52,7 +53,7 @@ function meanDateColumnHeadings($dataSet, $column_headings){
             && $dataSet[$i]["date"] != "2010-01-01"){  //sauf si c'est le premier jour du DataSet
 
             $dataColumn_headings =$sumMonth/$numberOfDayForMonth; //poids chaque semaine
-            $date = explode('-',$dataSet[$i]["date"])[0]."-"."0".(explode('-',$dataSet[$i]["date"])[1]-1);
+            $date = formatDateMonth($dataSet, $i, "oneMonth");
            // $date = $dataSet[$i]["date"];//date rentrée chaque semaine
             if ($isConvertible)
                 $month[]= array("date"=> $date, $column_headings => convert_min_into_array($dataColumn_headings)); //ajout des données chaque mois
@@ -74,4 +75,3 @@ function meanDateColumnHeadings($dataSet, $column_headings){
         'month' => $month);
     return $return;
 }
-

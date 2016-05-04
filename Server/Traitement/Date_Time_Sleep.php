@@ -23,13 +23,14 @@ function feed_bdd_sleeping($activity, $table, $column)
 }
 
 /*
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_sleeping("sleeping", "SleepDay", "day");
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_sleeping("sleeping", "SleepWeek", "week");
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_sleeping("sleeping", "SleepMonth", "month");
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * */
+// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+feed_bdd_sleeping("sleeping", "SleepDay", "day");
+// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+feed_bdd_sleeping("sleeping", "SleepWeek", "week");
+// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+feed_bdd_sleeping("sleeping", "SleepMonth", "month");
+// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+*/
+
 
 feed_bdd_sleeping("sleeping", "SleepMonth", "month");

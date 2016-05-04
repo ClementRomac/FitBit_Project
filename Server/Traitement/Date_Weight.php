@@ -33,7 +33,7 @@ function meanDateWeight(){
 
             $weight =$sumWeek/7; //poids chaque semaine
             $date = $dataSet[$i]["date"];//date rentrée chaque semaine
-            $week[]= array("date"=> $date, "weight" => round($weight, 2)); //ajout des données chaque semaine
+            $week[]= array("date"=> $date, "weight" => round($weight, 1)); //ajout des données chaque semaine
             $sumWeek=0;
             $incrementWeek +=7;
         }
@@ -46,7 +46,7 @@ function meanDateWeight(){
             $date = explode('-',$dataSet[$i]["date"])[0]."-"."0".(explode('-',$dataSet[$i]["date"])[1]-1).
                 "/".explode('-',$dataSet[$i]["date"])[1];
             //date rentrée chaque semaine
-            $twoMonths[]= array("date"=> $date, "weight" => round($weight, 2)); //ajout des données chaque mois
+            $twoMonths[]= array("date"=> $date, "weight" => round($weight, 1)); //ajout des données chaque mois
             $sumTwoMonths=0;
             $numberOfDayForTwoMonth=0;
         }
@@ -59,7 +59,7 @@ function meanDateWeight(){
             if ( explode('-',$dataSet[$i]["date"])[0] % 4 ==0) $numberOfDayForYear++; //si année bisextille ajout d'un jour
             $weight =$sumYear/$numberOfDayForYear; //poids chaque semaine
             $date = $dataSet[$i]["date"];//date rentrée chaque année
-            $year[]= array("date"=> $date, "weight" => round($weight, 2)); //ajout des données chaque semaine
+            $year[]= array("date"=> $date, "weight" => round($weight, 1)); //ajout des données chaque semaine
             $sumYear=0;
         }
     }
@@ -80,13 +80,14 @@ function feed_bdd_weight($table, $column)
 
 
 /*
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_weight("WeightWeek", "week");
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_weight("WeightTwoMonth", "twoMonths");
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_weight("WeightYear", "year");
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+feed_bdd_weight("WeightWeek", "week");
+// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+feed_bdd_weight("WeightTwoMonth", "twoMonths");
+// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+feed_bdd_weight("WeightYear", "year");
+// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
 */
+
 
 feed_bdd_weight("WeightTwoMonth", "twoMonths");

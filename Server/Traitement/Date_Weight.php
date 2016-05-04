@@ -76,12 +76,13 @@ function feed_bdd_weight($table, $column)
         $bdd->query('INSERT INTO '.$table.' (date, weight) VALUES ("' . $weight_column[$i]["date"] . '", ' . $weight_column[$i]["weight"] . ')');
 }
 
+
 /*
-DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
-feed_bdd_weight("Weight_weeks", "week");
-DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
-feed_bdd_weight("Weight_two_months", "twoMonths");
-DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
-feed_bdd_weight("Weight_Year", "year");
-DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+ * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+ * feed_bdd_weight("Weight_weeks", "week");
+ * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+ * feed_bdd_weight("Weight_two_months", "twoMonths");
+ * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+ * feed_bdd_weight("Weight_Year", "year");
+ * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
 */

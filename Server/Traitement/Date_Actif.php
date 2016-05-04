@@ -32,31 +32,26 @@ function feed_bdd_calories($activity, $table, $column)
 }
 
 /*
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_activity("active", "ActiveDay", "day");
 feed_bdd_activity("active", "ActiveWeek", "week");
 feed_bdd_activity("active", "ActiveMonth", "month");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_activity("mobile", "MobileDay", "day");
 feed_bdd_activity("mobile", "MobileWeek", "week");
 feed_bdd_activity("mobile", "MobileMonth", "month");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_activity("sedentary", "SedentaryDay", "day");
 feed_bdd_activity("sedentary", "SedentaryWeek", "week");
 feed_bdd_activity("sedentary", "SedentaryMonth", "month");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_activity("very_active", "VeryActiveDay", "day");
 feed_bdd_activity("very_active", "VeryActiveWeek", "week");
 feed_bdd_activity("very_active", "VeryActiveMonth", "month");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_calories("calories", "CaloriesDay", "day");
 feed_bdd_calories("calories", "CaloriesWeek", "week");
 feed_bdd_calories("calories", "CaloriesMonth", "month");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 */
 
-feed_bdd_activity("active", "ActiveMonth", "month");
-feed_bdd_activity("mobile", "MobileMonth", "month");
-feed_bdd_activity("sedentary", "SedentaryMonth", "month");
-feed_bdd_activity("very_active", "VeryActiveMonth", "month");
-feed_bdd_calories("calories", "CaloriesMonth", "month");

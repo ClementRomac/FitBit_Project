@@ -7,10 +7,10 @@
  */
 
 
-function fromatDateMonth($dataSet, $i , $month){
+function formatDateMonth($dataSet, $i , $month){
     $yearAdd = explode('-',$dataSet[$i]["date"])[0];
-    $oneMonceBefore = explode('-',$dataSet[$i]["date"])[1]-1;
-    $monthAdd = formatDateMonthMoreNine($oneMonceBefore, $dataSet, $i, 1);
+    $oneMonthBefore = explode('-',$dataSet[$i]["date"])[1]-1;
+    $monthAdd = formatDateMonthMoreNine($oneMonthBefore, $dataSet, $i, 1);
     if ($month == "twoMonths"){
         $twoMonthBefore= explode('-',$dataSet[$i]["date"])[1]-2;
         $twoMonthBefore = formatDateMonthMoreNine($twoMonthBefore, $dataSet, $i, 2);
@@ -20,31 +20,26 @@ function fromatDateMonth($dataSet, $i , $month){
         $date = $yearAdd."-".$twoMonthBefore."/".$monthAdd;
     }
     if ($month=="oneMonth"){
-        if (explode('-',$dataSet[$i]["date"])[1]-1== "00") {
+        if (explode('-',$dataSet[$i]["date"])[1]-1== "00")
             $yearAdd--;
-        }
         $date = $yearAdd."-".$monthAdd;
     }
 
     return $date;
 }
 
-function formatDateMonthMoreNine($monceBefore, $dataSet, $i, $numberMonth){
+function formatDateMonthMoreNine($monthBefore, $dataSet, $i, $numberMonth){
     if($numberMonth == 2)
         $isEqual ="-1";
-    else{
+    else
         $isEqual ="00";
-    }
-    if($monceBefore>9 || $monceBefore == $isEqual) {
-        if ($monceBefore == $isEqual) {
+    if($monthBefore>9 || $monthBefore == $isEqual) {
+        if ($monthBefore == $isEqual)
             $monthAdd = 13-$numberMonth;
-        } else {
+        else
             $monthAdd = (explode('-', $dataSet[$i]["date"])[1] - $numberMonth);
-        }
     }
-    else{
+    else
         $monthAdd= "0".(explode('-',$dataSet[$i]["date"])[1]-$numberMonth);
-        echo $monthAdd;
-    }
     return $monthAdd;
 }

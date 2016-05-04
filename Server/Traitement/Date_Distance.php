@@ -22,20 +22,17 @@ function feed_bdd_distance($activity, $table, $column)
 }
 
 /*
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_distance("distance", "DistanceDay", "day");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_distance("distance", "DistanceWeek", "week");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_distance("distance", "DistanceMonth", "month");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_distance("steps", "StepsDay", "day");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_distance("steps", "StepsWeek", "week");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_distance("steps", "StepsMonth", "month");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 */
-
-feed_bdd_distance("distance", "DistanceMonth", "month");
-feed_bdd_distance("steps", "StepsMonth", "month");

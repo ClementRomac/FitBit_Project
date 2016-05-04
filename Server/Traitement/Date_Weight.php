@@ -10,7 +10,6 @@
 include 'include.php';
 include '../BDD.php';
 include 'FormatDateMonth.php';
-meanDateWeight($dataSet);
 function meanDateWeight(){
     global $dataSet;
     array_shift($dataSet);
@@ -45,7 +44,7 @@ function meanDateWeight(){
 
             $weight =$sumTwoMonths/$numberOfDayForTwoMonth; //poids chaque semaine
 
-            $date = fromatDateMonth($dataSet, $i, "twoMonths");
+            $date = formatDateMonth($dataSet, $i, "twoMonths");
 
             //date rentrée chaque semaine
             $twoMonths[]= array("date"=> $date, "weight" => round($weight, 1)); //ajout des données chaque mois
@@ -65,7 +64,6 @@ function meanDateWeight(){
             $sumYear=0;
         }
     }
-    var_dump($twoMonths);
     $return = array("week" => $week,
         "twoMonths" => $twoMonths,
         'year' => $year);
@@ -83,14 +81,11 @@ function feed_bdd_weight($table, $column)
 
 
 /*
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_weight("WeightWeek", "week");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_weight("WeightTwoMonth", "twoMonths");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_weight("WeightYear", "year");
-// DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 */
-
-
-feed_bdd_weight("WeightTwoMonth", "twoMonths");

@@ -35,4 +35,3 @@ function convert_min_into_array($minutes) {
         "minutes" => $minutes_left);
     return $array;
 }
-

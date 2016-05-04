@@ -6,7 +6,7 @@
  * Time: 16:10
  */
 
-// $dataSet is available with tih include
+// $dataSet is available with this include
 include 'include.php';
 
 function meanDateWeight($dataSet){
@@ -17,11 +17,9 @@ function meanDateWeight($dataSet){
     $week = array();
     $twoMonths = array();
     $year = array();
-    $monthNow=0;
     $numberOfDayForTwoMonth=0;
     $incrementWeek =6;
     for ($i=0; $i<+count($dataSet);$i++){
-      //  echo $dataSet[$i]["weight"]." ";
         $sumWeek+=$dataSet[$i]["weight"];
         $sumTwoMonths+=$dataSet[$i]["weight"];
         $sumYear+=$dataSet[$i]["weight"];
@@ -61,6 +59,9 @@ function meanDateWeight($dataSet){
             $sumYear=0;
         }
     }
-    var_dump($year);
+    $return = array("week" => $week,
+        "twoMonths" => $twoMonths,
+        'year' => $year);
+    return $return;
 }
-?>
+

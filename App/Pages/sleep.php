@@ -11,21 +11,26 @@
         header('Location: ../index.html');
     }
     ?>
-        <div id="header-sleep">
+        <header class="sleep">
             <a href="Dashboard.php"><img src="../maquettes/sprite/back.png" class="img-back"></a>
             <h1>Qualitée de Sommeil</h1>
             <img src="../maquettes/sprite/nightW.png" class="img-moon">
-        </div>
+        </header>
+
         <div id="conteneur">
-            <h2 class="h-sleep"> Aujourd'hui </h2>
-            <p><span class="span-1-1">Dormir pendant : </span><span class="span-1-2"> 6h 52min </span></p>
-            <p><span class="span-2-1">Qualité de sommeil : </span><span class="span-2-2"> Bon | 8.5/10 </span></p>
-            <h3 class="h-sleep"><span class="span-3">Graphique </span></h3>
-            <div>
-                <input type="button" value="Jours" class="button-sleep">
-                <input type="button" value="Semaines" class="button-sleep">
-                <input type="button" value="Mois" class="button-sleep">
-            </div>
+
+            <h2> Aujourd'hui </h2>
+
+                <p>Dormir pendant : <span class="space"></span> 6h 52min </p>
+                <p>Qualité de sommeil : <span class="space"></span> Bon | 8.5/10</p>
+
+            <h2>Graphique </h2>
+
+                <div>
+                    <button class="button-sleep active-sleep" onclick="changeLocation('weight')" >Semaines</button>
+                    <button class="button-sleep" onclick="changeLocation('weight/month')">Deux mois</button>
+                    <button class="button-sleep" onclick="changeLocation('weight/year')">Années</button>
+                </div>
         </div>
         
     </body>

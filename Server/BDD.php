@@ -6,7 +6,7 @@
  Mot de Passe : password
 
  Connection PHP : 
-*/
+*/	
 try{
 
 	$bdd = new PDO('mysql:host=mysql-fitbitproject.alwaysdata.net;dbname=fitbitproject_bdd','122417_root','password');

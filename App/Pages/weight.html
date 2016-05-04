@@ -25,9 +25,9 @@
             <h2>Graphique</h2>
 
                 <div>
-                    <button class="button-weight active-weight" onclick="changeLocation('weight')">Semaines</button>
-                    <button class="button-weight" onclick="changeLocation('weight/month')">Deux mois</button>
-                    <button class="button-weight" onclick="changeLocation('weight/year')">Années</button>
+                    <button id ="1" class="button-weight active-weight" onclick="changeLocation('weight', 1)">Semaines</button>
+                    <button id ="2" class="button-weight" onclick="changeLocation('weight/month', 2)">Deux mois</button>
+                    <button id ="3" class="button-weight" onclick="changeLocation('weight/year', 3)">Années</button>
                 </div>
                 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
@@ -36,9 +36,11 @@
         var myLocation = "weight"; //default location
         getData(myLocation); //get data for default location
 
-        function changeLocation(newLocation){
+        function changeLocation(newLocation, id){
             myLocation = newLocation;
             getData(myLocation);
+            $('button').removeClass("active-weight");
+            $('#'+id).addClass("active-weight")
         }
 
         function renderChart() {

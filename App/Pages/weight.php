@@ -3,7 +3,7 @@
         <title>FitiBit</title></colspan="2"d >
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/Pages/style.css">
-        <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+        <script   src="../js/zepto.min.js"></script> 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
         <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
@@ -75,7 +75,10 @@
                 myData[i] = weights[''+weights_length-i+''].weight;
             };
 
-            $('#container_weight').highcharts({
+            new Highcharts.Chart({
+                chart : {
+                  renderTo : 'container_weight'
+                },
                 title: {
                     text: 'Poids',
                     x: -20 //center
@@ -109,7 +112,8 @@
             var gaugeOptions = {
 
                 chart: {
-                    type: 'solidgauge'
+                    type: 'solidgauge',
+                    renderTo: 'container_imc'
                 },
 
                 title: null,
@@ -163,7 +167,7 @@
             };
 
             // The speed gauge
-            $('#container_imc').highcharts(Highcharts.merge(gaugeOptions, {
+            new Highcharts.Chart(Highcharts.merge(gaugeOptions, {
                 yAxis: {
                     min: 0,
                     max: 40,

@@ -1,10 +1,10 @@
 <html>
     <head>
-        
         <title>FitiBit</title></colspan="2"d >
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/Pages/dashboard.css">
-    
+        <script   src="../js/zepto.min.js"></script> 
+        <script type="text/javascript" src="../js/callAPI.js"></script>
     </head>
     <body>
     <?php
@@ -20,13 +20,13 @@
         <div id="small-tile">
             <a href="weight.php">
                 <div class="squarre-1"><img src="../maquettes/sprite/icon.png" class="img-squarre">
-                    <div class="text-1"> 90 Kg </div>
+                    <div class="text-1"> <span id="dashboard-weight">90</span> Kg </div>
                     <div class="text-1-2"> Poids </div>
                 </div>
             </a>
             <a href="walk.php">
                 <div class="squarre-2"><img src="../maquettes/sprite/footsteps-silhouette-variant.png" class="img-squarre">
-                    <div class="text-2"> 852 </div>
+                    <div class="text-2"> <span id="dashboard-steps">852</span> Pas </div>
                     <div class="text-2-2"> + 8.5 % </div>
                 </div>
             </a>
@@ -40,5 +40,22 @@
                 </div>
             </div>
         </a>
+        <script type="text/javascript">
+            // getData("weight");
+            // getData("steps");
+            // getData("sleep");
+            
+            function renderChart (location) {
+                if(location == 'weight'){
+                    $("#dashboard-weight").text(JSON.parse(localStorage[''+location+''])[0].weight);
+                }
+                else if(location == 'steps'){
+                    $("#dashboard-steps").text(JSON.parse(localStorage[''+location+''])[0].steps);
+                }
+                else if(location == 'sleep'){
+                    //set sleep
+                }
+            }
+        </script>
     </body>
 </html>

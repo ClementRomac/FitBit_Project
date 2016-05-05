@@ -33,7 +33,7 @@
             <h2>Graphique</h2>
 
                 <div>
-                    <button id ="1" class="button-weight active-weight" onclick="changeWeightLocation('weight', 1)">Semaines</button>
+                    <button id ="1" class="button-weight active-weight" onclick="changeWeightLocation('weight/week', 1)">Semaines</button>
                     <button id ="2" class="button-weight" onclick="changeWeightLocation('weight/month', 2)">Deux mois</button>
                     <button id ="3" class="button-weight" onclick="changeWeightLocation('weight/year', 3)">Années</button>
                 </div>
@@ -43,7 +43,7 @@
 
         <script type="text/javascript">
         //var myLocation = "weight"; //default location
-        getData("weight"); //get data for default location
+        getData("weight/week"); //get data for default location
         getData("imc"); //get data for default location
 
         function changeWeightLocation(newLocation, id){
@@ -53,7 +53,7 @@
         }
 
         function renderChart(location) {
-            if(location == "weight" || location == "weight/month" || location == "weight/year"){
+            if(location == "weight/week" || location == "weight/month" || location == "weight/year"){
                 renderWeight(location);
             }
             else if(location == "imc"){

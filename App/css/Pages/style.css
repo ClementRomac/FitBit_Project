@@ -6,10 +6,14 @@
     font-family: 'roboto_fin';
     src: url('../../font/roboto/Roboto-Thin.ttf');
 }
+@font-face {
+    font-family: 'roboto_lig';
+    src: url('../../font/roboto/Roboto-Light.ttf');
+}
 
 body{
     background-color: #262626;
-    font-family: "roboto_fin";
+    font-family: "roboto_lig";
 }
 
 header{
@@ -20,29 +24,37 @@ header{
     font-size: 2em;
 }
 
-.sleep{
+.sleepB{
     background-color: #34495e;
-    color: #34495e;
 }
 
-.walk{
+.walkB{
     background-color: #27ae60;
+}
+.weightB{
+    background-color: #e67e22;
+}
+
+.sleepC{
+    color: #34495e;
+}
+.walkC{
     color: #27ae60;
 }
-.weight{
-    background-color: #e67e22;
+.weightC{
     color: #e67e22;
 }
 
 h1{
     float: left;
-    color: #FFF;
+    font-family: "roboto_fin";
 }
 
 h2{
     padding: 30px 0;
-    font-size: 3em;
+    font-size: 5em;
     background-color: #FFF;
+    font-family: "roboto_fin";
 }
 
 [class*='img-']{
@@ -67,12 +79,15 @@ h2{
     padding: 30px;
     border-radius: 4px;
 }
+.bloc{
+	background-color: #F00;
+}
 
 .space{
 	margin-right: 30px;
 }
 p{
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 button{
@@ -80,7 +95,6 @@ button{
     width: 170px;
     background: none;
     border-radius: 4px;
-    font-family: "roboto_fin";
     font-size: 2em;
     margin-right: 20px;
     cursor: pointer;

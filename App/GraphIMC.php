@@ -83,7 +83,7 @@ $(function () {
         },
 
         series: [{
-            name: 'Speed',
+            name: 'IMC',
             data: [23],
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:' +

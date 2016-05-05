@@ -17,7 +17,7 @@
     }
     ?>
 
-        <header class="weight">
+        <header class="weightB">
             <a href="Dashboard.php"><img src="../maquettes/sprite/back.png" class="img-back"></a>
             <h1>Poids</h1>
             <img src="../maquettes/sprite/iconW.png" class="img-moon">
@@ -26,18 +26,18 @@
 
         <div id="conteneur">
 
-            <h2>Aujourd'hui</h2>
+            <h2 class="weightC">Aujourd'hui</h2>
                 <p>Dormir pendant :<span class="space"></span>6h 52min</p>
                 <p>Qualité de sommeil :<span class="space"></span>Bon | 8.5/10</p>
 
-            <h2>Graphique</h2>
+            <h2 class="weightC">Graphique</h2>
 
                 <div>
                     <button id ="1" class="button-weight active-weight" onclick="changeWeightLocation('weight', 1)">Semaines</button>
                     <button id ="2" class="button-weight" onclick="changeWeightLocation('weight/month', 2)">Deux mois</button>
                     <button id ="3" class="button-weight" onclick="changeWeightLocation('weight/year', 3)">Années</button>
                 </div>
-                <div id="container_weight" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                <a href="test.html"><div id="container_weight" style="min-width: 310px; height: 400px; margin: 0 auto"></div></a>
                 <div id="container_imc" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
 

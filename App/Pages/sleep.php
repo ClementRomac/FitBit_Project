@@ -11,7 +11,7 @@
         header('Location: ../index.html');
     }
     ?>
-        <header class="sleep">
+        <header class="sleepB">
             <a href="Dashboard.php"><img src="../maquettes/sprite/back.png" class="img-back"></a>
             <h1>Qualitée de Sommeil</h1>
             <img src="../maquettes/sprite/nightW.png" class="img-moon">
@@ -19,12 +19,12 @@
 
         <div id="conteneur">
 
-            <h2> Aujourd'hui </h2>
+            <h2 class="sleepC"> Aujourd'hui </h2>
 
                 <p>Dormir pendant : <span class="space"></span> 6h 52min </p>
                 <p>Qualité de sommeil : <span class="space"></span> Bon | 8.5/10</p>
 
-            <h2>Graphique </h2>
+            <h2 class="sleepC">Graphique </h2>
 
                 <div>
                     <button class="button-sleep active-sleep" onclick="changeLocation('weight')" >Semaines</button>

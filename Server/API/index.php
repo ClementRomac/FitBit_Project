@@ -67,6 +67,37 @@ $app->get('/imc', function ($request, $response, $args) {
 
 });
 
+/******* Sommeil *******/
+
+$app->get('/sleep', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'hours', 'minutes'))->from('SleepDay')->orderBy('date', 'DESC')->limit(8)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/sleep/month', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'hours', 'minutes'))->from('SleepMonth')->orderBy('date', 'DESC')->limit(6)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/sleep/year', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'hours', 'minutes'))->from('SleepWeek')->orderBy('date', 'DESC')->limit(6)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
 
 
 // Run app

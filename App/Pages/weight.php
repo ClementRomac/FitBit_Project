@@ -30,7 +30,7 @@
                 <p>Dormir pendant :<span class="space"></span>6h 52min</p>
                 <p>Qualité de sommeil :<span class="space"></span>Bon | 8.5/10</p>
 
-            <h2 class="weightC">Graphique</h2>
+            <h2 class="weightC">Historique du poids</h2>
 
                 <div>
                     <button id ="1" class="button-weight active-weight" onclick="changeWeightLocation('weight', 1)">Semaines</button>
@@ -38,6 +38,9 @@
                     <button id ="3" class="button-weight" onclick="changeWeightLocation('weight/year', 3)">Années</button>
                 </div>
                 <a href="test.html"><div id="container_weight" style="min-width: 310px; height: 400px; margin: 0 auto"></div></a>
+                
+            <h2 class="weightC">IMC</h2>
+
                 <div id="container_imc" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
 

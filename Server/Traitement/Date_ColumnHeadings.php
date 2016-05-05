@@ -30,7 +30,11 @@ function meanDateColumnHeadings($dataSet, $column_headings){
             else
                 $day[] = array("date"=> $date, $column_headings => convert_min_into_array($dataSet[$i][$column_headings]));
         else
-            $day[] = array("date"=> $date, $column_headings => $dataSet[$i][$column_headings]);
+            if ($column_headings == "weight")
+                $day[] = array("date"=> $date, $column_headings => round($dataSet[$i][$column_headings]), 1);
+            else
+                $day[] = array("date"=> $date, $column_headings => $dataSet[$i][$column_headings]);
+
         $numberOfDayForMonth++;
 
         //------------------------------Traitement semaine

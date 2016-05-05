@@ -27,13 +27,12 @@ function parse_csv_file($file, $column_headings = false, $delimiter = ',', $encl
     return $rows;
 }
 
-function convert_min_into_array($minutes) {
+function convert_min_into_proportion($minutes) {
     $modulo_hours = 60;
     $minutes_left = $minutes % $modulo_hours;
     $hours_left = intval(($minutes-$minutes_left) / $modulo_hours);
-    $array = array("hours" => $hours_left,
-        "minutes" => $minutes_left);
-    return $array;
+    $time = $hours_left + ($minutes_left*100/6000);
+    return round($time, 2);
 }
 
 function convert_min_into_string($minutes){
@@ -43,3 +42,6 @@ function convert_min_into_string($minutes){
     $hours_minutes = $hours_left." h".$minutes_left." min";
     return $hours_minutes;
 }
+
+$dump = 94;
+print_r(convert_min_into_proportion($dump));

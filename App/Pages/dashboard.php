@@ -35,16 +35,16 @@
             <div id="large-tile">
                 <div class="rectangle"><img src="../maquettes/sprite/night.png" class="img-rectangle">
                 <div class="text-3"> Sommeil </div>
-                <div class="text-3-2"> 6h 52min </div>  
+                <div class="text-3-2"> <span id="dashboard-sleep">852</span> </div>  
                 <div class="text-3-3"> 8.5/10 </div>
                 </div>
             </div>
         </a>
         <script type="text/javascript">
-            // getData("weight");
+            getData("weight");
             // getData("steps");
-            // getData("sleep");
-            
+            getData("sleep");
+
             function renderChart (location) {
                 if(location == 'weight'){
                     $("#dashboard-weight").text(JSON.parse(localStorage[''+location+''])[0].weight);
@@ -53,7 +53,7 @@
                     $("#dashboard-steps").text(JSON.parse(localStorage[''+location+''])[0].steps);
                 }
                 else if(location == 'sleep'){
-                    //set sleep
+                    $("#dashboard-sleep").text(JSON.parse(localStorage[''+location+''])[0].time);
                 }
             }
         </script>

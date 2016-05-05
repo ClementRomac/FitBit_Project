@@ -77,11 +77,11 @@ $app->get('/imc', function ($request, $response, $args) {
 
 });
 
-/******* Sommeil *******/
+/******* SLEEP *******/
 
 $app->get('/sleep', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'hours', 'minutes'))->from('SleepDay')->orderBy('date', 'DESC')->limit(8)->execute();
+	$stt = $pdo->select(array('date', 'time'))->from('SleepDay')->orderBy('date', 'DESC')->limit(8)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);

@@ -48,7 +48,9 @@
         <script type="text/javascript">
         var walk = {'steps' : '', 'distance' : ''};
         changeWalkLocation('walk', 1);
-        //console.log(walk['steps']);
+        
+        var activity = {'sedentary' : '', 'mobile' : '', 'active' : '', 'very_active' : '', 'calories' : ''}
+        changeWalkLocation('activity', 1);
 
         function changeWalkLocation(newLocation, id){
             if(newLocation == 'walk'){
@@ -60,6 +62,24 @@
                 getData('distance/week');
             }
             else if(newLocation == 'walk/month'){
+                getData('steps/month');
+                getData('distance/month');
+            }
+
+            $('button').removeClass("active-walk");
+            $('#'+id).addClass("active-walk")
+        }
+
+        function changeActivityLocation(newLocation, id){
+            if(newLocation == 'activity'){
+                getData('steps');
+                getData('distance');
+            }
+            else if(newLocation == 'activity/week'){
+                getData('steps/week');
+                getData('distance/week');
+            }
+            else if(newLocation == 'activity/month'){
                 getData('steps/month');
                 getData('distance/month');
             }

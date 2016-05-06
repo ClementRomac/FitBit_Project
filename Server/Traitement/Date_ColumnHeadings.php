@@ -25,10 +25,7 @@ function meanDateColumnHeadings($dataSet, $column_headings){
         $sumMonth+=$dataSet[$i][$column_headings];
         $date = $dataSet[$i]["date"];
         if ($isConvertible)
-            if ($column_headings == "sleeping")
-                $day[] = array("date"=> $date, $column_headings => convert_min_into_string($dataSet[$i][$column_headings]));
-            else
-                $day[] = array("date"=> $date, $column_headings => convert_min_into_array($dataSet[$i][$column_headings]));
+                $day[] = array("date"=> $date, "label" => convert_min_into_string($dataSet[$i][$column_headings]), "time" => convert_min_into_proportion($dataSet[$i][$column_headings]));
         else
             if ($column_headings == "weight")
                 $day[] = array("date"=> $date, $column_headings => round($dataSet[$i][$column_headings]), 1);
@@ -43,11 +40,7 @@ function meanDateColumnHeadings($dataSet, $column_headings){
             $dataColumn_headings =$sumWeek/7; //poids chaque semaine
             $date = $dataSet[$i]["date"];//date rentrée chaque semaine
             if ($isConvertible)
-                if ($column_headings == "sleeping")
-                    $week[]= array("date"=> $date, $column_headings => convert_min_into_string($dataColumn_headings)); //ajout des données chaque semaine
-                else
-                    $week[]= array("date"=> $date, $column_headings => convert_min_into_array($dataColumn_headings)); //ajout des données chaque semaine
-
+                $week[]= array("date"=> $date, "label" => convert_min_into_string($dataColumn_headings), "time" => convert_min_into_proportion($dataColumn_headings)); //ajout des données chaque semaine
             else {
                 if ($column_headings == "steps")
                     $week[] = array("date" => $date, $column_headings => round($dataColumn_headings, 0)); //ajout des données chaque semaine
@@ -67,11 +60,7 @@ function meanDateColumnHeadings($dataSet, $column_headings){
             $date = formatDateMonth($dataSet, $i, "oneMonth");
            // $date = $dataSet[$i]["date"];//date rentrée chaque semaine
             if ($isConvertible)
-                if ($column_headings == "sleeping")
-                    $month[]= array("date"=> $date, $column_headings => convert_min_into_string($dataColumn_headings)); //ajout des données chaque mois
-                else
-                    $month[]= array("date"=> $date, $column_headings => convert_min_into_array($dataColumn_headings)); //ajout des données chaque mois
-
+                $month[]= array("date"=> $date, "label" => convert_min_into_string($dataColumn_headings), "time" => convert_min_into_proportion($dataColumn_headings)); //ajout des données chaque semaine
             else {
                 if ($column_headings == "steps")
                     $month[] = array("date" => $date, $column_headings => round($dataColumn_headings, 0)); //ajout des données chaque mois

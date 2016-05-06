@@ -42,6 +42,3 @@ function convert_min_into_string($minutes){
     $hours_minutes = $hours_left." h".$minutes_left." min";
     return $hours_minutes;
 }
-
-$dump = 94;
-print_r(convert_min_into_proportion($dump));

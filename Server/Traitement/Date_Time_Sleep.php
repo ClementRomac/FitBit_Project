@@ -19,7 +19,7 @@ function feed_bdd_sleeping($activity, $table, $column)
     $activity_column = meanDateColumnHeadings($dataSet, $activity);
     $activity_column = $activity_column[$column];
     for ($i = 0; $i < count($activity_column); $i++)
-        $bdd->query('INSERT INTO '.$table.' (date, time) VALUES ("' . $activity_column[$i]["date"].'", "'.$activity_column[$i][$activity].'")');
+        $bdd->query('INSERT INTO '.$table.' (date, label, time) VALUES ("' . $activity_column[$i]["date"].'", "'.$activity_column[$i]["label"].'", "'.$activity_column[$i]["time"].'")');
 }
 
 /*

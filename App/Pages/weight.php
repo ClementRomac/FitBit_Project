@@ -45,7 +45,6 @@
         </div>
 
         <script type="text/javascript">
-        //var myLocation = "weight"; //default location
         getData("weight/week"); //get data for default location
         getData("imc"); //get data for default location
 

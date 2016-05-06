@@ -103,15 +103,15 @@ button{
 .button-sleep{
     border: 2px solid #34495e;
 }
-
 .button-walk{
    border: 2px solid #27ae60; 
 }
-
+.button-activity{
+   border: 2px solid #27ae60; 
+}
 .button-weight{
    border: 2px solid #e67e22; 
 }
-
 .active-sleep{
 	background-color: #34495e;
 	color: #FFF;
@@ -123,4 +123,8 @@ button{
 .active-walk{
 	background-color: #27ae60;
 	color: #FFF;
+}
+.active-activity{
+    background-color: #27ae60;
+    color: #FFF;
 }

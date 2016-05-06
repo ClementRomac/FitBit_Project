@@ -27,7 +27,7 @@
             <a href="walk.php">
                 <div class="squarre-2"><img src="../maquettes/sprite/footsteps-silhouette-variant.png" class="img-squarre">
                     <div class="text-2"> <span id="dashboard-steps">852</span> Pas </div>
-                    <div class="text-2-2"> + 8.5 % </div>
+                    <div class="text-2-2"> <span id="dashboard-steps-variation">+ 8.5 %</span> </div>
                 </div>
             </a>
         </div>
@@ -42,7 +42,7 @@
         </a>
         <script type="text/javascript">
             getData("weight");
-            // getData("steps");
+            getData("steps");
             getData("sleep");
 
             function renderChart (location) {
@@ -50,7 +50,12 @@
                     $("#dashboard-weight").text(JSON.parse(localStorage[''+location+''])[0].weight);
                 }
                 else if(location == 'steps'){
-                    $("#dashboard-steps").text(JSON.parse(localStorage[''+location+''])[0].steps);
+                    var steps_today = JSON.parse(localStorage[''+location+''])[0].steps;
+                    var steps_yesterday = JSON.parse(localStorage[''+location+''])[1].steps;
+                    var steps_variation = ((steps_today-steps_yesterday)/steps_yesterday)*100;
+
+                    $("#dashboard-steps").text(steps_today);
+                    $("#dashboard-steps-variation").text((steps_variation >= 0 ? "+ " : "") + steps_variation.toFixed(1) + " %");
                 }
                 else if(location == 'sleep'){
                     $("#dashboard-sleep").text(JSON.parse(localStorage[''+location+''])[0].time);

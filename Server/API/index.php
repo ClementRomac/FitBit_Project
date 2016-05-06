@@ -109,6 +109,38 @@ $app->get('/sleep/year', function ($request, $response, $args) {
 
 });
 
+/******* STEPS *******/
+
+$app->get('/steps', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'steps'))->from('StepsDay')->orderBy('date', 'DESC')->limit(7)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/steps/week', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'steps'))->from('StepsWeek')->orderBy('date', 'DESC')->limit(4)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/steps/month', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'steps'))->from('StepsMonth')->orderBy('date', 'DESC')->limit(12)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
 
 // Run app
 $app->run();

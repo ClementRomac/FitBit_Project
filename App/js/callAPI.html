@@ -32,7 +32,7 @@ function renderChart() {
     
     var myData = [];
     for (var i = 0; i <= weights_length; i++) {
-        myData[i] = weights[''+weights_length-i+''].weight;
+        myData[i] = weights[''+weights_length-i+''].date;
     };
 
     $('#container').highcharts({

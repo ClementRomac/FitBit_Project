@@ -65,11 +65,11 @@
             
             var myDataSommeil = [];
             for (var i = 0; i <= sleep_length; i++) {
-                myDataSommeil[i] = sleep[''+sleep_length-i+''].hours;
+                myDataSommeil[i] = sleep[''+sleep_length-i+''].time;
             };
             var myDataEveil = [];
             for (var i = 0; i <= sleep_length; i++) {
-                myDataEveil[i] = sleep[''+sleep_length-i+''].minutes;
+                myDataEveil[i] = sleep[''+sleep_length-i+''].time;
             };
 
             

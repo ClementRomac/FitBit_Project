@@ -28,6 +28,16 @@ $app->get('/', function ($request, $response, $args) {
 	/******* WEIGHT *******/
 $app->get('/weight', function ($request, $response, $args) {
 	global $pdo;
+	$stt = $pdo->select(array('round(weight, 1) AS weight'))->from('WeightDay')->orderBy('date', 'DESC')->limit(1)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/weight/week', function ($request, $response, $args) {
+	global $pdo;
 	$stt = $pdo->select(array('date', 'round(weight, 1) AS weight'))->from('WeightWeek')->orderBy('date', 'DESC')->limit(8)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -67,7 +77,7 @@ $app->get('/imc', function ($request, $response, $args) {
 
 });
 
-/******* Sommeil *******/
+/******* SLEEP *******/
 
 $app->get('/sleep', function ($request, $response, $args) {
 	global $pdo;
@@ -125,6 +135,70 @@ $app->get('/awake/month', function ($request, $response, $args) {
 $app->get('/awake/week', function ($request, $response, $args) {
 	global $pdo;
 	$stt = $pdo->select(array('date', 'label', 'time'))->from('AwakeWeek')->orderBy('date', 'DESC')->limit(6)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+/******* STEPS *******/
+
+$app->get('/steps', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'steps'))->from('StepsDay')->orderBy('date', 'DESC')->limit(7)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/steps/week', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'steps'))->from('StepsWeek')->orderBy('date', 'DESC')->limit(4)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/steps/month', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'steps'))->from('StepsMonth')->orderBy('date', 'DESC')->limit(12)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+/******* DISTANCE *******/
+
+$app->get('/distance', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'round(distance, 1) AS distance'))->from('DistanceDay')->orderBy('date', 'DESC')->limit(7)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/distance/week', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'round(distance, 1) AS distance'))->from('DistanceWeek')->orderBy('date', 'DESC')->limit(4)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/distance/month', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'round(distance, 1) AS distance'))->from('DistanceMonth')->orderBy('date', 'DESC')->limit(12)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);

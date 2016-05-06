@@ -3,7 +3,7 @@
         <title>FitiBit</title></colspan="2"d >
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/Pages/style.css">
-        <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+        <script   src="../js/zepto.min.js"></script> 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
         <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
@@ -33,7 +33,7 @@
             <h2 class="weightC">Historique du poids</h2>
 
                 <div>
-                    <button id ="1" class="button-weight active-weight" onclick="changeWeightLocation('weight', 1)">Semaines</button>
+                    <button id ="1" class="button-weight active-weight" onclick="changeWeightLocation('weight/week', 1)">Semaines</button>
                     <button id ="2" class="button-weight" onclick="changeWeightLocation('weight/month', 2)">Deux mois</button>
                     <button id ="3" class="button-weight" onclick="changeWeightLocation('weight/year', 3)">Années</button>
                 </div>
@@ -45,8 +45,7 @@
         </div>
 
         <script type="text/javascript">
-        //var myLocation = "weight"; //default location
-        getData("weight"); //get data for default location
+        getData("weight/week"); //get data for default location
         getData("imc"); //get data for default location
 
         function changeWeightLocation(newLocation, id){
@@ -56,7 +55,7 @@
         }
 
         function renderChart(location) {
-            if(location == "weight" || location == "weight/month" || location == "weight/year"){
+            if(location == "weight/week" || location == "weight/month" || location == "weight/year"){
                 renderWeight(location);
             }
             else if(location == "imc"){
@@ -78,7 +77,10 @@
                 myData[i] = weights[''+weights_length-i+''].weight;
             };
 
-            $('#container_weight').highcharts({
+            new Highcharts.Chart({
+                chart : {
+                  renderTo : 'container_weight'
+                },
                 title: {
                     text: 'Poids',
                     x: -20 //center
@@ -112,7 +114,8 @@
             var gaugeOptions = {
 
                 chart: {
-                    type: 'solidgauge'
+                    type: 'solidgauge',
+                    renderTo: 'container_imc'
                 },
 
                 title: null,
@@ -166,7 +169,7 @@
             };
 
             // The speed gauge
-            $('#container_imc').highcharts(Highcharts.merge(gaugeOptions, {
+            new Highcharts.Chart(Highcharts.merge(gaugeOptions, {
                 yAxis: {
                     min: 0,
                     max: 40,

@@ -18,7 +18,8 @@ function feed_bdd_activity($activity, $table, $column)
     $activity_column = meanDateColumnHeadings($dataSet, $activity);
     $activity_column = $activity_column[$column];
     for ($i = 0; $i < count($activity_column); $i++)
-        $bdd->query('INSERT INTO '.$table.' (date, hours, minutes) VALUES ("' . $activity_column[$i]["date"].'", "'.$activity_column[$i][$activity]["hours"].'", "'.$activity_column[$i][$activity]["minutes"].'")');
+        $bdd->query('INSERT INTO '.$table.' (date, label, time) VALUES ("' . $activity_column[$i]["date"].'", "'.$activity_column[$i]["label"].'", "'.$activity_column[$i]["time"].'")');
+
 }
 
 function feed_bdd_calories($activity, $table, $column)
@@ -53,5 +54,8 @@ feed_bdd_calories("calories", "CaloriesDay", "day");
 feed_bdd_calories("calories", "CaloriesWeek", "week");
 feed_bdd_calories("calories", "CaloriesMonth", "month");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
+feed_bdd_activity("awake", "AwakeDay", "day");
+feed_bdd_activity("awake", "AwakeWeek", "week");
+feed_bdd_activity("awake", "AwakeMonth", "month");
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 */
-

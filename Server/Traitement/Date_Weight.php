@@ -8,8 +8,8 @@
 
 // $dataSet is available with this include
 include 'include.php';
+include 'Date_ColumnHeadings.php';
 include '../BDD.php';
-include 'FormatDateMonth.php';
 function meanDateWeight(){
     global $dataSet;
     array_shift($dataSet);
@@ -79,6 +79,16 @@ function feed_bdd_weight($table, $column)
         $bdd->query('INSERT INTO '.$table.' (date, weight) VALUES ("' . $weight_column[$i]["date"] . '", ' . $weight_column[$i]["weight"] . ')');
 }
 
+function feed_bdd_weight_day($activity, $table, $column)
+{
+    global $bdd;
+    global $dataSet;
+    $weight_column = meanDateColumnHeadings($dataSet, $activity);
+    $weight_column = $weight_column[$column];
+    for ($i = 0; $i < count($weight_column); $i++)
+        $bdd->query('INSERT INTO '.$table.' (date, weight) VALUES ("' . $weight_column[$i]["date"] . '", ' . $weight_column[$i]["weight"] . ')');
+}
+
 
 /*
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
@@ -89,3 +99,5 @@ feed_bdd_weight("WeightTwoMonth", "twoMonths");
 feed_bdd_weight("WeightYear", "year");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 */
+
+

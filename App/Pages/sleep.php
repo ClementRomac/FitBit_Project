@@ -33,8 +33,8 @@
 
                 <div>
                     <button class="button-sleep active-sleep" onclick="changeSleepLocation('sleep')" >Semaines</button>
-                    <button class="button-sleep" onclick="changeSleepLocation('sleep/month')">Deux mois</button>
-                    <button class="button-sleep" onclick="changeSleepLocation('sleep/year')">Années</button>
+                    <button class="button-sleep" onclick="changeSleepLocation('sleep/week')">Deux mois</button>
+                    <button class="button-sleep" onclick="changeSleepLocation('sleep/month')">Années</button>
                 </div>
 <div id="container_sleep" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
@@ -74,23 +74,24 @@
             var awake_length = Object.keys(awake).length - 1;
             var myCategories = [];
             for (var i = 0; i <= sleep_length; i++) {
-                myCategories[i] = sleep[''+sleep_length-i+''].date;
+                myCategories[i] = awake[''+sleep_length-i+''].date;
             };
             
             var sleepData = [];
             for (var i = 0; i <= sleep_length; i++) {
-                sleepData[i] = sleep[''+sleep_length-i+''].sleep;
+                sleepData[i] = sleep[''+sleep_length-i+''].time;
             };
             var awakeData = [];
             for (var i = 0; i <= awake_length; i++) {
-                awakeData[i] = awake[''+awake_length-i+''].awake;
+                awakeData[i] = awake[''+awake_length-i+''].time;
             };
+
             new Highcharts.Chart({
                 chart: {
                     renderTo: 'container_sleep'
                 },
                 title: {
-                    text: 'Nombre de pas / Distance parcouru'
+                    text: 'Temps de sommeil / Eveil'
                 },
                 xAxis: [{
                     categories: myCategories,
@@ -98,26 +99,26 @@
                 }],
                 yAxis: [{ // Primary yAxis
                     labels: {
-                        format: '{value}',
+                        format: '{value} h',
                         style: {
                             color: Highcharts.getOptions().colors[1]
                         }
                     },
                     title: {
-                        text: 'Nombre de pas',
+                        text: 'Sommeil',
                         style: {
                             color: Highcharts.getOptions().colors[1]
                         }
                     }
                 }, { // Secondary yAxis
                     title: {
-                        text: 'Distance parcouru',
+                        text: 'Eveil',
                         style: {
                             color: Highcharts.getOptions().colors[0]
                         }
                     },
                     labels: {
-                        format: '{value} Km',
+                        format: '{value} min',
                         style: {
                             color: Highcharts.getOptions().colors[0]
                         }
@@ -125,7 +126,7 @@
                     opposite: true
                 }],
                 tooltip: {
-                    shared: true
+                    shared: true,
                 },
                 legend: {
                     layout: 'vertical',
@@ -137,15 +138,12 @@
                     backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
                 },
                 series: [{
-                    name: 'Distance parcouru',
+                    name: 'Eveil',
                     type: 'column',
                     yAxis: 1,
-                    data: awakeData,
-                    tooltip: {
-                        valueSuffix: ' Km'
-                    },
+                    data: awakeData
                 }, {
-                    name: 'Nombre de pas',
+                    name: 'Sommeil',
                     type: 'spline',
                     data: sleepData
                 }]

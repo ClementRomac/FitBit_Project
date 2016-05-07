@@ -81,17 +81,7 @@ $app->get('/imc', function ($request, $response, $args) {
 
 $app->get('/sleep', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'label', 'time'))->from('SleepDay')->orderBy('date', 'DESC')->limit(8)->execute();
-	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
-
-	$json_response = json_encode($json);
-	return $response->write($json_response);
-
-});
-
-$app->get('/sleep/month', function ($request, $response, $args) {
-	global $pdo;
-	$stt = $pdo->select(array('date', 'label', 'time'))->from('SleepMonth')->orderBy('date', 'DESC')->limit(6)->execute();
+	$stt = $pdo->select(array('date', 'label', 'time'))->from('SleepDay')->orderBy('date', 'DESC')->limit(7)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);
@@ -101,7 +91,17 @@ $app->get('/sleep/month', function ($request, $response, $args) {
 
 $app->get('/sleep/week', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'label', 'time'))->from('SleepWeek')->orderBy('date', 'DESC')->limit(6)->execute();
+	$stt = $pdo->select(array('date', 'label', 'time'))->from('SleepWeek')->orderBy('date', 'DESC')->limit(4)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/sleep/month', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'label', 'time'))->from('SleepMonth')->orderBy('date', 'DESC')->limit(12)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);
@@ -114,17 +114,7 @@ $app->get('/sleep/week', function ($request, $response, $args) {
 
 $app->get('/awake', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'label', 'time'))->from('AwakeDay')->orderBy('date', 'DESC')->limit(8)->execute();
-	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
-
-	$json_response = json_encode($json);
-	return $response->write($json_response);
-
-});
-
-$app->get('/awake/month', function ($request, $response, $args) {
-	global $pdo;
-	$stt = $pdo->select(array('date', 'label', 'time'))->from('AwakeMonth')->orderBy('date', 'DESC')->limit(6)->execute();
+	$stt = $pdo->select(array('date', 'label', 'time'))->from('AwakeDay')->orderBy('date', 'DESC')->limit(7)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);
@@ -134,7 +124,17 @@ $app->get('/awake/month', function ($request, $response, $args) {
 
 $app->get('/awake/week', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'label', 'time'))->from('AwakeWeek')->orderBy('date', 'DESC')->limit(6)->execute();
+	$stt = $pdo->select(array('date', 'label', 'time'))->from('AwakeWeek')->orderBy('date', 'DESC')->limit(4)->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
+
+$app->get('/awake/month', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('date', 'label', 'time'))->from('AwakeMonth')->orderBy('date', 'DESC')->limit(12)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);

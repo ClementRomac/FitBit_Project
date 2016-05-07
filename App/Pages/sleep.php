@@ -76,6 +76,7 @@
             for (var i = 0; i <= sleep_length; i++) {
                 myCategories[i] = sleep[''+sleep_length-i+''].date;
             };
+            console.log(myCategories)
             
             var sleepData = [];
             for (var i = 0; i <= sleep_length; i++) {

@@ -38,122 +38,118 @@
                 </div>
 <div id="container_sleep" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
-    <script type="text/javascript">
-        //var myLocation = "weight"; //default location
-        getData("sleep"); //get data for default location
-
+ <script type="text/javascript">
+        var sleep = {'sleep' : '', 'awake' : ''};
+        changeSleepLocation('sleep', 1);
+        //console.log(sleep['sleep']);
         function changeSleepLocation(newLocation, id){
-            getData(newLocation);
+            if(newLocation == 'sleep'){
+                getData('sleep');
+                getData('awake');
+            }
+            else if(newLocation == 'sleep/week'){
+                getData('sleep/week');
+                getData('awake/week');
+            }
+            else if(newLocation == 'sleep/month'){
+                getData('sleep/month');
+                getData('awake/month');
+            }
             $('button').removeClass("active-sleep");
             $('#'+id).addClass("active-sleep")
         }
-
         function renderChart(location) {
-            if(location == "sleep" || location == "sleep/month" || location == "sleep/year"){
-                renderSleep(location);
+            if(location == "sleep" || location == "sleep/week" || location == "sleep/month"){
+                sleep['sleep'] = location;
+            }
+            else if(location == "awake" || location == "awake/week" || location == "awake/month"){
+                sleep['awake'] = location;
+                renderSleep(sleep);
             }
         }
-
-        function renderSleep(sleepLocation){
-            var sleep = JSON.parse(localStorage[''+sleepLocation+'']);
+        function renderSleep(sleep_array){
+            var sleep = JSON.parse(localStorage[''+sleep_array['sleep']+'']);
             var sleep_length = Object.keys(sleep).length - 1;
-
+            var awake = JSON.parse(localStorage[''+sleep_array['awake']+'']);
+            var awake_length = Object.keys(awake).length - 1;
             var myCategories = [];
             for (var i = 0; i <= sleep_length; i++) {
                 myCategories[i] = sleep[''+sleep_length-i+''].date;
             };
             
-            var myDataSommeil = [];
+            var sleepData = [];
             for (var i = 0; i <= sleep_length; i++) {
-                myDataSommeil[i] = sleep[''+sleep_length-i+''].time;
+                sleepData[i] = sleep[''+sleep_length-i+''].sleep;
             };
-            var myDataEveil = [];
-            for (var i = 0; i <= sleep_length; i++) {
-                myDataEveil[i] = sleep[''+sleep_length-i+''].time;
+            var awakeData = [];
+            for (var i = 0; i <= awake_length; i++) {
+                awakeData[i] = awake[''+awake_length-i+''].awake;
             };
-
-            
-    $('#container_sleep').highcharts({
-        chart: {
-            zoomType: 'xy'
-        },
-        title: {
-            text: 'Sommeil'
-        },
-        xAxis: [{
-          categories: myCategories,
-          crosshair: true
-        }],
-        yAxis: [{ // Primary yAxis
-            gridLineWidth: 0,
-            title: {
-                text: 'Heure sommeil',
-                style: {
-                    color: Highcharts.getOptions().colors[1]
-                }
-            },
-            labels: {
-                format: '{value} h',
-                style: {
-                    color: Highcharts.getOptions().colors[1]
-                }
-            }
-
-        }, { // Secondary yAxis
-            gridLineWidth: 0,
-            title: {
-                text: 'Eveil',
-                style: {
-                    color: Highcharts.getOptions().colors[0]
-                }
-            },
-            labels: {
-                format: '{value} min',
-                style: {
-                    color: Highcharts.getOptions().colors[0]
-                }
-            },
-            opposite: true
-        }],
-        tooltip: {
-            shared: true
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'left',
-            x: 80,
-            verticalAlign: 'top',
-            y: 55,
-            floating: true,
-        },
-        series: [{
-            name: 'Eveil',
-            type: 'spline',
-            yAxis: 1,
-            data: myDataEveil,
-            tooltip: {
-                valueSuffix: ' min'
-            }
-
-        },  {
-            name: 'Sommeil',
-            type: 'spline',
-            data: myDataSommeil,
-            tooltip: {
-                valueSuffix: ' h'
-            }
-        }]
-    });
-
-
-
-
-
-
-
-
-
-
+            new Highcharts.Chart({
+                chart: {
+                    renderTo: 'container_sleep'
+                },
+                title: {
+                    text: 'Nombre de pas / Distance parcouru'
+                },
+                xAxis: [{
+                    categories: myCategories,
+                crosshair: true
+                }],
+                yAxis: [{ // Primary yAxis
+                    labels: {
+                        format: '{value}',
+                        style: {
+                            color: Highcharts.getOptions().colors[1]
+                        }
+                    },
+                    title: {
+                        text: 'Nombre de pas',
+                        style: {
+                            color: Highcharts.getOptions().colors[1]
+                        }
+                    }
+                }, { // Secondary yAxis
+                    title: {
+                        text: 'Distance parcouru',
+                        style: {
+                            color: Highcharts.getOptions().colors[0]
+                        }
+                    },
+                    labels: {
+                        format: '{value} Km',
+                        style: {
+                            color: Highcharts.getOptions().colors[0]
+                        }
+                    },
+                    opposite: true
+                }],
+                tooltip: {
+                    shared: true
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'left',
+                    x: 120,
+                    verticalAlign: 'top',
+                    y: 100,
+                    floating: true,
+                    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                },
+                series: [{
+                    name: 'Distance parcouru',
+                    type: 'column',
+                    yAxis: 1,
+                    data: awakeData,
+                    tooltip: {
+                        valueSuffix: ' Km'
+                    },
+                }, {
+                    name: 'Nombre de pas',
+                    type: 'spline',
+                    data: sleepData
+                }]
+            });
         }
         </script>
     </body>

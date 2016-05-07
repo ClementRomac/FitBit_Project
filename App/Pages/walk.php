@@ -49,8 +49,7 @@
         var walk = {'steps' : '', 'distance' : ''};
         changeWalkLocation('walk', 1);
         
-        var activity = {'sedentary' : '', 'mobile' : '', 'active' : '', 'very_active' : '', 'calories' : ''}
-        changeWalkLocation('activity', 1);
+        changeActivityLocation('activity', 4);
 
         function changeWalkLocation(newLocation, id){
             if(newLocation == 'walk'){
@@ -71,21 +70,9 @@
         }
 
         function changeActivityLocation(newLocation, id){
-            if(newLocation == 'activity'){
-                getData('steps');
-                getData('distance');
-            }
-            else if(newLocation == 'activity/week'){
-                getData('steps/week');
-                getData('distance/week');
-            }
-            else if(newLocation == 'activity/month'){
-                getData('steps/month');
-                getData('distance/month');
-            }
-
-            $('button').removeClass("active-walk");
-            $('#'+id).addClass("active-walk")
+            getData(newLocation)
+            $('button').removeClass("active-activity");
+            $('#'+id).addClass("active-activity")
         }
 
         function renderChart(location) {
@@ -95,6 +82,9 @@
             else if(location == "distance" || location == "distance/week" || location == "distance/month"){
                 walk['distance'] = location;
                 renderWalk(walk);
+            }
+            else if(location == "activity" || location == "activity/week" || location == "activity/month" ){
+                renderActivity(location);
             }
         }
 
@@ -183,6 +173,112 @@
                     name: 'Nombre de pas',
                     type: 'spline',
                     data: stepsData
+                }]
+            });
+        }
+
+        function renderActivity(activityLocation){
+            var activity_length = (activityLocation == "activity" ? 7 : (activityLocation == "activity/week" ? 4 : 12)) - 1;
+            var activity = JSON.parse(localStorage[''+activityLocation+'']);
+
+            var sedentary = [];
+            for (var i = 0; i <= activity_length; i++) {
+                sedentary[i] = parseInt((activity[''+activity_length-i+''].time).toFixed(2));
+            };
+
+            var mobile = [];
+            for (var i = 0; i <= activity_length; i++) {
+                mobile[i] = parseInt((activity[''+((activity_length*2)+1)-i+''].time).toFixed(2));
+            };
+
+            var active = [];
+            for (var i = 0; i <= activity_length; i++) {
+                active[i] = parseInt((activity[''+((activity_length*3)+2)-i+''].time).toFixed(2));
+            };
+
+            var very_active = [];
+            for (var i = 0; i <= activity_length; i++) {
+                very_active[i] = parseInt((activity[''+((activity_length*4)+3)-i+''].time).toFixed(2));
+            };
+
+            var calories = [];
+            for (var i = 0; i <= activity_length; i++) {
+                calories[i] = activity[''+((activity_length*5)+4)-i+''].time;
+            };
+
+            var myCategories = [];
+            for (var i = 0; i <= activity_length; i++) {
+                myCategories[i] = activity[''+activity_length-i+''].date;
+            };
+            
+            new Highcharts.Chart({
+                chart: {
+                    renderTo: 'container_activity'
+                },
+                title: {
+                    text: 'Calories'
+                },
+                xAxis: {
+                    categories: myCategories
+                },
+                yAxis: [{ // Primary yAxis
+                    labels: {
+                        format: '{value} Kj',
+                        style: {
+                            color: Highcharts.getOptions().colors[0]
+                        }
+                    },
+                    title: {
+                        text: 'Calories perdues',
+                        style: {
+                            color: Highcharts.getOptions().colors[0]
+                        }
+                    }
+                }, { // Secondary yAxis
+                    labels: {
+                        format: '{value} heures',
+                        style: {
+                            color: Highcharts.getOptions().colors[1]
+                        }
+                    },
+                    title: {
+                        text: 'Activité',
+                        style: {
+                            color: Highcharts.getOptions().colors[1]
+                        }
+                    },
+                    opposite: true
+                }],
+                series: [{
+                    type: 'column',
+                    name: 'Sedentaire',
+                    yAxis: 1,
+                    data: sedentary
+                }, {
+                    type: 'column',
+                    name: 'Mobile',
+                    yAxis: 1,
+                    data: mobile
+                }, {
+                    type: 'column',
+                    name: 'Active',
+                    yAxis: 1,
+                    data: active
+                }, {
+                    type: 'column',
+                    name: 'Trés active',
+                    yAxis: 1,
+                    data: very_active
+                }, {
+                    type: 'spline',
+                    name: 'Calories perdues',
+                    data: calories,
+                    lineColor: Highcharts.getOptions().colors[0],
+                    marker: {
+                        lineWidth: 2,
+                        lineColor: Highcharts.getOptions().colors[0],
+                        fillColor: 'white'
+                    }
                 }]
             });
         }

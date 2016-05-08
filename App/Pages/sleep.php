@@ -127,20 +127,20 @@
                 }],
 		        tooltip: {
 		            formatter: function () {
-		                var s = '<b>' + this.x + '</b>';
+		                var result = '<b>' + this.x + '</b>';
 
 		                $.each(this.points, function () {
-	                		var test = this.y;
-							var string = test.toString();
-	                    	s += '<br/><span style="color: '+this.series.color+';">' + this.series.name + ':</span> ';
+	                		var data = this.y;
+							var string = data.toString();
+	                    	result += '<br/><span style="color: '+this.series.color+';">' + this.series.name + ':</span> ';
 			            	if (Math.round(string) == string) {
-			            		s += string+' min';
+			            		result += string+' min';
 			            	}else{
 			            		string = String(Math.round(string*100)/100);
-			            		s += string.replace(".", " h ")+' min';
+			            		result += string.replace(".", " h ")+' min';
 			            	}
 		                });
-		                return s;
+		                return result;
 		            },
 		            shared: true
 		        },

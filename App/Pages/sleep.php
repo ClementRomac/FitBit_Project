@@ -32,9 +32,9 @@
             <h2 class="sleepC">Durée du sommeil</h2>
 
                 <div>
-                    <button class="button-sleep active-sleep" onclick="changeSleepLocation('sleep')" >Semaines</button>
-                    <button class="button-sleep" onclick="changeSleepLocation('sleep/week')">Deux mois</button>
-                    <button class="button-sleep" onclick="changeSleepLocation('sleep/month')">Années</button>
+                    <button class="button-sleep active-sleep" onclick="changeSleepLocation('sleep')" >Jours</button>
+                    <button class="button-sleep" onclick="changeSleepLocation('sleep/week')">Semaines</button>
+                    <button class="button-sleep" onclick="changeSleepLocation('sleep/month')">Mois</button>
                 </div>
 <div id="container_sleep" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
@@ -125,9 +125,25 @@
                     },
                     opposite: true
                 }],
-                tooltip: {
-                    shared: true,
-                },
+		        tooltip: {
+		            formatter: function () {
+		                var s = '<b>' + this.x + '</b>';
+
+		                $.each(this.points, function () {
+	                		var test = this.y;
+							var string = test.toString();
+	                    	s += '<br/><span style="color: '+this.series.color+';">' + this.series.name + ':</span> ';
+			            	if (Math.round(string) == string) {
+			            		s += string+' min';
+			            	}else{
+			            		string = String(Math.round(string*100)/100);
+			            		s += string.replace(".", " h ")+' min';
+			            	}
+		                });
+		                return s;
+		            },
+		            shared: true
+		        },
                 legend: {
                     layout: 'vertical',
                     align: 'left',
@@ -141,11 +157,17 @@
                     name: 'Eveil',
                     type: 'column',
                     yAxis: 1,
-                    data: awakeData
+                    data: awakeData,
+	                tooltip: {
+
+					}
                 }, {
                     name: 'Sommeil',
                     type: 'spline',
-                    data: sleepData
+                    data: sleepData,
+	                tooltip: {
+	                	
+					}
                 }]
             });
         }

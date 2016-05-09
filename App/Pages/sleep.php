@@ -131,9 +131,9 @@
 		                $.each(this.points, function () {
 		                	var minutes = 0;
 		                	var heures = 0;
-	                		var data = String(Math.round(this.y*100)/100);
+	                		var data = Math.round(this.y*100)/100;
 
-	                		minutes = parseInt(((data%1)*60).toFixed(0));
+	                		minutes = ((data%1)*60).toFixed(0);
 							heures = data-data%1;
 	                    	result += '<br/><span style="color: '+this.series.color+';">' + this.series.name + ':</span> ';
 			            	if (heures == 0)

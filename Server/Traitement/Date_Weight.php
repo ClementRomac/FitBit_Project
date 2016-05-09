@@ -65,7 +65,7 @@ function meanDateWeight(){
             $sumYear=0;
         }
     }
-    var_dump($twoMonths);
+    var_dump($week);
     $return = array("week" => $week,
         "twoMonths" => $twoMonths,
         'year' => $year);

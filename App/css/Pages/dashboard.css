@@ -50,7 +50,7 @@ h3{
 }
 
 h4{
-    font-size: 3em;
+    font-size: 4em;
     color: #16a085;
     margin-left: 20px;
 }
@@ -168,7 +168,7 @@ h4{
 
 [class*='part-']{
     width: 100%;
-    border-bottom-color: gainsboro;
+    border-bottom-color: #262626;
     border-bottom-width: 1px;
     border-bottom-style: solid;
 }
@@ -221,7 +221,9 @@ ul{
     margin-left: 20px;
 }
 
-.span-aide-deco{
+.part-parametre a{
     margin-left: 20px;
+    font-size: 3em;
+    color: #000;
+    text-decoration: none;
 }
-

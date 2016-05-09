@@ -53,7 +53,6 @@ h1{
     color: #FFF;
     font-size: 3.5em;
 }
-
 form{
     padding-top: 10%;
 }
@@ -66,8 +65,6 @@ input{
     height: 200px;
     width: 90%;
     margin: 5px 0;
-}
-input[type="submit"]{
 }
 .small{
     text-align: center;

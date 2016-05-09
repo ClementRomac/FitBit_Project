@@ -2,7 +2,7 @@
     <head>
         <title>FitiBit</title></colspan="2"d >
         <meta charset="utf-8"/>
-        <link rel="stylesheet" media="screen" type="text/css" href="../css/Pages/style.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="../css/pages/style.css">
         <script   src="../js/zepto.min.js"></script> 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -14,7 +14,7 @@
     <?php
     session_start();
     if (!isset($_SESSION['user'])){
-        header('Location: ../index.html');
+        header('Location: ../index.php');
     }
     ?>
 

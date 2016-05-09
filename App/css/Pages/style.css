@@ -128,3 +128,7 @@ button{
     background-color: #27ae60;
     color: #FFF;
 }
+
+.center{
+    transform: translateY(20%);
+}

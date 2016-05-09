@@ -2,7 +2,7 @@
     <head>
         <title>FitiBit</title></colspan="2"d >
         <meta charset="utf-8"/>
-        <link rel="stylesheet" media="screen" type="text/css" href="../css/Pages/dashboard.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="../css/pages/dashboard.css">
         <script   src="../js/zepto.min.js"></script> 
         <script type="text/javascript" src="../js/callAPI.js"></script>
 
@@ -27,7 +27,7 @@
     <?php
         session_start();
         if (!isset($_SESSION['user'])){
-            header('Location: ../index.html');
+            header('Location: ../index.php');
         }
     ?>
     <div id="content">
@@ -86,8 +86,8 @@
             </div>
             <div class="part-parametre">
                 <h4>Paramètre</h4>
-                <div class="aide-deconnexion"><img src="../img/information-button.png" class="img-parametre"><span class="span-aide-deco"> Aide </span></div>
-                <div class="aide-deconnexion"><img src="../img/logout-sign.png" class="img-parametre" ><span class="span-aide-deco"> Déconnexion </span></div>
+                <div class="aide-deconnexion"><img src="../img/information-button.png" class="img-parametre"><span class="span-aide-deco"> <a href="#">Aide</a> </span></div>
+                <div class="aide-deconnexion"><img src="../img/logout-sign.png" class="img-parametre" ><span class="span-aide-deco"> <a href="../deconnexion.php">Déconnexion</a> </span></div>
             </div>
         </div>  
         <script type="text/javascript">

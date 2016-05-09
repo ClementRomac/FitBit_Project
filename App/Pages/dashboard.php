@@ -6,11 +6,18 @@
         <script   src="../js/zepto.min.js"></script> 
         <script type="text/javascript" src="../js/callAPI.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js">        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script>
     $(document).ready(function(){
-        $(".img-menu").click(function(){
+        $('.img-menu').click(function(e){
             $("#menu").toggle("slow");
+            $("#content").css("background-color", "black");
+            $("#content").css("z-index", "3");
+            e.stopPropagation(); // Prevent bubbling
+        });
+        $('#content').click(function(e){
+            $("#menu").toggle("hide");
+            $("#content").css("background-color", "transparent");
         });
     });
     </script>
@@ -18,11 +25,12 @@
     </head>
     <body>
     <?php
-    session_start();
-    if (!isset($_SESSION['user'])){
-        header('Location: ../index.html');
-    }
+        session_start();
+        if (!isset($_SESSION['user'])){
+            header('Location: ../index.html');
+        }
     ?>
+    <div id="content">
         <div id="header">
             <img src="../maquettes/sprite/line.png" class="img-menu">
             <h1>Tableau de bord</h1>
@@ -51,7 +59,8 @@
                 </div>
             </div>
         </a>
-        
+    
+    </div>     
         <div id="menu">
             <div class="part-name">
                 <img src="../maquettes/sprite/businessman.png" class="img-profil">
@@ -79,10 +88,8 @@
                 <h4>Paramètre</h4>
                 <div class="aide-deconnexion"><img src="../maquettes/sprite/information-button.png" class="img-parametre"><span class="span-aide-deco"> Aide </span></div>
                 <div class="aide-deconnexion"><img src="../maquettes/sprite/logout-sign.png" class="img-parametre" ><span class="span-aide-deco"> Déconnexion </span></div>
-                <div class="aide-deconnexion"><img src="../maquettes/sprite/logout-sign.png" class="img-parametre"><span class="span-aide-deco"> Retour </span></div>
             </div>
-        </div>
-        
+        </div>  
         <script type="text/javascript">
             getData("weight");
             getData("steps");

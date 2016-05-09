@@ -74,3 +74,8 @@ input[type="submit"]{
     font-size: 50px;
     color: #FFF;
 }
+.erreur{
+    text-align: center;
+    color: #c0392b;
+    font-size: 50px;
+}

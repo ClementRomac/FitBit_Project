@@ -237,7 +237,28 @@
                     }
                 }, { // Secondary yAxis
                     labels: {
-                        format: '{value} heures',
+                        formatter: function () {
+                            var result = 0;
+                            var minutes = 0;
+                            var heures = 0;
+                            minutes = ((this.value%1)*60).toFixed(0);
+                            heures = this.value-this.value%1;
+                            
+                            if (heures == 0)
+                                if (minutes == 0 || minutes == 1)
+                                    result = minutes+' minute';
+                                else
+                                    result = minutes+' minutes';
+                            else if (minutes == 0)
+                                if (heures == 0 || heures == 1)
+                                result = heures+' heure';
+                                else
+                                result = heures+' heures';
+                            else
+                                result = heures+' h '+minutes+' min';
+
+                        return result;
+                        },
                         style: {
                             color: Highcharts.getOptions().colors[1]
                         }

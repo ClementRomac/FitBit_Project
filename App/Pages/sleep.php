@@ -18,7 +18,7 @@
     ?>
         <header class="sleepB">
             <a href="Dashboard.php"><img src="../img/back.png" class="img-back"></a>
-            <h1>Qualitée de Sommeil</h1>
+            <h1>Qualité de Sommeil</h1>
             <img src="../img/nightW.png" class="img-moon">
         </header>
 
@@ -26,7 +26,7 @@
 
             <h2 class="sleepC"> Aujourd'hui </h2>
 
-                <p>Dormir pendant : <span class="space"></span> 6h 52min </p>
+                <p>Dormi pendant : <span class="space"></span> <span id="sleep_value">6h 52min</span> </p>
                 <p>Qualité de sommeil : <span class="space"></span> Bon | 8.5/10</p>
 
             <h2 class="sleepC">Durée du sommeil</h2>
@@ -41,6 +41,7 @@
  <script type="text/javascript">
         var sleep = {'sleep' : '', 'awake' : ''};
         changeSleepLocation('sleep', 1);
+        setHeaderInfos();
 
         function changeSleepLocation(newLocation, id){
             if(newLocation == 'sleep'){
@@ -66,6 +67,13 @@
                 sleep['awake'] = location;
                 renderSleep(sleep, "container_sleep");
             }
+        }
+        function setHeaderInfos(){
+            data = JSON.parse(localStorage['sleep'])[0].time;
+            data = Math.round(data*100)/100;
+            minutes = ((data%1)*60).toFixed(0);
+            heures = data-data%1;
+            $("#sleep_value").text(heures+"h "+minutes+"min");
         }
 
         $("#container_sleep").on('click', function(e){

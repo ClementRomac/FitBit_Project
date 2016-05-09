@@ -28,8 +28,7 @@
         <div id="conteneur">
 
             <h2 class="weightC">Aujourd'hui</h2>
-                <p>Dormir pendant :<span class="space"></span>6h 52min</p>
-                <p>Qualité de sommeil :<span class="space"></span>Bon | 8.5/10</p>
+                <p>Poids : <span class="space"></span> <span id="weight_value">80</span> Kg</p>
 
             <h2 class="weightC">Historique du poids</h2>
 
@@ -47,8 +46,9 @@
 
         <script type="text/javascript">
         var location_weight="";
-        changeWeightLocation("weight/week", 1); //get data for default location
-        getData("imc"); //get data for default location
+        changeWeightLocation("weight/week", 1);
+        getData("imc");
+        setHeaderInfos();
 
         function changeWeightLocation(newLocation, id){
             getData(newLocation);
@@ -65,6 +65,11 @@
                 renderImc(location, "container_imc");
             }
         }
+
+        function setHeaderInfos(){
+            $("#weight_value").text(JSON.parse(localStorage['weight'])[0].weight);
+        }
+
 
         $("#container_weight").on('click', function(e){
             fullScreenChart(location_weight, e);

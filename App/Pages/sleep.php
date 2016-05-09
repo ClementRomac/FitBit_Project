@@ -36,7 +36,7 @@
                     <button id="2" class="button-sleep" onclick="changeSleepLocation('sleep/week', 2)">Semaines</button>
                     <button id="3" class="button-sleep" onclick="changeSleepLocation('sleep/month', 3)">Mois</button>
                 </div>
-<div id="container_sleep" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+				<a href="graph.php"><div id="container_sleep" style="min-width: 310px; height: 400px; margin: 0 auto"></div></a>
         </div>
  <script type="text/javascript">
         var sleep = {'sleep' : '', 'awake' : ''};
@@ -85,7 +85,7 @@
             for (var i = 0; i <= awake_length; i++) {
                 awakeData[i] = awake[''+awake_length-i+''].time;
             };
-
+            var test = 0;
             new Highcharts.Chart({
                 chart: {
                     renderTo: 'container_sleep'
@@ -99,7 +99,28 @@
                 }],
                 yAxis: [{ // Primary yAxis
                     labels: {
-                        format: '{value} h',
+                        formatter: function () {
+                            var result = 0;
+                            var minutes = 0;
+                            var heures = 0;
+                            minutes = ((this.value%1)*60).toFixed(0);
+                            heures = this.value-this.value%1;
+                            
+                            if (heures == 0)
+                                if (minutes == 0 || minutes == 1)
+                                    result = minutes+' minute';
+                                else
+                                    result = minutes+' minutes';
+                            else if (minutes == 0)
+                                if (heures == 0 || heures == 1)
+                                result = heures+' heure';
+                                else
+                                result = heures+' heures';
+                            else
+                                result = heures+' h '+minutes+' min';
+
+                        return result;
+                        },
                         style: {
                             color: Highcharts.getOptions().colors[1]
                         }
@@ -118,7 +139,28 @@
                         }
                     },
                     labels: {
-                        format: '{value} min',
+                        formatter: function () {
+                            var result = 0;
+                            var minutes = 0;
+                            var heures = 0;
+                            minutes = ((this.value%1)*60).toFixed(0);
+                            heures = this.value-this.value%1;
+                            
+                            if (heures == 0)
+                                if (minutes == 0 || minutes == 1)
+                                    result = minutes+' minute';
+                                else
+                                    result = minutes+' minutes';
+                            else if (minutes == 0)
+                                if (heures == 0 || heures == 1)
+                                result = heures+' heure';
+                                else
+                                result = heures+' heures';
+                            else
+                                result = heures+' h '+minutes+' min';
+
+                        return result;
+                        },
                         style: {
                             color: Highcharts.getOptions().colors[0]
                         }

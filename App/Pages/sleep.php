@@ -128,17 +128,18 @@
 		        tooltip: {
 		            formatter: function () {
 		                var result = '<b>' + this.x + '</b>';
-
 		                $.each(this.points, function () {
-	                		var data = this.y;
-							var string = data.toString();
+		                	var minutes = 0;
+		                	var heures = 0;
+	                		var data = String(Math.round(this.y*100)/100);
+
+	                		minutes = parseInt(((data%1)*60).toFixed(0));
+							heures = data-data%1;
 	                    	result += '<br/><span style="color: '+this.series.color+';">' + this.series.name + ':</span> ';
-			            	if (Math.round(string) == string) {
-			            		result += string+' min';
-			            	}else{
-			            		string = String(Math.round(string*100)/100);
-			            		result += string.replace(".", " h ")+' min';
-			            	}
+			            	if (heures == 0)
+			            		result += minutes+' min';
+			            	else
+			            		result += heures+' h '+minutes+' min';
 		                });
 		                return result;
 		            },
@@ -157,17 +158,11 @@
                     name: 'Eveil',
                     type: 'column',
                     yAxis: 1,
-                    data: awakeData,
-	                tooltip: {
-
-					}
+                    data: awakeData
                 }, {
                     name: 'Sommeil',
                     type: 'spline',
-                    data: sleepData,
-	                tooltip: {
-	                	
-					}
+                    data: sleepData
                 }]
             });
         }

@@ -26,8 +26,8 @@
 
             <h2 class="walkC"> Aujourd'hui </h2>
 
-                <p>Dormir pendant : <span class="space"></span> 6h 52min</p>
-                <p>Qualité de sommeil : <span class="space"></span> Bon | 8.5/10</p>
+                <p>Nombre de pas : <span class="space"></span> <span id="steps_value">500</span></p>
+                <p>Evolution par rapport à hier : <span class="space"></span> <span id="steps_variation">+10%</span></p>
 
             <h2 class="walkC">Distance / Pas</h2>
 
@@ -51,8 +51,8 @@
         var walk = {'steps' : '', 'distance' : ''};
         var location_activity = "";
         changeWalkLocation('walk', 1);
-        
         changeActivityLocation('activity', 4);
+        setHeaderInfos();
 
         function changeWalkLocation(newLocation, id){
             if(newLocation == 'walk'){
@@ -90,6 +90,15 @@
             else if(location == "activity" || location == "activity/week" || location == "activity/month" ){
                 renderActivity(location, "container_activity");
             }
+        }
+
+        function setHeaderInfos(){
+            var steps_today = JSON.parse(localStorage['steps'])[0].steps;
+            var steps_yesterday = JSON.parse(localStorage['steps'])[1].steps;
+            var steps_variation = ((steps_today-steps_yesterday)/steps_yesterday)*100;
+
+            $("#steps_value").text(steps_today);
+            $("#steps_variation").text((steps_variation >= 0 ? "+ " : "") + steps_variation.toFixed(1) + " %");
         }
 
         $("#container_walk").on('click', function(e){

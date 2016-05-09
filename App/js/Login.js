@@ -1,7 +1,6 @@
 
 $(document).ready(function(){
     $("#submit").click(function(e){
-        console.log("ebuft")
         e.preventDefault();
         $.post(
             'Connexion.php',
@@ -13,11 +12,9 @@ $(document).ready(function(){
             function(data){
                 console.log(data + "feqda");
                 if(data == 'ok'){
-                    // Le membre est connecté. Ajoutons lui un message dans la page HTML.
                     document.location.href="Pages/dashboard.php"
                 }
                 else{
-                    // Le membre n'a pas été connecté. (data vaut ici "failed")
                     $("#resultat").html("<p class='erreur'>Erreur lors de la connexion...</p>");
                 }
             }

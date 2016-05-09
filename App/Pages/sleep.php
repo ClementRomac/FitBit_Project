@@ -6,7 +6,6 @@
         <script   src="../js/zepto.min.js"></script> 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
-        <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
         <script type="text/javascript" src="../js/renderCharts.js"></script>
     </head>
@@ -18,9 +17,9 @@
     }
     ?>
         <header class="sleepB">
-            <a href="Dashboard.php"><img src="../maquettes/sprite/back.png" class="img-back"></a>
+            <a href="Dashboard.php"><img src="../img/back.png" class="img-back"></a>
             <h1>Qualitée de Sommeil</h1>
-            <img src="../maquettes/sprite/nightW.png" class="img-moon">
+            <img src="../img/nightW.png" class="img-moon">
         </header>
 
         <div id="conteneur">

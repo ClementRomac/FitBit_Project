@@ -18,7 +18,7 @@ $(document).ready(function(){
                 }
                 else{
                     // Le membre n'a pas été connecté. (data vaut ici "failed")
-                    $("#resultat").html("<p>Erreur lors de la connexion...</p>");
+                    $("#resultat").html("<p class='erreur'>Erreur lors de la connexion...</p>");
                 }
             }
         );

@@ -32,19 +32,19 @@
     ?>
     <div id="content">
         <div id="header">
-            <img src="../maquettes/sprite/line.png" class="img-menu">
+            <img src="../img/line.png" class="img-menu">
             <h1>Tableau de bord</h1>
         </div>
         <div class="date"> <script type="text/javascript" src="../js/time.js"></script> </div>
         <div id="small-tile">
             <a href="weight.php">
-                <div class="squarre-1"><img src="../maquettes/sprite/icon.png" class="img-squarre">
+                <div class="squarre-1"><img src="../img/icon.png" class="img-squarre">
                     <div class="text-1"> <span id="dashboard-weight">90</span> Kg </div>
                     <div class="text-1-2"> Poids </div>
                 </div>
             </a>
             <a href="walk.php">
-                <div class="squarre-2"><img src="../maquettes/sprite/footsteps-silhouette-variant.png" class="img-squarre">
+                <div class="squarre-2"><img src="../img/footsteps-silhouette-variant.png" class="img-squarre">
                     <div class="text-2"> <span id="dashboard-steps">852</span> Pas </div>
                     <div class="text-2-2"> <span id="dashboard-steps-variation">+ 8.5 %</span> </div>
                 </div>
@@ -52,7 +52,7 @@
         </div>
         <a href="Sleep.php">
             <div id="large-tile">
-                <div class="rectangle"><img src="../maquettes/sprite/night.png" class="img-rectangle">
+                <div class="rectangle"><img src="../img/night.png" class="img-rectangle">
                 <div class="text-3"> Sommeil </div>
                 <div class="text-3-2"> <span id="dashboard-sleep">852</span> </div>  
                 <div class="text-3-3"> 8.5/10 </div>
@@ -63,7 +63,7 @@
     </div>     
         <div id="menu">
             <div class="part-name">
-                <img src="../maquettes/sprite/businessman.png" class="img-profil">
+                <img src="../img/businessman.png" class="img-profil">
                 <div class="nom-prenom">
                     <h2>Prenom</h2>
                     <h3>Nom</h3>
@@ -86,8 +86,8 @@
             </div>
             <div class="part-parametre">
                 <h4>Paramètre</h4>
-                <div class="aide-deconnexion"><img src="../maquettes/sprite/information-button.png" class="img-parametre"><span class="span-aide-deco"> Aide </span></div>
-                <div class="aide-deconnexion"><img src="../maquettes/sprite/logout-sign.png" class="img-parametre" ><span class="span-aide-deco"> Déconnexion </span></div>
+                <div class="aide-deconnexion"><img src="../img/information-button.png" class="img-parametre"><span class="span-aide-deco"> Aide </span></div>
+                <div class="aide-deconnexion"><img src="../img/logout-sign.png" class="img-parametre" ><span class="span-aide-deco"> Déconnexion </span></div>
             </div>
         </div>  
         <script type="text/javascript">

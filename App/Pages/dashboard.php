@@ -86,8 +86,8 @@
             </div>
             <div class="part-parametre">
                 <h4>Paramètre</h4>
-                <div class="aide-deconnexion"><img src="../maquettes/sprite/information-button.png" class="img-parametre"><span class="span-aide-deco"> Aide </span></div>
-                <div class="aide-deconnexion"><img src="../maquettes/sprite/logout-sign.png" class="img-parametre" ><span class="span-aide-deco"> Déconnexion </span></div>
+                <div class="aide-deconnexion"><img src="../img/information-button.png" class="img-parametre"><span class="span-aide-deco"> Aide </span></div>
+                <div class="aide-deconnexion"><img src="../img/logout-sign.png" class="img-parametre" ><span class="span-aide-deco"> Déconnexion </span></div>
             </div>
         </div>  
         <script type="text/javascript">

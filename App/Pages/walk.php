@@ -2,7 +2,8 @@
     <head>
         <title>FitiBit</title></colspan="2"d >
         <meta charset="utf-8"/>
-        <link rel="stylesheet" media="screen" type="text/css" href="../css/Pages/style.css"><script   src="../js/zepto.min.js"></script> 
+        <link rel="stylesheet" media="screen" type="text/css" href="../css/Pages/style.css">
+        <script   src="../js/zepto.min.js"></script> 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
     </head>

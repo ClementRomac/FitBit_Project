@@ -3,7 +3,7 @@
         <title>FitiBit</title></colspan="2"d >
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/Pages/style.css">
-        <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+        <script   src="../js/zepto.min.js"></script> 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
         <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
@@ -32,16 +32,16 @@
             <h2 class="sleepC">Durée du sommeil</h2>
 
                 <div>
-                    <button class="button-sleep active-sleep" onclick="changeSleepLocation('sleep')" >Jours</button>
-                    <button class="button-sleep" onclick="changeSleepLocation('sleep/week')">Semaines</button>
-                    <button class="button-sleep" onclick="changeSleepLocation('sleep/month')">Mois</button>
+                    <button id="1" class="button-sleep active-sleep" onclick="changeSleepLocation('sleep', 1)" >Jours</button>
+                    <button id="2" class="button-sleep" onclick="changeSleepLocation('sleep/week', 2)">Semaines</button>
+                    <button id="3" class="button-sleep" onclick="changeSleepLocation('sleep/month', 3)">Mois</button>
                 </div>
 <div id="container_sleep" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
  <script type="text/javascript">
         var sleep = {'sleep' : '', 'awake' : ''};
         changeSleepLocation('sleep', 1);
-        //console.log(sleep['sleep']);
+
         function changeSleepLocation(newLocation, id){
             if(newLocation == 'sleep'){
                 getData('sleep');

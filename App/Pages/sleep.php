@@ -6,7 +6,6 @@
         <script   src="../js/zepto.min.js"></script> 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
-        <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
     </head>
     <body>

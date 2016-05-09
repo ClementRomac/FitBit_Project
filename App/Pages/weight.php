@@ -18,9 +18,9 @@
     ?>
 
         <header class="weightB">
-            <a href="Dashboard.php"><img src="../maquettes/sprite/back.png" class="img-back"></a>
+            <a href="Dashboard.php"><img src="../img/back.png" class="img-back"></a>
             <h1>Poids</h1>
-            <img src="../maquettes/sprite/iconW.png" class="img-moon">
+            <img src="../img/iconW.png" class="img-moon">
         </header>
 
 

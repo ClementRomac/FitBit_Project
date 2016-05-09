@@ -132,7 +132,6 @@
 		                	var minutes = 0;
 		                	var heures = 0;
 	                		var data = Math.round(this.y*100)/100;
-
 	                		minutes = ((data%1)*60).toFixed(0);
 							heures = data-data%1;
 	                    	result += '<br/><span style="color: '+this.series.color+';">' + this.series.name + ':</span> ';

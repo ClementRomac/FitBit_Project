@@ -153,9 +153,9 @@
                                     result = minutes+' minutes';
                             else if (minutes == 0)
                                 if (heures == 0 || heures == 1)
-                                result = heures+' heure';
+                                    result = heures+' heure';
                                 else
-                                result = heures+' heures';
+                                    result = heures+' heures';
                             else
                                 result = heures+' h '+minutes+' min';
 

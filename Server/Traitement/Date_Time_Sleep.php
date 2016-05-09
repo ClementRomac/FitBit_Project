@@ -19,17 +19,15 @@ function feed_bdd_sleeping($activity, $table, $column)
     $activity_column = meanDateColumnHeadings($dataSet, $activity);
     $activity_column = $activity_column[$column];
     for ($i = 0; $i < count($activity_column); $i++)
-        $bdd->query('INSERT INTO '.$table.' (date, hours, minutes) VALUES ("' . $activity_column[$i]["date"].'", "'.$activity_column[$i][$activity]["hours"].'", "'.$activity_column[$i][$activity]["minutes"].'")');
+        $bdd->query('INSERT INTO '.$table.' (date, label, time) VALUES ("' . $activity_column[$i]["date"].'", "'.$activity_column[$i]["label"].'", "'.$activity_column[$i]["time"].'")');
 }
 
 /*
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_sleeping("sleeping", "SleepDay", "day");
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_sleeping("sleeping", "SleepWeek", "week");
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_sleeping("sleeping", "SleepMonth", "month");
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * */
-
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
+feed_bdd_sleeping("sleeping", "SleepDay", "day");
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
+feed_bdd_sleeping("sleeping", "SleepWeek", "week");
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_sleeping("sleeping", "SleepMonth", "month");
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
+*/

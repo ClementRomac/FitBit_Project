@@ -13,6 +13,9 @@ body{
     font-family: "roboto_fin";
 }
 
+#menu{
+    position: absolute;
+}
 
 #header {
     background-color: #2980b9;
@@ -25,7 +28,23 @@ body{
 }
 
 h1{
-    padding-top: 2%
+    padding-right: 11%;
+}
+
+h2{
+    font-size: 3em;
+    float: left;
+}
+
+h3{
+    font-size: 2em;
+    float: left;
+}
+
+h4{
+    font-size: 3em;
+    color: #16a085;
+    margin-left: 20px;
 }
 
 #center {
@@ -100,7 +119,7 @@ h1{
 
 [class*='text-1']{
     color: #e67e22;
-}
+}S
 
 [class*='text-2']{
     color: #27ae60;
@@ -124,5 +143,81 @@ h1{
     margin-left: 100;
     margin-top: 20;
     font-size: 4em;
+}
+
+.img-menu{
+    float: left;
+    padding-top: 30px; 
+    padding-left: 5%
+}
+
+#menu{
+    width: 70%;
+    background-color: #FFF;
+    height: 100%;
+    display: none;
+}
+
+[class*='part-']{
+    width: 100%;
+    border-bottom-color: gainsboro;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.part-name{
+    height: 170px;
+}
+
+.part-profil{
+    height: 340px;
+}
+
+.part-parametre{
+    
+}
+
+.img-profil{
+    float: left;
+    width: 150px;
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: #16a085;
+    border-radius: 100%;
+}
+
+.nom-prenom{
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+    width: 50px;
+}
+
+li {
+    margin-top: 10px;
+    font-size: 2em;
+}
+
+ul{
+    margin-left: 20px;
+    list-style-type: none;
+    width: 40%;
+    float: left;
+}
+
+.line-2{
+    color: gainsboro;
+}
+
+.img-parametre{
+    width: 40px;
+}
+
+.aide-deconnexion{
+    margin-left: 20px;
+}
+
+.span-aide-deco{
+    margin-left: 20px;
 }
 

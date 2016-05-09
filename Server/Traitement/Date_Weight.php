@@ -8,9 +8,8 @@
 
 // $dataSet is available with this include
 include 'include.php';
+include 'Date_ColumnHeadings.php';
 include '../BDD.php';
-include 'FormatDateMonth.php';
-meanDateWeight($dataSet);
 function meanDateWeight(){
     global $dataSet;
     array_shift($dataSet);
@@ -34,7 +33,7 @@ function meanDateWeight(){
 
             $weight =$sumWeek/7; //poids chaque semaine
             $date = $dataSet[$i]["date"];//date rentrée chaque semaine
-            $week[]= array("date"=> $date, "weight" => round($weight, 2)); //ajout des données chaque semaine
+            $week[]= array("date"=> $date, "weight" => round($weight, 1)); //ajout des données chaque semaine
             $sumWeek=0;
             $incrementWeek +=7;
         }
@@ -45,10 +44,10 @@ function meanDateWeight(){
 
             $weight =$sumTwoMonths/$numberOfDayForTwoMonth; //poids chaque semaine
 
-            $date = fromatDateMonth($dataSet, $i, "twoMonths");
+            $date = formatDateMonth($dataSet, $i, "twoMonths");
 
             //date rentrée chaque semaine
-            $twoMonths[]= array("date"=> $date, "weight" => round($weight, 2)); //ajout des données chaque mois
+            $twoMonths[]= array("date"=> $date, "weight" => round($weight, 1)); //ajout des données chaque mois
             $sumTwoMonths=0;
             $numberOfDayForTwoMonth=0;
         }
@@ -61,11 +60,10 @@ function meanDateWeight(){
             if ( explode('-',$dataSet[$i]["date"])[0] % 4 ==0) $numberOfDayForYear++; //si année bisextille ajout d'un jour
             $weight =$sumYear/$numberOfDayForYear; //poids chaque semaine
             $date = $dataSet[$i]["date"];//date rentrée chaque année
-            $year[]= array("date"=> $date, "weight" => round($weight, 2)); //ajout des données chaque semaine
+            $year[]= array("date"=> $date, "weight" => round($weight, 1)); //ajout des données chaque semaine
             $sumYear=0;
         }
     }
-    var_dump($week);
     $return = array("week" => $week,
         "twoMonths" => $twoMonths,
         'year' => $year);
@@ -81,15 +79,25 @@ function feed_bdd_weight($table, $column)
         $bdd->query('INSERT INTO '.$table.' (date, weight) VALUES ("' . $weight_column[$i]["date"] . '", ' . $weight_column[$i]["weight"] . ')');
 }
 
+function feed_bdd_weight_day($activity, $table, $column)
+{
+    global $bdd;
+    global $dataSet;
+    $weight_column = meanDateColumnHeadings($dataSet, $activity);
+    $weight_column = $weight_column[$column];
+    for ($i = 0; $i < count($weight_column); $i++)
+        $bdd->query('INSERT INTO '.$table.' (date, weight) VALUES ("' . $weight_column[$i]["date"] . '", ' . $weight_column[$i]["weight"] . ')');
+}
+
 
 /*
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_weight("WeightWeek", "week");
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_weight("WeightTwoMonth", "twoMonths");
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
- * feed_bdd_weight("WeightYear", "year");
- * DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK | DO NOT RUN THIS HOOK
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
+feed_bdd_weight("WeightWeek", "week");
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
+feed_bdd_weight("WeightTwoMonth", "twoMonths");
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
+feed_bdd_weight("WeightYear", "year");
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 */
 
-feed_bdd_weight("WeightTwoMonth", "twoMonths");
+

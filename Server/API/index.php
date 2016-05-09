@@ -212,30 +212,30 @@ $app->get('/activity', function ($request, $response, $args) {
 	global $pdo;
 	$stt = $pdo->select(array('*'))->from('
 				((
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `SedentaryDay` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 7
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `MobileDay` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 7
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `ActiveDay` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 7
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `VeryActiveDay` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 7)
 				UNION ALL(
-				SELECT date, id, calories
+				SELECT date, calories
 				FROM  `CaloriesDay` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 7)) AS tmp')
@@ -251,30 +251,30 @@ $app->get('/activity/week', function ($request, $response, $args) {
 	global $pdo;
 	$stt = $pdo->select(array('*'))->from('
 				((
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `SedentaryWeek` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 4
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `MobileWeek` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 4
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `ActiveWeek` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 4
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `VeryActiveWeek` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 4)
 				UNION ALL(
-				SELECT date, id, calories
+				SELECT date, calories
 				FROM  `CaloriesWeek` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 4)) AS tmp')
@@ -290,31 +290,31 @@ $app->get('/activity/month', function ($request, $response, $args) {
 	global $pdo;
 	$stt = $pdo->select(array('*'))->from('
 				((
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `SedentaryMonth` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 12
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `MobileMonth` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 12
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `ActiveMonth` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 12
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `VeryActiveMonth` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 12
 				)
 				UNION ALL(
-				SELECT date, id, calories
+				SELECT date, calories
 				FROM  `CaloriesMonth` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 12)) AS tmp')

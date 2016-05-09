@@ -183,22 +183,22 @@
 
             var sedentary = [];
             for (var i = 0; i <= activity_length; i++) {
-                sedentary[i] = parseInt((activity[''+activity_length-i+''].time).toFixed(2));
+                sedentary[i] = activity[''+activity_length-i+''].time;
             };
 
             var mobile = [];
             for (var i = 0; i <= activity_length; i++) {
-                mobile[i] = parseInt((activity[''+((activity_length*2)+1)-i+''].time).toFixed(2));
+                mobile[i] = activity[''+((activity_length*2)+1)-i+''].time;
             };
 
             var active = [];
             for (var i = 0; i <= activity_length; i++) {
-                active[i] = parseInt((activity[''+((activity_length*3)+2)-i+''].time).toFixed(2));
+                active[i] = activity[''+((activity_length*3)+2)-i+''].time;
             };
 
             var very_active = [];
             for (var i = 0; i <= activity_length; i++) {
-                very_active[i] = parseInt((activity[''+((activity_length*4)+3)-i+''].time).toFixed(2));
+                very_active[i] = activity[''+((activity_length*4)+3)-i+''].time;
             };
 
             var calories = [];
@@ -249,6 +249,31 @@
                     },
                     opposite: true
                 }],
+                tooltip: {
+                    formatter: function () {
+                        var result = '<b>' + this.x + '</b>';
+                        $.each(this.points, function () {
+                            result += '<br/><span style="color: '+this.series.color+';">' + this.series.name + ':</span> ';
+                            data = this.y;
+                            if(this.series.name != 'Calories perdues'){
+                                var minutes = 0;
+                                var heures = 0;
+                                var data = String(Math.round(data*100)/100);
+
+                                minutes = parseInt(((data%1)*60).toFixed(0));
+                                heures = data-data%1;
+                                if (heures == 0)
+                                    result += minutes+' min';
+                                else
+                                    result += heures+' h '+minutes+' min';
+                            }else{
+                                result += data + ' Kj';
+                            }
+                        });
+                        return result;
+                    },
+                    shared: true
+                },
                 series: [{
                     type: 'column',
                     name: 'Sedentaire',

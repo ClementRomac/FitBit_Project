@@ -101,7 +101,11 @@
                     $("#dashboard-steps-variation").text((steps_variation >= 0 ? "+ " : "") + steps_variation.toFixed(1) + " %");
                 }
                 else if(location == 'sleep'){
-                    $("#dashboard-sleep").text(JSON.parse(localStorage[''+location+''])[0].label);
+                    data = JSON.parse(localStorage[''+location+''])[0].time;
+                    data = Math.round(data*100)/100;
+                    minutes = ((data%1)*60).toFixed(0);
+                    heures = data-data%1;
+                    $("#dashboard-sleep").text(heures+"h "+minutes+"min");
                 }
             }
         </script>

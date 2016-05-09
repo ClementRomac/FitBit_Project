@@ -81,7 +81,7 @@ $app->get('/imc', function ($request, $response, $args) {
 
 $app->get('/sleep', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'label', 'ROUND(time, 2) AS time'))->from('SleepDay')->orderBy('date', 'DESC')->limit(7)->execute();
+	$stt = $pdo->select(array('date', 'ROUND(time, 2) AS time'))->from('SleepDay')->orderBy('date', 'DESC')->limit(7)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);
@@ -91,7 +91,7 @@ $app->get('/sleep', function ($request, $response, $args) {
 
 $app->get('/sleep/week', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'label', 'ROUND(time, 2) AS time'))->from('SleepMonth')->orderBy('date', 'DESC')->limit(4)->execute();
+	$stt = $pdo->select(array('date', 'ROUND(time, 2) AS time'))->from('SleepMonth')->orderBy('date', 'DESC')->limit(4)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);
@@ -101,7 +101,7 @@ $app->get('/sleep/week', function ($request, $response, $args) {
 
 $app->get('/sleep/month', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'label', 'ROUND(time, 2) AS time'))->from('SleepWeek')->orderBy('date', 'DESC')->limit(12)->execute();
+	$stt = $pdo->select(array('date', 'ROUND(time, 2) AS time'))->from('SleepWeek')->orderBy('date', 'DESC')->limit(12)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);
@@ -114,7 +114,7 @@ $app->get('/sleep/month', function ($request, $response, $args) {
 
 $app->get('/awake', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'label', 'ROUND(time, 2) AS time'))->from('AwakeDay')->orderBy('date', 'DESC')->limit(7)->execute();
+	$stt = $pdo->select(array('date', 'ROUND(time, 2) AS time'))->from('AwakeDay')->orderBy('date', 'DESC')->limit(7)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);
@@ -124,7 +124,7 @@ $app->get('/awake', function ($request, $response, $args) {
 
 $app->get('/awake/week', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'label', 'ROUND(time, 2) AS time'))->from('AwakeMonth')->orderBy('date', 'DESC')->limit(4)->execute();
+	$stt = $pdo->select(array('date', 'ROUND(time, 2) AS time'))->from('AwakeMonth')->orderBy('date', 'DESC')->limit(4)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);
@@ -134,7 +134,7 @@ $app->get('/awake/week', function ($request, $response, $args) {
 
 $app->get('/awake/month', function ($request, $response, $args) {
 	global $pdo;
-	$stt = $pdo->select(array('date', 'label', 'ROUND(time, 2) AS time'))->from('AwakeWeek')->orderBy('date', 'DESC')->limit(12)->execute();
+	$stt = $pdo->select(array('date', 'ROUND(time, 2) AS time'))->from('AwakeWeek')->orderBy('date', 'DESC')->limit(12)->execute();
 	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
 
 	$json_response = json_encode($json);
@@ -212,30 +212,30 @@ $app->get('/activity', function ($request, $response, $args) {
 	global $pdo;
 	$stt = $pdo->select(array('*'))->from('
 				((
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `SedentaryDay` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 7
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `MobileDay` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 7
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `ActiveDay` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 7
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `VeryActiveDay` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 7)
 				UNION ALL(
-				SELECT date, id, calories
+				SELECT date, ROUND(calories, 0) AS calories
 				FROM  `CaloriesDay` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 7)) AS tmp')
@@ -251,30 +251,30 @@ $app->get('/activity/week', function ($request, $response, $args) {
 	global $pdo;
 	$stt = $pdo->select(array('*'))->from('
 				((
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `SedentaryWeek` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 4
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `MobileWeek` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 4
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `ActiveWeek` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 4
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `VeryActiveWeek` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 4)
 				UNION ALL(
-				SELECT date, id, calories
+				SELECT date, ROUND(calories, 0) AS calories
 				FROM  `CaloriesWeek` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 4)) AS tmp')
@@ -290,31 +290,31 @@ $app->get('/activity/month', function ($request, $response, $args) {
 	global $pdo;
 	$stt = $pdo->select(array('*'))->from('
 				((
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `SedentaryMonth` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 12
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `MobileMonth` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 12
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `ActiveMonth` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 12
 				)
 				UNION ALL(
-				SELECT date, label, ROUND(time, 2) AS time
+				SELECT date, ROUND(time, 2) AS time
 				FROM  `VeryActiveMonth` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 12
 				)
 				UNION ALL(
-				SELECT date, id, calories
+				SELECT date, ROUND(calories, 0) AS calories
 				FROM  `CaloriesMonth` 
 				ORDER BY DATE DESC 
 				LIMIT 0 , 12)) AS tmp')

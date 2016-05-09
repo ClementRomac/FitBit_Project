@@ -3,10 +3,9 @@
         <title>FitiBit</title></colspan="2"d >
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/Pages/style.css">
-        <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+        <script   src="../js/zepto.min.js"></script> 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
-        <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
     </head>
     <body>
@@ -32,16 +31,16 @@
             <h2 class="sleepC">Durée du sommeil</h2>
 
                 <div>
-                    <button class="button-sleep active-sleep" onclick="changeSleepLocation('sleep')" >Jours</button>
-                    <button class="button-sleep" onclick="changeSleepLocation('sleep/week')">Semaines</button>
-                    <button class="button-sleep" onclick="changeSleepLocation('sleep/month')">Mois</button>
+                    <button id="1" class="button-sleep active-sleep" onclick="changeSleepLocation('sleep', 1)" >Jours</button>
+                    <button id="2" class="button-sleep" onclick="changeSleepLocation('sleep/week', 2)">Semaines</button>
+                    <button id="3" class="button-sleep" onclick="changeSleepLocation('sleep/month', 3)">Mois</button>
                 </div>
-<div id="container_sleep" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+				<a href="graph.php"><div id="container_sleep" style="min-width: 310px; height: 400px; margin: 0 auto"></div></a>
         </div>
  <script type="text/javascript">
         var sleep = {'sleep' : '', 'awake' : ''};
         changeSleepLocation('sleep', 1);
-        //console.log(sleep['sleep']);
+
         function changeSleepLocation(newLocation, id){
             if(newLocation == 'sleep'){
                 getData('sleep');
@@ -85,7 +84,7 @@
             for (var i = 0; i <= awake_length; i++) {
                 awakeData[i] = awake[''+awake_length-i+''].time;
             };
-
+            var test = 0;
             new Highcharts.Chart({
                 chart: {
                     renderTo: 'container_sleep'
@@ -99,7 +98,28 @@
                 }],
                 yAxis: [{ // Primary yAxis
                     labels: {
-                        format: '{value} h',
+                        formatter: function () {
+                            var result = 0;
+                            var minutes = 0;
+                            var heures = 0;
+                            minutes = ((this.value%1)*60).toFixed(0);
+                            heures = this.value-this.value%1;
+                            
+                            if (heures == 0)
+                                if (minutes == 0 || minutes == 1)
+                                    result = minutes+' minute';
+                                else
+                                    result = minutes+' minutes';
+                            else if (minutes == 0)
+                                if (heures == 0 || heures == 1)
+                                result = heures+' heure';
+                                else
+                                result = heures+' heures';
+                            else
+                                result = heures+' h '+minutes+' min';
+
+                        return result;
+                        },
                         style: {
                             color: Highcharts.getOptions().colors[1]
                         }
@@ -118,7 +138,28 @@
                         }
                     },
                     labels: {
-                        format: '{value} min',
+                        formatter: function () {
+                            var result = 0;
+                            var minutes = 0;
+                            var heures = 0;
+                            minutes = ((this.value%1)*60).toFixed(0);
+                            heures = this.value-this.value%1;
+                            
+                            if (heures == 0)
+                                if (minutes == 0 || minutes == 1)
+                                    result = minutes+' minute';
+                                else
+                                    result = minutes+' minutes';
+                            else if (minutes == 0)
+                                if (heures == 0 || heures == 1)
+                                    result = heures+' heure';
+                                else
+                                    result = heures+' heures';
+                            else
+                                result = heures+' h '+minutes+' min';
+
+                        return result;
+                        },
                         style: {
                             color: Highcharts.getOptions().colors[0]
                         }
@@ -128,17 +169,17 @@
 		        tooltip: {
 		            formatter: function () {
 		                var result = '<b>' + this.x + '</b>';
-
 		                $.each(this.points, function () {
-	                		var data = this.y;
-							var string = data.toString();
+		                	var minutes = 0;
+		                	var heures = 0;
+	                		var data = Math.round(this.y*100)/100;
+	                		minutes = ((data%1)*60).toFixed(0);
+							heures = data-data%1;
 	                    	result += '<br/><span style="color: '+this.series.color+';">' + this.series.name + ':</span> ';
-			            	if (Math.round(string) == string) {
-			            		result += string+' min';
-			            	}else{
-			            		string = String(Math.round(string*100)/100);
-			            		result += string.replace(".", " h ")+' min';
-			            	}
+			            	if (heures == 0)
+			            		result += minutes+' min';
+			            	else
+			            		result += heures+' h '+minutes+' min';
 		                });
 		                return result;
 		            },
@@ -157,17 +198,11 @@
                     name: 'Eveil',
                     type: 'column',
                     yAxis: 1,
-                    data: awakeData,
-	                tooltip: {
-
-					}
+                    data: awakeData
                 }, {
                     name: 'Sommeil',
                     type: 'spline',
-                    data: sleepData,
-	                tooltip: {
-	                	
-					}
+                    data: sleepData
                 }]
             });
         }

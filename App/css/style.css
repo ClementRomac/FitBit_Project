@@ -33,7 +33,7 @@ body{
     text-align: center;
     width: 100%;
     font-family: "roboto_lig";
-    background-image: url('../img/bg_co.jpg');
+    background-image: url('../img/backgroundConnexion.jpg');
     background-size: 100% 100%;
     min-height:100%;
     height:auto;
@@ -76,11 +76,7 @@ input[type='submit']{
     background-color: #262626;
     min-height:100%;
     height:auto;
-}
-
-#menu{
-    position: absolute;
-    z-index: 4;
+    position: relative;
 }
 
 header {
@@ -114,7 +110,7 @@ header h1{
 .tile-container{
     width: 90%;
     margin-left: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 5%; 
 }
 
 [class*='small-tile-']{
@@ -182,28 +178,41 @@ header h1{
     font-size: 2.3em;
 }
 
-h2{
+#faded{
+    background-color: rgba(0,0,0,0.5);
+    z-index: 5;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    height:auto;
+    display: none;
+}
+/** menu **/
+#menu{
+    width: 70%;
+    background-color: #FFF;
+    height:100%;
+    display: none;
+    top: 0;
+    z-index: 10;
+    font-family: 'roboto_lig';
+    position: absolute;
+}
+
+#menu h2{
     font-size: 3em;
     float: left;
 }
 
-h3{
+#menu h3{
     font-size: 2em;
     float: left;
 }
 
-h4{
+#menu h4{
     font-size: 4em;
     color: #16a085;
     margin-left: 20px;
-}
-
-#menu{
-    width: 70%;
-    background-color: #FFF;
-    height: 100%;
-    display: none;
-    top: 0;
 }
 
 [class*='part-']{
@@ -250,7 +259,7 @@ ul{
 }
 
 .line-2{
-    color: #262626;
+    color: #777;
 }
 
 .img-parametre{

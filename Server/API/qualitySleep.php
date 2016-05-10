@@ -1,13 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: leroy
- * Date: 09/05/2016
- * Time: 14:57
- */
-
-include 'include.php';
-
 
 // Number cycle sleep per night
 function numberSleepCycle($SleepingDay){
@@ -68,5 +59,3 @@ function QualitySleep($SleepingDay, $AwakeDay, $SleepingWeek) {
 
     return $qualitySleep;
 }
-
-var_dump(QualitySleep(487, 31, 450));

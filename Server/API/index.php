@@ -1,4 +1,5 @@
 <?php
+require_once 'qualitySleep.php';
 require_once 'vendor/autoload.php';
 
 // Create and configure Slim app
@@ -326,6 +327,20 @@ $app->get('/activity/month', function ($request, $response, $args) {
 
 });
 
+/******* SLEEP QUALITY *******/
+$app->get('/sleep_quality', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('ROUND(time, 2) AS time'))->from('SleepDay')->orderBy('date', 'DESC')->limit(1)->execute();
+	$sleep_day = $stt->fetch(PDO::FETCH_ASSOC);
 
+	$stt = $pdo->select(array('ROUND(time, 2) AS time'))->from('AwakeDay')->orderBy('date', 'DESC')->limit(1)->execute();
+	$awake_day = $stt->fetch(PDO::FETCH_ASSOC);
+
+	$stt = $pdo->select(array('ROUND(time, 2) AS time'))->from('SleepWeek')->orderBy('date', 'DESC')->limit(1)->execute();
+	$sleep_week = $stt->fetch(PDO::FETCH_ASSOC);
+
+	return $response->write(QualitySleep($sleep_day['time'], $awake_day['time'], $sleep_week['time']));
+
+});
 // Run app
 $app->run();

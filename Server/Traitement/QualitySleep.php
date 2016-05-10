@@ -69,4 +69,4 @@ function QualitySleep($SleepingDay, $AwakeDay, $SleepingWeek) {
     return $qualitySleep;
 }
 
-var_dump(QualitySleep(487, 31, 450));
+/*var_dump(QualitySleep(487, 31, 450));*/

@@ -17,9 +17,9 @@
     ?>
 
         <header class="walkB">
-            <a href="Dashboard.php"><img src="../img/back.png" class="img-back"></a>
+            <a href="Dashboard.php"><img src="../img/backW.png" class="img-back"></a>
             <h1>Activité</h1>
-            <img src="../img/footsteps-silhouette-variantW.png" class="img-moon">
+            <img src="../img/footW.png" class="img-moon">
         </header>
 
         <div id="conteneur">

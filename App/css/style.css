@@ -276,3 +276,132 @@ ul{
     color: #000;
     text-decoration: none;
 }
+
+/********** CHART PAGE **********/
+.chart-page-container{
+    background-color: #262626;
+    font-family: "roboto_lig";
+}
+
+.sleepB{
+    background-color: #34495e;
+}
+
+.walkB{
+    background-color: #27ae60;
+}
+.weightB{
+    background-color: #e67e22;
+}
+
+.sleepC{
+    color: #34495e;
+}
+.walkC{
+    color: #27ae60;
+}
+.weightC{
+    color: #e67e22;
+}
+
+.header-chart h1{
+    float: left;
+    font-family: "roboto_fin";
+}
+
+.conteneur h2{
+    padding: 30px 0;
+    font-size: 5em;
+    background-color: #FFF;
+    font-family: "roboto_fin";
+}
+
+.header-chart [class*='img-']{
+    margin-top: 40px;
+    height: 50%;
+}
+
+.img-back{
+    float: left;
+}
+
+.img-moon{
+    float: right;
+    margin-right: 60px;
+}
+
+.conteneur {
+    background-color: white;
+    width: 90%;
+    margin: 30px auto;
+    height: auto;
+    padding: 30px;
+    border-radius: 4px;
+}
+.bloc{
+    background-color: #F00;
+}
+
+.space{
+    margin-right: 30px;
+}
+.conteneur p{
+    font-size: 2.5em;
+}
+
+button{
+    height: 50px;
+    width: 170px;
+    background: none;
+    border-radius: 4px;
+    font-size: 2em;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.button-sleep{
+    border: 2px solid #34495e;
+}
+.button-walk{
+   border: 2px solid #27ae60; 
+}
+.button-activity{
+   border: 2px solid #27ae60; 
+}
+.button-weight{
+   border: 2px solid #e67e22; 
+}
+.active-sleep{
+    background-color: #34495e;
+    color: #FFF;
+}
+.active-weight{
+    background-color: #e67e22;
+    color: #FFF;
+}
+.active-walk{
+    background-color: #27ae60;
+    color: #FFF;
+}
+.active-activity{
+    background-color: #27ae60;
+    color: #FFF;
+}
+
+.bg_custom{
+    background-color: #FFF;
+}
+.bg_custom .img_back{
+    margin-top: 20px;
+}
+.bg_custom img{
+    width: 50px;
+    vertical-align:middle;
+}
+.bg_custom span{
+    font-size: 2em;
+}
+.bg_custom a{
+    color: #000;
+    text-decoration: none;
+}

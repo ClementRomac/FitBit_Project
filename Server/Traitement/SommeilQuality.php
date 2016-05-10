@@ -9,9 +9,9 @@
 //penalityWhenAwakening(440);
 
 
-//
-function penalityWhenAwakening($sleeping){
-    $res = $sleeping % 90;
+// Note sur 10  sur le temps d'éveil
+function penalityWhenAwakening($SleepingDay){
+    $res = $SleepingDay % 90;
     if ($res > 45) $res = 90 - $res;
     $res = $res/4.5; // note sur 10
     return $res;
@@ -19,24 +19,24 @@ function penalityWhenAwakening($sleeping){
 
 
 // Number cycle sleep per night
-function numberSommeilCycle($sleeping){
-    return $sleeping % 90;
+function numberSommeilCycle($SleepingDay){
+    return $SleepingDay % 90;
 }
 
 
 // Cycle sleep lost in night
-function sleepCycleLost($awake){
-    return $awake / 90;
+function sleepCycleLost($AwakeDay){
+    return $AwakeDay / 90;
 }
 
 
 //
-function  penalityNumberAwakening($sleeping, $awake){
-    $numberSommeilCycle = numberSommeilCycle($sleeping);
-    if ($numberSommeilCycle < $awake){
+function  penalityNumberAwakening($SleepingDay, $AwakeDay){
+    $numberSommeilCycle = numberSommeilCycle($SleepingDay);
+    if ($numberSommeilCycle < $AwakeDay){
         $res = 10;
     }
-    else if( $numberSommeilCycle> 2){
+    else if( $numberSommeilCycle > 2){
         $res = 7;
     }
     else if( $numberSommeilCycle==1){
@@ -53,6 +53,7 @@ function percentageFromWeek($SleepingDay, $SleepingWeek) {
     return ($SleepingDay * 100 / $SleepingWeek) - 100;
 }
 
-function QualitySleep($Sleeping) {
+
+function QualitySleep($SleepingDay) {
     
 }

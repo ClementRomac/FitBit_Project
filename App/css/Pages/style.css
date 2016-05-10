@@ -129,6 +129,20 @@ button{
     color: #FFF;
 }
 
-.center{
-    transform: translateY(20%);
+.bg_custom{
+    background-color: #FFF;
+}
+.bg_custom .img_back{
+    margin-top: 20px;
+}
+.bg_custom img{
+    width: 50px;
+    vertical-align:middle;
+}
+.bg_custom span{
+    font-size: 2em;
+}
+.bg_custom a{
+    color: #000;
+    text-decoration: none;
 }

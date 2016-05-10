@@ -30,7 +30,7 @@ body{
     text-align: center;
     font-size: 100%;
     color: white; 
-    line-height: 120px;
+    line-height: 160px;
     font-size: 2em;
     z-index: 1;
 }
@@ -154,7 +154,7 @@ h4{
 
 .img-menu{
     float: left;
-    padding-top: 30px; 
+    padding-top: 45px; 
     padding-left: 5%
 }
 

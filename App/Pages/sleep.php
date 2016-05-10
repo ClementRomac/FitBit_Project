@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>FitiBit</title></colspan="2"d >
+        <title>FitiBit</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/pages/style.css">
         <script   src="../js/zepto.min.js"></script> 

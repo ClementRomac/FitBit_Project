@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>FitiBit</title></colspan="2"d >
+        <title>FitiBit</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/pages/dashboard.css">
         <script   src="../js/zepto.min.js"></script> 
@@ -17,6 +17,7 @@
         });
         $('#content').click(function(e){
             $("#menu").toggle("hide");
+            $("#menu").css("display", "none");
             $("#content").css("background-color", "transparent");
         });
     });
@@ -39,7 +40,7 @@
         <div id="small-tile">
             <a href="weight.php">
                 <div class="squarre-1"><img src="../img/icon.png" class="img-squarre">
-                    <div class="text-1"> <span id="dashboard-weight">90</span> Kg </div>
+                    <div class="text-1"> <span id="dashboard-weight">90</span> Kg</div>
                     <div class="text-1-2"> Poids </div>
                 </div>
             </a>

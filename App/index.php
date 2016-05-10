@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>FitBit</title></colspan="2"d >
+        <title>FitBit</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>

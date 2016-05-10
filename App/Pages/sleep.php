@@ -2,7 +2,7 @@
     <head>
         <title>FitiBit</title>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" media="screen" type="text/css" href="../css/pages/style.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
         <script   src="../js/zepto.min.js"></script> 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -16,13 +16,14 @@
         header('Location: ../index.php');
     }
     ?>
-        <header class="sleepB">
-            <a href="Dashboard.php"><img src="../img/backW.png" class="img-back" alt="Retour" title="Retour"></a>
+    <div class="chart-page-container">
+        <header class="header-chart sleepB">
+            <a href="dashboard.php"><img src="../img/backW.png" class="img-back" alt="Retour" title="Retour"></a>
             <h1>Qualité de Sommeil</h1>
             <img src="../img/nightW.png" class="img-moon" alt="Sommeil" title="Sommeil">
         </header>
 
-        <div id="conteneur">
+        <div class="conteneur">
 
             <h2 class="sleepC"> Aujourd'hui </h2>
 
@@ -38,6 +39,7 @@
                 </div>
 				<div id="container_sleep" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
+    </div>
  <script type="text/javascript">
         var sleep = {'sleep' : '', 'awake' : ''};
         changeSleepLocation('sleep', 1);

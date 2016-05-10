@@ -2,7 +2,7 @@
     <head>
         <title>FitiBit</title>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" media="screen" type="text/css" href="../css/pages/style.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
         <script   src="../js/zepto.min.js"></script> 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
@@ -15,37 +15,38 @@
         header('Location: ../index.php');
     }
     ?>
+        <div class="chart-page-container">
+            <header class="header-chart walkB">
+                <a href="dashboard.php"><img src="../img/backW.png" class="img-back" alt="Retour" title="Retour"></a>
+                <h1>Activité</h1>
+                <img src="../img/footW.png" class="img-moon" alt="Activité" title="Activité">
+            </header>
 
-        <header class="walkB">
-            <a href="Dashboard.php"><img src="../img/backW.png" class="img-back" alt="Retour" title="Retour"></a>
-            <h1>Activité</h1>
-            <img src="../img/footW.png" class="img-moon" alt="Activité" title="Activité">
-        </header>
+            <div class="conteneur">
 
-        <div id="conteneur">
+                <h2 class="walkC"> Aujourd'hui </h2>
 
-            <h2 class="walkC"> Aujourd'hui </h2>
+                    <p>Nombre de pas : <span class="space"></span> <span id="steps_value">500</span></p>
+                    <p>Evolution par rapport à hier : <span class="space"></span> <span id="steps_variation">+10%</span></p>
 
-                <p>Nombre de pas : <span class="space"></span> <span id="steps_value">500</span></p>
-                <p>Evolution par rapport à hier : <span class="space"></span> <span id="steps_variation">+10%</span></p>
+                <h2 class="walkC">Distance / Pas</h2>
 
-            <h2 class="walkC">Distance / Pas</h2>
+                    <div>
+                        <button id ="1" class="button-walk active-walk" onclick="changeWalkLocation('walk', 1)">Jours</button>
+                        <button id ="2" class="button-walk" onclick="changeWalkLocation('walk/week', 2)">Semaines</button>
+                        <button id ="3" class="button-walk" onclick="changeWalkLocation('walk/month', 3)">Mois</button>
+                    </div>
+                    <div id="container_walk" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    
+                <h2 class="walkC">Activité</h2>
 
-                <div>
-                    <button id ="1" class="button-walk active-walk" onclick="changeWalkLocation('walk', 1)">Jours</button>
-                    <button id ="2" class="button-walk" onclick="changeWalkLocation('walk/week', 2)">Semaines</button>
-                    <button id ="3" class="button-walk" onclick="changeWalkLocation('walk/month', 3)">Mois</button>
-                </div>
-                <div id="container_walk" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-                
-            <h2 class="walkC">Activité</h2>
-
-                <div>
-                    <button id ="4" class="button-activity active-activity" onclick="changeActivityLocation('activity', 4)">Jours</button>
-                    <button id ="5" class="button-activity" onclick="changeActivityLocation('activity/week', 5)">Semaines</button>
-                    <button id ="6" class="button-activity" onclick="changeActivityLocation('activity/month', 6)">Mois</button>
-                </div>
-                <div id="container_activity" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    <div>
+                        <button id ="4" class="button-activity active-activity" onclick="changeActivityLocation('activity', 4)">Jours</button>
+                        <button id ="5" class="button-activity" onclick="changeActivityLocation('activity/week', 5)">Semaines</button>
+                        <button id ="6" class="button-activity" onclick="changeActivityLocation('activity/month', 6)">Mois</button>
+                    </div>
+                    <div id="container_activity" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+            </div>
         </div>
         <script type="text/javascript">
         var walk = {'steps' : '', 'distance' : ''};

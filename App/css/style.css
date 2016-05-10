@@ -16,7 +16,7 @@
     src: url('../font/roboto/Roboto-Bold.ttf');
 }
 
-{
+html{
     box-sizing: border-box;
 }
 
@@ -25,54 +25,383 @@
 }
 
 body{
-    font-family: "roboto_lig";
+    font-family: 'roboto_fin'
 }
 
-.background-image {
-  background-image: url('../img/bg_co.jpg');
-  background-size: 100% 100%;
-  display: block;
-  height: 100%;
-  position: center fixed;
-  right: 0;
-  z-index: 1;
-}
+/********** INDEX **********/
 #homepage{
     text-align: center;
-    font-size: 600%;
-    transform: translateY(30%);
     width: 100%;
-    top: 10px;
-    left: 0;
-    position: fixed;
-    right: 0;
-    z-index: 2;
+    font-family: "roboto_lig";
+    background-image: url('../img/backgroundConnexion.jpg');
+    background-size: 100% 100%;
+    min-height:100%;
+    height:auto;
 }
-h1{
+#homepage h1{
+    padding-top: 10%;
     font-family: "roboto_bold";
     color: #FFF;
-    font-size: 3.5em;
+    font-size: 15em;
+}
+.small{
+    font-size: 2.3em;
+    color: #FFF;
 }
 form{
-    padding-top: 10%;
+    margin-top: 10%;
+    padding-bottom: 5%;
 }
 input{
     background-color: #FFF;
     border-radius: 4px;
     border: none;
     padding: 0 10px;
-    font-size: 1em;
+    font-size: 2em;
     height: 200px;
     width: 90%;
     margin: 5px 0;
 }
-.small{
-    text-align: center;
-    font-size: 50px;
-    color: #FFF;
+input[type='submit']{
+    margin-top: 20px
 }
 .erreur{
     text-align: center;
     color: #c0392b;
     font-size: 50px;
+}
+
+/********** DASHBOARD **********/
+#content{
+    background-color: #262626;
+    min-height:100%;
+    height:auto;
+    position: relative;
+}
+
+header {
+    background-color: #2980b9;
+    height: 160px;
+    color: white; 
+    line-height: 160px;
+    font-size: 2em;
+    z-index: 1;
+}
+
+.img-menu{
+    float: left;
+    margin-top: 45px; 
+    margin-left: 5%
+}
+
+header h1{
+    float: left;
+    margin-left: 5%;
+}
+
+.date{
+    color: white;
+    text-align: center;
+    margin-top: 2%;
+    font-size: 2em;
+    font-family: 'roboto_lig';
+}
+
+.tile-container{
+    width: 90%;
+    margin-left: 5%;
+    padding-bottom: 5%; 
+}
+
+[class*='small-tile-']{
+    float:left;
+    text-align: center;
+    height: 400px;
+    width: 48%;
+    margin-top: 3%;  
+    border-radius: 4px;
+    color: white;
+}
+
+.small-tile-weight{
+    background-color: #e67e22;
+}
+
+.small-tile-walk{
+    background-color: #27ae60;
+    margin-left: 4%;
+}
+
+[class*='small-tile-'] p{
+    margin-bottom: 10px;
+}
+
+[class*='large-tile-']{
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    margin-top: 3%;  
+    border-radius: 4px;
+    color: white;
+}
+
+.large-tile-sleep{
+    background-color: #34495E;
+}
+
+.img-tile {
+    margin: 40px 0;
+    height:40%;
+}
+
+.large-tile-bottom{
+    width: 90%;
+    height: 40%;
+    margin:0 5%;
+}
+
+.large-tile-bottom .left{
+    float: left;
+}
+
+.large-tile-bottom .right{
+    float: right;
+}
+
+.large-text{
+    font-size: 3em;
+    font-family: 'roboto_bold';
+}
+
+.small-text{
+    font-family: 'roboto_fin';
+    font-size: 2.3em;
+}
+
+#faded{
+    background-color: rgba(0,0,0,0.5);
+    z-index: 5;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    height:auto;
+    display: none;
+}
+/** menu **/
+#menu{
+    width: 70%;
+    background-color: #FFF;
+    height:100%;
+    display: none;
+    top: 0;
+    z-index: 10;
+    font-family: 'roboto_lig';
+    position: absolute;
+}
+
+#menu h2{
+    font-size: 3em;
+    float: left;
+}
+
+#menu h3{
+    font-size: 2em;
+    float: left;
+}
+
+#menu h4{
+    font-size: 4em;
+    color: #16a085;
+    margin-left: 20px;
+}
+
+[class*='part-']{
+    width: 100%;
+    border-bottom-color: #262626;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.part-name{
+    height: 170px;
+}
+
+.part-profil{
+    height: 340px;
+}
+
+.img-profil{
+    float: left;
+    width: 150px;
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: #16a085;
+    border-radius: 100%;
+}
+
+.nom-prenom{
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+    width: 50px;
+}
+
+li {
+    margin-top: 10px;
+    font-size: 2em;
+}
+
+ul{
+    margin-left: 20px;
+    list-style-type: none;
+    width: 40%;
+    float: left;
+}
+
+.line-2{
+    color: #777;
+}
+
+.img-parametre{
+    width: 40px;
+}
+
+.aide-deconnexion{
+    margin-left: 20px;
+}
+
+.part-parametre a{
+    margin-left: 20px;
+    font-size: 3em;
+    color: #000;
+    text-decoration: none;
+}
+
+/********** CHART PAGE **********/
+.chart-page-container{
+    background-color: #262626;
+    font-family: "roboto_lig";
+}
+
+.sleepB{
+    background-color: #34495e;
+}
+
+.walkB{
+    background-color: #27ae60;
+}
+.weightB{
+    background-color: #e67e22;
+}
+
+.sleepC{
+    color: #34495e;
+}
+.walkC{
+    color: #27ae60;
+}
+.weightC{
+    color: #e67e22;
+}
+
+.header-chart h1{
+    float: left;
+    font-family: "roboto_fin";
+}
+
+.conteneur h2{
+    padding: 30px 0;
+    font-size: 5em;
+    background-color: #FFF;
+    font-family: "roboto_fin";
+}
+
+.header-chart [class*='img-']{
+    margin-top: 40px;
+    height: 50%;
+}
+
+.img-back{
+    float: left;
+}
+
+.img-moon{
+    float: right;
+    margin-right: 60px;
+}
+
+.conteneur {
+    background-color: white;
+    width: 90%;
+    margin: 30px auto;
+    height: auto;
+    padding: 30px;
+    border-radius: 4px;
+}
+.bloc{
+    background-color: #F00;
+}
+
+.space{
+    margin-right: 30px;
+}
+.conteneur p{
+    font-size: 2.5em;
+}
+
+button{
+    height: 50px;
+    width: 170px;
+    background: none;
+    border-radius: 4px;
+    font-size: 2em;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.button-sleep{
+    border: 2px solid #34495e;
+}
+.button-walk{
+   border: 2px solid #27ae60; 
+}
+.button-activity{
+   border: 2px solid #27ae60; 
+}
+.button-weight{
+   border: 2px solid #e67e22; 
+}
+.active-sleep{
+    background-color: #34495e;
+    color: #FFF;
+}
+.active-weight{
+    background-color: #e67e22;
+    color: #FFF;
+}
+.active-walk{
+    background-color: #27ae60;
+    color: #FFF;
+}
+.active-activity{
+    background-color: #27ae60;
+    color: #FFF;
+}
+
+.bg_custom{
+    background-color: #FFF;
+}
+.bg_custom .img_back{
+    margin-top: 20px;
+}
+.bg_custom img{
+    width: 50px;
+    vertical-align:middle;
+}
+.bg_custom span{
+    font-size: 2em;
+}
+.bg_custom a{
+    color: #000;
+    text-decoration: none;
 }

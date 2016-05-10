@@ -13,17 +13,19 @@ include '../BDD.php';
 // Max$column, $table.date, numberMaxi$column
 function max_per_table($table, $column, $label) {
     global $bdd;
-    global $dataSet;
-    $sql = 'SELECT MAX( alias.'.$column.' ) AS Max'.$column.', alias.date, (
+    $sql = 'SELECT alias.date, alias.'.$column.' AS Max'.$column.', (
     SELECT COUNT( * ) 
         FROM '.$table.' alias
         WHERE alias.'.$column.' = (
     SELECT MAX( '.$column.' )
             FROM '.$table.')) as numberMaxi'.$column.'
-    FROM '.$table.' alias';
+    FROM '.$table.' alias
+    WHERE alias.'.$column.' = (
+    SELECT MAX('.$column.')
+     FROM '.$table.' )';
     $query = $bdd->query($sql);
     $result = $query->fetch();
-    $bdd->query('INSERT INTO Records (label, record, date, nbr_record) VALUES ("' . $label . '", "'.$result[0].'", "'.$result[1].'", "'.$result[2].'")');
+    $bdd->query('INSERT INTO Records (label, record, date, nbr_record) VALUES ("' . $label . '", "'.$result[1].'", "'.$result[0].'", "'.$result[2].'")');
 }
 
 
@@ -53,4 +55,3 @@ max_per_table("ActiveDay", "time", "Active");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 max_per_table("VeryActiveDay", "time", "VeryActive");
 */
-

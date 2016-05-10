@@ -231,7 +231,6 @@ function renderWalk(walk_array, renderContainer){
 }
 
 function renderActivity(activityLocation, renderContainer){
-    console.log(activityLocation)
     var activity_length = (activityLocation == "activity" ? 7 : (activityLocation == "activity/week" ? 4 : 12)) - 1;
     var activity = JSON.parse(localStorage[''+activityLocation+'']);
 
@@ -521,7 +520,11 @@ function renderImc(imcLocation, renderContainer){
 /********************* FULL SCREEN *********************/
 
 function fullScreenChart(chartLocation, container){
-    if(container.path[4].className.baseVal != 'highcharts-legend'){
+    // If the text or the image of the legend has been clicked
+    var clicked_part_image = container.path[4].className.baseVal == 'highcharts-legend';
+    var clicked_part_span = container.path[5].className.baseVal == 'highcharts-legend';
+
+    if(!clicked_part_span && !clicked_part_image){
         var i = 0;
         if(typeof(chartLocation) == "object"){
             i = Object.keys(chartLocation).length - 1;

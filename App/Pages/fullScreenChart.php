@@ -11,7 +11,7 @@
         <script type="text/javascript" src="../js/renderCharts.js"></script>
     </head>
 <body class="bg_custom">
-    <a><div class="img-back"><img src="../img/backB.png" alt="back"> <span>Retour</span></div></a>
+    <a><div class="img-back"><img src="../img/backB.png" alt="back" alt="Retour" title="Retour"> <span>Retour</span></div></a>
     <div id="container_full_screen" class="center" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 <script type="text/javascript">

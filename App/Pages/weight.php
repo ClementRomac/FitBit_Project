@@ -20,9 +20,9 @@
         <div class="chart-page-container">
 
             <header class="header-chart weightB">
-                <a href="dashboard.php"><img src="../img/backW.png" class="img-back"></a>
+                <a href="dashboard.php"><img src="../img/backW.png" class="img-back" alt="Retour" title="Retour"></a>
                 <h1>Poids</h1>
-                <img src="../img/weightW.png" class="img-moon">
+                <img src="../img/weightW.png" class="img-moon" alt="Poids" title="Poids">
             </header>
 
 

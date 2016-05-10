@@ -6,13 +6,13 @@
  * Time: 14:57
  */
 
-penalityWhenAwakening(440);
+//penalityWhenAwakening(440);
 
 function penalityWhenAwakening($sleeping){
     $res = $sleeping % 90;
     if ($res > 45) $res = 90 - $res;
     $res = $res/4.5; // note sur 10
-    echo $res;
+    return $res;
 }
 
 function numberSommeilCycle($sleeping){

@@ -29,27 +29,28 @@ function max_per_table($table, $column, $label) {
 
 /*
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
-$dump = max_per_table("WeightDay", "weight", "Weight");
+max_per_table("WeightDay", "weight", "Weight");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
-$dump = max_per_table("Imc", "imc", "Imc");
+max_per_table("Imc", "imc", "Imc");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
-$dump = max_per_table("SleepDay", "time", "Sleeping");
+max_per_table("SleepDay", "time", "Sleeping");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
-$dump = max_per_table("AwakeDay", "time", "Awake");
+max_per_table("AwakeDay", "time", "Awake");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
-$dump = max_per_table("CaloriesDay", "calories", "Calories");
+max_per_table("CaloriesDay", "calories", "Calories");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
-$dump = max_per_table("StepsDay", "steps", "Steps");
+max_per_table("StepsDay", "steps", "Steps");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
-$dump = max_per_table("DistanceDay", "distance", "Distance");
+max_per_table("DistanceDay", "distance", "Distance");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
-$dump = max_per_table("FloorsDay", "floors", "Floors");
+max_per_table("FloorsDay", "floors", "Floors");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
-$dump = max_per_table("SedentaryDay", "time", "Sedentary");
+max_per_table("SedentaryDay", "time", "Sedentary");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
-$dump = max_per_table("MobileDay", "time", "Mobile");
+max_per_table("MobileDay", "time", "Mobile");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
-$dump = max_per_table("ActiveDay", "time", "Active");
+max_per_table("ActiveDay", "time", "Active");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
-$dump = max_per_table("VeryActiveDay", "time", "VeryActive");
+max_per_table("VeryActiveDay", "time", "VeryActive");
 */
+

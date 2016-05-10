@@ -3,25 +3,40 @@
         <title>FitiBit</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
-        <script   src="../js/zepto.min.js"></script> 
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"   
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
+        <script>
+        $(function(){
+            $(document.body).click(function(){
+                isTheMenu = jQuery.grep($(event.target).parents(), function( n, i ) {
+                  return ( n.id == "menu");
+                });
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script>
-    $(document).ready(function(){
-        $('.img-menu').click(function(e){
-            $("#faded").css("display", "block");
-            $("#menu").toggle("slow");
-            e.stopPropagation(); // Prevent bubbling
-        });
-        $('#content').click(function(e){
-            $("#menu").toggle("hide").promise().done(function(){
-                $("#menu").css("display", "none");
-                $("#faded").css("display", "none");
+                if (isTheMenu.length == 0 && $('#menu').css('display') != 'none') {
+                    $("#menu").toggle("hide").promise().done(function(){
+                        $("#faded").css("display", "none");
+                    });
+                }
+                else if($('#menu').css('display') == 'none' && event.target.className == 'img-menu'){
+                    $("#faded").css("display","block");
+                    $("#menu").toggle("slow");
+                }
             });
         });
-    });
-    </script>
+        /*$(document).ready(function(){
+            $('#hamburger-menu').click(function(e){
+                $("#faded").css("display","block");
+                $("#menu").toggle("slow");
+
+                $('#content').click(function(e){
+                    $("#menu").toggle("hide")
+                    //$("#menu").css("display", "none");
+                    $("#faded").css("display", "none");
+                });
+            });
+        });*/
+        </script>
     
     </head>
     <body>

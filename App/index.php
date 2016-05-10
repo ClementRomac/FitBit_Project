@@ -16,6 +16,6 @@
                 <input name="submit" type="submit" id="submit" value="Connexion"/>
             </form>
         </div>
-        <script type="text/javascript" src="js/Login.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
     </body>
 </html>

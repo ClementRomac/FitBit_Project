@@ -12,7 +12,7 @@ $(document).ready(function(){
             function(data){
                 console.log(data + "feqda");
                 if(data == 'ok'){
-                    document.location.href="Pages/dashboard.php"
+                    document.location.href="pages/dashboard.php"
                 }
                 else{
                     $("#resultat").html("<p class='erreur'>Erreur lors de la connexion...</p>");

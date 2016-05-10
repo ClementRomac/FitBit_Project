@@ -2,7 +2,7 @@
     <head>
         <title>FitiBit</title>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" media="screen" type="text/css" href="../css/pages/style.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
         <script   src="../js/zepto.min.js"></script> 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -17,31 +17,33 @@
         header('Location: ../index.php');
     }
     ?>
+        <div class="chart-page-container">
 
-        <header class="weightB">
-            <a href="Dashboard.php"><img src="../img/back.png" class="img-back"></a>
-            <h1>Poids</h1>
-            <img src="../img/iconW.png" class="img-moon">
-        </header>
+            <header class="header-chart weightB">
+                <a href="dashboard.php"><img src="../img/backW.png" class="img-back"></a>
+                <h1>Poids</h1>
+                <img src="../img/weightW.png" class="img-moon">
+            </header>
 
 
-        <div id="conteneur">
+            <div class="conteneur">
 
-            <h2 class="weightC">Aujourd'hui</h2>
-                <p>Poids : <span class="space"></span> <span id="weight_value">80</span> Kg</p>
+                <h2 class="weightC">Aujourd'hui</h2>
+                    <p>Poids : <span class="space"></span> <span id="weight_value">80</span> Kg</p>
 
-            <h2 class="weightC">Historique du poids</h2>
+                <h2 class="weightC">Historique du poids</h2>
 
-                <div>
-                    <button id ="1" class="button-weight active-weight" onclick="changeWeightLocation('weight/week', 1)">Semaines</button>
-                    <button id ="2" class="button-weight" onclick="changeWeightLocation('weight/month', 2)">Deux mois</button>
-                    <button id ="3" class="button-weight" onclick="changeWeightLocation('weight/year', 3)">Années</button>
-                </div>
-                <div id="container_weight" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-                
-            <h2 class="weightC">IMC</h2>
+                    <div>
+                        <button id ="1" class="button-weight active-weight" onclick="changeWeightLocation('weight/week', 1)">Semaines</button>
+                        <button id ="2" class="button-weight" onclick="changeWeightLocation('weight/month', 2)">Deux mois</button>
+                        <button id ="3" class="button-weight" onclick="changeWeightLocation('weight/year', 3)">Années</button>
+                    </div>
+                    <div id="container_weight" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    
+                <h2 class="weightC">IMC</h2>
 
-                <div id="container_imc" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    <div id="container_imc" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+            </div>
         </div>
 
         <script type="text/javascript">

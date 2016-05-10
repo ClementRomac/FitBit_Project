@@ -17,7 +17,7 @@
     }
     ?>
         <header class="sleepB">
-            <a href="Dashboard.php"><img src="../img/back.png" class="img-back"></a>
+            <a href="Dashboard.php"><img src="../img/backW.png" class="img-back"></a>
             <h1>Qualité de Sommeil</h1>
             <img src="../img/nightW.png" class="img-moon">
         </header>

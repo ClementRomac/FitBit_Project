@@ -35,4 +35,6 @@ feed_bdd_distance("steps", "StepsWeek", "week");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 feed_bdd_distance("steps", "StepsMonth", "month");
 // DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
+feed_bdd_distance("floors", "FloorsDay", "day");
+// DO NOT RUN THIS CODE | DO NOT RUN THIS CODE | DO NOT RUN THIS CODE
 */

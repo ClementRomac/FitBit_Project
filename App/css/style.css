@@ -76,11 +76,7 @@ input[type='submit']{
     background-color: #262626;
     min-height:100%;
     height:auto;
-}
-
-#menu{
-    position: absolute;
-    z-index: 4;
+    position: relative;
 }
 
 header {
@@ -114,7 +110,7 @@ header h1{
 .tile-container{
     width: 90%;
     margin-left: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 5%; 
 }
 
 [class*='small-tile-']{
@@ -182,28 +178,41 @@ header h1{
     font-size: 2.3em;
 }
 
-h2{
+#faded{
+    background-color: rgba(0,0,0,0.5);
+    z-index: 5;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    height:auto;
+    display: none;
+}
+/** menu **/
+#menu{
+    width: 70%;
+    background-color: #FFF;
+    height:100%;
+    display: none;
+    top: 0;
+    z-index: 10;
+    font-family: 'roboto_lig';
+    position: absolute;
+}
+
+#menu h2{
     font-size: 3em;
     float: left;
 }
 
-h3{
+#menu h3{
     font-size: 2em;
     float: left;
 }
 
-h4{
+#menu h4{
     font-size: 4em;
     color: #16a085;
     margin-left: 20px;
-}
-
-#menu{
-    width: 70%;
-    background-color: #FFF;
-    height: 100%;
-    display: none;
-    top: 0;
 }
 
 [class*='part-']{
@@ -250,7 +259,7 @@ ul{
 }
 
 .line-2{
-    color: #262626;
+    color: #777;
 }
 
 .img-parametre{
@@ -264,6 +273,140 @@ ul{
 .part-parametre a{
     margin-left: 20px;
     font-size: 3em;
+    color: #000;
+    text-decoration: none;
+}
+
+/********** CHART PAGE **********/
+.chart-page-container{
+    background-color: #262626;
+    font-family: "roboto_lig";
+}
+
+.sleepB{
+    background-color: #34495e;
+}
+
+.walkB{
+    background-color: #27ae60;
+}
+.weightB{
+    background-color: #e67e22;
+}
+
+.sleepC{
+    color: #34495e;
+}
+.walkC{
+    color: #27ae60;
+}
+.weightC{
+    color: #e67e22;
+}
+
+.header-chart h1{
+    float: left;
+    font-family: "roboto_fin";
+}
+
+.conteneur h2{
+    padding: 30px 0;
+    font-size: 5em;
+    background-color: #FFF;
+    font-family: "roboto_fin";
+}
+
+.header-chart [class*='img-']{
+    margin-top: 40px;
+    height: 50%;
+}
+
+.img-back{
+    float: left;
+    margin-top: 10px;
+}
+
+.img-back span{
+    vertical-align: middle
+}
+
+.img-moon{
+    float: right;
+    margin-right: 60px;
+}
+
+.conteneur {
+    background-color: white;
+    width: 90%;
+    margin: 30px auto;
+    height: auto;
+    padding: 30px;
+    border-radius: 4px;
+}
+.bloc{
+    background-color: #F00;
+}
+
+.space{
+    margin-right: 30px;
+}
+.conteneur p{
+    font-size: 2.5em;
+}
+
+button{
+    height: 50px;
+    width: 170px;
+    background: none;
+    border-radius: 4px;
+    font-size: 2em;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.button-sleep{
+    border: 2px solid #34495e;
+}
+.button-walk{
+   border: 2px solid #27ae60; 
+}
+.button-activity{
+   border: 2px solid #27ae60; 
+}
+.button-weight{
+   border: 2px solid #e67e22; 
+}
+.active-sleep{
+    background-color: #34495e;
+    color: #FFF;
+}
+.active-weight{
+    background-color: #e67e22;
+    color: #FFF;
+}
+.active-walk{
+    background-color: #27ae60;
+    color: #FFF;
+}
+.active-activity{
+    background-color: #27ae60;
+    color: #FFF;
+}
+
+.bg_custom{
+    background-color: #FFF;
+}
+.bg_custom .img_back{
+    margin-top: 20px;
+}
+.bg_custom img{
+    width: 50px;
+    vertical-align:middle;
+}
+.bg_custom span{
+    font-size: 2em;
+}
+.bg_custom a{
     color: #000;
     text-decoration: none;
 }

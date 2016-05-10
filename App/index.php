@@ -8,7 +8,7 @@
     <body>
         <div id="homepage">
             <h1>FitBit</h1>    
-            <p class="small">Votre santée au delà de vos limites</p>    
+            <p class="small">Votre santé au delà de vos limites</p>    
             <div id="resultat"></div>
             <form >
                 <input name="username" id="username" type="text" placeholder="Nom d'utilisateur"><br>

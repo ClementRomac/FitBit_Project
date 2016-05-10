@@ -11,7 +11,7 @@ penalityWhenAwakening(440);
 function penalityWhenAwakening($sleeping){
     $res = $sleeping % 90;
     if ($res > 45) $res = 90 - $res;
-    $res = 45/4.5; // note sur 10
+    $res = $res/4.5; // note sur 10
     echo $res;
 }
 
@@ -25,5 +25,17 @@ function sleepCycleLost($awake){
 
 function  penalityNumberAwakening($sleeping, $awake){
     $numberSommeilCycle = numberSommeilCycle($sleeping);
+    if ($numberSommeilCycle < $awake){
+        $res = 10;
+    }
+    else if( $numberSommeilCycle> 2){
+        $res = 7;
+    }
+    else if( $numberSommeilCycle==1){
+        $res = 5;
+    }
+    else{
+        $res =0;
+    }
     
 }

@@ -323,6 +323,11 @@ ul{
 
 .img-back{
     float: left;
+    margin-top: 10px;
+}
+
+.img-back span{
+    vertical-align: middle
 }
 
 .img-moon{

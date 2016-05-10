@@ -3,15 +3,15 @@
     <head>
         <title>FitiBit</title>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" media="screen" type="text/css" href="../css/pages/style.css">
-        <script   src="../js/zepto.min.js"></script> 
+        <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
+        <script src="../js/zepto.min.js"></script> 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
         <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
         <script type="text/javascript" src="../js/renderCharts.js"></script>
     </head>
 <body class="bg_custom">
-    <a><div class="img_back"><img src="../img/backB.png" alt="back"> <span>Retour</span></div></a>
+    <a><div class="img-back"><img src="../img/backB.png" alt="back"> <span>Retour</span></div></a>
     <div id="container_full_screen" class="center" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 <script type="text/javascript">

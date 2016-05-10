@@ -41,3 +41,6 @@ function percentageFromWeek($SleepingDay, $SleepingWeek) {
     return ($SleepingDay * 100 / $SleepingWeek) - 100;
 }
 
+function QualitySleep($Sleeping) {
+    
+}

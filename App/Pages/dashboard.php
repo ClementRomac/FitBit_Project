@@ -116,7 +116,7 @@
                 </div>
                 <div class="part-parametre">
                     <h4>Paramètre</h4>
-                    <div class="aide-deconnexion"><img src="../img/infoB.png" class="img-parametre" alt="Information" title="Information"><span class="span-aide-deco"> <a href="#">Aide</a> </span></div>
+                    <div class="aide-deconnexion"><img src="../img/infoB.png" class="img-parametre" alt="Information" title="Information"><span class="span-aide-deco"> <a href="help.php">Aide</a> </span></div>
                     <div class="aide-deconnexion"><img src="../img/logoutB.png" class="img-parametre" alt="Déconnexion" title="Déconnexion" ><span class="span-aide-deco"> <a href="../deconnexion.php">Déconnexion</a> </span></div>
                 </div>
             </div>  

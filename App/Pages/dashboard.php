@@ -33,37 +33,48 @@
     ?>
     <div id="content">
         <header>
-            <img src="../img/line.png" class="img-menu" title="menu_image" alt="image pour accèder au menu">
+            <img src="../img/hamburgerW.png" class="img-menu" title="menu_image" alt="image pour accèder au menu">
             <h1>Tableau de bord</h1>
         </header>
         <div class="date"> <script type="text/javascript" src="../js/time.js"></script> </div>
 
-        <a href="weight.php">
-            <div class="small-tile-weight">
-                <img src="../img/icon.png" class="img-squarre" title="icon-weight" alt="icone du poids">
-                <div class="text-1"> <span id="dashboard-weight">90</span> Kg</div>
-                <div class="text-1-2"> Poids </div>
-            </div>
-        </a>
-        <a href="walk.php">
-            <div class="small-tile-walk">
-                <img src="../img/footsteps-silhouette-variant.png" 
-                    class="img-squarre"  title="icon-walk" alt="icone de l'activité">
-                <div class="text-2"> <span id="dashboard-steps">852</span> Pas </div>
-                <div class="text-2-2"> <span id="dashboard-steps-variation">+ 8.5 %</span> </div>
-            </div>
-        </a>
-
-        <a href="sleep.php">
-            <div id="large-tile">
-                <div class="rectangle">
-                    <img src="../img/night.png" class="img-rectangle" title="icon-sleep" alt="icone du sommeil">
-                    <div class="text-3"> Sommeil </div>
-                    <div class="text-3-2"> <span id="dashboard-sleep">852</span> </div>  
-                    <div class="text-3-3"> 8.5/10 </div>
+        <div class="tile-container">
+            <a href="weight.php">
+                <div class="small-tile-weight">
+                    <img src="../img/weightW.png" class="img-tile" 
+                        title="icon-weight" alt="icone du poids">
+                    <p> <span id="dashboard-weight" class="large-text" >90</span> <span class="small-text">Kg</span></p>
+                    <p> <span id="dashboard-imc" class="large-text" >25</span> <span class="small-text">IMC</span></p>
                 </div>
-            </div>
-        </a>
+            </a>
+            <a href="walk.php">
+                <div class="small-tile-walk">
+                    <img src="../img/footW.png" class="img-tile" 
+                        title="icon-walk" alt="icone de l'activité">
+                    <p> <span id="dashboard-steps" class="large-text" >852</span> <span class="small-text">Pas</span></p>
+                    <p> <span id="dashboard-steps-variation" class="small-text">+ 8.5 %</span></p>
+                </div>
+            </a>
+            <div style="clear:both"></div>
+
+            <a href="sleep.php">
+                <div class="large-tile-sleep">
+                    <img src="../img/nightW.png" class="img-tile" 
+                        title="icon-sleep" alt="icone du sommeil">
+                    <div class="large-tile-bottom">
+                        <div class="left">
+                            <p class="large-text"> <span id="dashboard-sleep">6h 52min</span> </p>
+                            <p class="small-text"> Heures de sommeil </p>
+                        </div>
+                        <div class="right">
+                            <p class="large-text"> +8% </p>
+                            <p class="small-text"> Qualité de sommeil </p>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
     
     </div>     
         <div id="menu">

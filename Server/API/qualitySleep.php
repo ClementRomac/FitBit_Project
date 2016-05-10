@@ -1,16 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: leroy
- * Date: 09/05/2016
- * Time: 14:57
- */
-
-include 'include.php';
-
 
 // Number cycle sleep per night
 function numberSleepCycle($SleepingDay){
+    $SleepingDay *= 60;
     $modulo = 90;
     $reste = $SleepingDay % 90;
     $sleep_cycle = ($SleepingDay - $reste) / $modulo;
@@ -23,12 +15,15 @@ function numberSleepCycle($SleepingDay){
 
 // Cycle sleep lost in night
 function sleepCycleLost($AwakeDay){
+    $AwakeDay *= 60;
     return $AwakeDay / 90;
 }
 
 
 //
 function  penaltyNumberAwakening($SleepingDay, $AwakeDay){
+    $AwakeDay *= 60;
+    $SleepingDay *= 60;
     $numberSommeilCycle = numberSleepCycle($SleepingDay);
     if ($numberSommeilCycle < $AwakeDay)
         $res = 1;
@@ -44,6 +39,8 @@ function  penaltyNumberAwakening($SleepingDay, $AwakeDay){
 
 // Return % différentiel du sommeil sur la moyenne de la semaine passée.
 function percentageFromWeek($SleepingDay, $SleepingWeek) {
+    $SleepingDay *= 60;
+    $SleepingWeek *= 60;
     return ($SleepingDay * 100 / $SleepingWeek) - 100;
 }
 
@@ -68,5 +65,3 @@ function QualitySleep($SleepingDay, $AwakeDay, $SleepingWeek) {
 
     return $qualitySleep;
 }
-
-/*var_dump(QualitySleep(487, 31, 450));*/

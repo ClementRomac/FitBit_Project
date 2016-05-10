@@ -520,19 +520,19 @@ function renderImc(imcLocation, renderContainer){
 
 /********************* FULL SCREEN *********************/
 
-function fullScreenChart(location, container){
+function fullScreenChart(chartLocation, container){
     if(container.path[4].className.baseVal != 'highcharts-legend'){
         var i = 0;
-        if(typeof(location) == "object"){
-            i = Object.keys(location).length - 1;
+        if(typeof(chartLocation) == "object"){
+            i = Object.keys(chartLocation).length - 1;
         }else{
-            location = {"key" : location};
+            chartLocation = {"key" : chartLocation};
         }
 
         var input = "";
         for (j = 0; j <= i; j++) {
-            var key = Object.keys(location)[j];
-            input+= '<input type="text" name="'+key+'" value="'+location[key]+'"/>';
+            var key = Object.keys(chartLocation)[j];
+            input+= '<input type="text" name="'+key+'" value="'+chartLocation[key]+'"/>';
         };
         
         var form = $('<form action="fullScreenChart.php" method="post" style="display:none">'+input+'</form>');

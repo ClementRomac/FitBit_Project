@@ -2,7 +2,7 @@
     <head>
         <title>FitiBit</title>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" media="screen" type="text/css" href="../css/pages/dashboard.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
         <script   src="../js/zepto.min.js"></script> 
         <script type="text/javascript" src="../js/callAPI.js"></script>
 

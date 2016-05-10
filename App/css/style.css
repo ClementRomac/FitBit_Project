@@ -281,6 +281,8 @@ ul{
 .chart-page-container{
     background-color: #262626;
     font-family: "roboto_lig";
+    padding-bottom: 20px;
+    min-height: 100%;
 }
 
 .sleepB{

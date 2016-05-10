@@ -24,18 +24,6 @@
                 }
             });
         });
-        /*$(document).ready(function(){
-            $('#hamburger-menu').click(function(e){
-                $("#faded").css("display","block");
-                $("#menu").toggle("slow");
-
-                $('#content').click(function(e){
-                    $("#menu").toggle("hide")
-                    //$("#menu").css("display", "none");
-                    $("#faded").css("display", "none");
-                });
-            });
-        });*/
         </script>
     
     </head>
@@ -83,7 +71,7 @@
                                 <p class="small-text"> Heures de sommeil </p>
                             </div>
                             <div class="right">
-                                <p class="large-text"> +8% </p>
+                                <p class="large-text"> <span id="dashboard-sleep-quality">+8%</span> </p>
                                 <p class="small-text"> Qualité de sommeil </p>
                             </div>
                             <div style="clear:both"></div>
@@ -126,10 +114,15 @@
             getData("weight");
             getData("steps");
             getData("sleep");
+            getData("imc");
+            getData("sleep_quality");
 
             function renderChart (location) {
                 if(location == 'weight'){
                     $("#dashboard-weight").text(JSON.parse(localStorage[''+location+''])[0].weight);
+                }
+                else if(location == 'imc'){
+                    $("#dashboard-imc").text(JSON.parse(localStorage[''+location+''])[0].imc);
                 }
                 else if(location == 'steps'){
                     var steps_today = JSON.parse(localStorage[''+location+''])[0].steps;
@@ -145,6 +138,10 @@
                     minutes = ((data%1)*60).toFixed(0);
                     heures = data-data%1;
                     $("#dashboard-sleep").text(heures+"h "+minutes+"min");
+                }
+                else if(location == 'sleep_quality'){
+                    var quality = JSON.parse(localStorage[''+location+'']).sleep_quality;
+                    $("#dashboard-sleep-quality").text((quality >= 0 ? "+ " : "") + quality + " %");
                 }
             }
         </script>

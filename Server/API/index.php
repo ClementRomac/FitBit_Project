@@ -339,7 +339,10 @@ $app->get('/sleep_quality', function ($request, $response, $args) {
 	$stt = $pdo->select(array('ROUND(time, 2) AS time'))->from('SleepWeek')->orderBy('date', 'DESC')->limit(1)->execute();
 	$sleep_week = $stt->fetch(PDO::FETCH_ASSOC);
 
-	return $response->write(QualitySleep($sleep_day['time'], $awake_day['time'], $sleep_week['time']));
+	$json = array('sleep_quality' => QualitySleep($sleep_day['time'], $awake_day['time'], $sleep_week['time']));
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
 
 });
 // Run app

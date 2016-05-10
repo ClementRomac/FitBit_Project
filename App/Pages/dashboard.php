@@ -32,31 +32,35 @@
         }
     ?>
     <div id="content">
-        <div id="header">
-            <img src="../img/line.png" class="img-menu">
+        <header>
+            <img src="../img/line.png" class="img-menu" title="menu_image" alt="image pour accèder au menu">
             <h1>Tableau de bord</h1>
-        </div>
+        </header>
         <div class="date"> <script type="text/javascript" src="../js/time.js"></script> </div>
-        <div id="small-tile">
-            <a href="weight.php">
-                <div class="squarre-1"><img src="../img/icon.png" class="img-squarre">
-                    <div class="text-1"> <span id="dashboard-weight">90</span> Kg</div>
-                    <div class="text-1-2"> Poids </div>
-                </div>
-            </a>
-            <a href="walk.php">
-                <div class="squarre-2"><img src="../img/footsteps-silhouette-variant.png" class="img-squarre">
-                    <div class="text-2"> <span id="dashboard-steps">852</span> Pas </div>
-                    <div class="text-2-2"> <span id="dashboard-steps-variation">+ 8.5 %</span> </div>
-                </div>
-            </a>
-        </div>
-        <a href="Sleep.php">
+
+        <a href="weight.php">
+            <div class="small-tile-weight">
+                <img src="../img/icon.png" class="img-squarre" title="icon-weight" alt="icone du poids">
+                <div class="text-1"> <span id="dashboard-weight">90</span> Kg</div>
+                <div class="text-1-2"> Poids </div>
+            </div>
+        </a>
+        <a href="walk.php">
+            <div class="small-tile-walk">
+                <img src="../img/footsteps-silhouette-variant.png" 
+                    class="img-squarre"  title="icon-walk" alt="icone de l'activité">
+                <div class="text-2"> <span id="dashboard-steps">852</span> Pas </div>
+                <div class="text-2-2"> <span id="dashboard-steps-variation">+ 8.5 %</span> </div>
+            </div>
+        </a>
+
+        <a href="sleep.php">
             <div id="large-tile">
-                <div class="rectangle"><img src="../img/night.png" class="img-rectangle">
-                <div class="text-3"> Sommeil </div>
-                <div class="text-3-2"> <span id="dashboard-sleep">852</span> </div>  
-                <div class="text-3-3"> 8.5/10 </div>
+                <div class="rectangle">
+                    <img src="../img/night.png" class="img-rectangle" title="icon-sleep" alt="icone du sommeil">
+                    <div class="text-3"> Sommeil </div>
+                    <div class="text-3-2"> <span id="dashboard-sleep">852</span> </div>  
+                    <div class="text-3-3"> 8.5/10 </div>
                 </div>
             </div>
         </a>

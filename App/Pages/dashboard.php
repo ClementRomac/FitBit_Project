@@ -49,16 +49,16 @@
                     <div class="small-tile-weight">
                         <img src="../img/weightW.png" class="img-tile" 
                             title="icon-weight" alt="icone du poids">
-                        <p> <span id="dashboard-weight" class="large-text" >90</span> <span class="small-text">Kg</span></p>
-                        <p> <span id="dashboard-imc" class="large-text" >25</span> <span class="small-text">IMC</span></p>
+                        <p> <span id="dashboard-weight" class="large-text" >Chargement...</span> <span class="small-text">Kg</span></p>
+                        <p> <span id="dashboard-imc" class="large-text" >Chargement...</span> <span class="small-text">IMC</span></p>
                     </div>
                 </a>
                 <a href="walk.php">
                     <div class="small-tile-walk">
                         <img src="../img/footW.png" class="img-tile" 
                             title="icon-walk" alt="icone de l'activité">
-                        <p> <span id="dashboard-steps" class="large-text" >852</span> <span class="small-text"> Pas</span></p>
-                        <p> <span id="dashboard-steps-variation" class="small-text">+ 8.5 %</span></p>
+                        <p> <span id="dashboard-steps" class="large-text" >Chargement...</span> <span class="small-text"> Pas</span></p>
+                        <p> <span id="dashboard-steps-variation" class="small-text">Chargement...</span></p>
                     </div>
                 </a>
                 <div style="clear:both"></div>
@@ -69,11 +69,11 @@
                             title="icon-sleep" alt="icone du sommeil">
                         <div class="large-tile-bottom">
                             <div class="left">
-                                <p class="large-text"> <span id="dashboard-sleep">6h 52min</span> </p>
+                                <p class="large-text"> <span id="dashboard-sleep">Chargement...</span> </p>
                                 <p class="small-text"> Heures de sommeil </p>
                             </div>
                             <div class="right">
-                                <p class="large-text"> <span id="dashboard-sleep-quality">+8%</span> </p>
+                                <p class="large-text"> <span id="dashboard-sleep-quality">Chargement...</span> </p>
                                 <p class="small-text"> Qualité de sommeil </p>
                             </div>
                             <div style="clear:both"></div>

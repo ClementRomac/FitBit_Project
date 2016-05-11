@@ -345,5 +345,16 @@ $app->get('/sleep_quality', function ($request, $response, $args) {
 	return $response->write($json_response);
 
 });
+
+/******* RECORDS *******/
+$app->get('/records', function ($request, $response, $args) {
+	global $pdo;
+	$stt = $pdo->select(array('label, round(record, 2) AS record, date, nbr_record'))->from('Records')->execute();
+	$json = $stt->fetchAll(PDO::FETCH_ASSOC);
+
+	$json_response = json_encode($json);
+	return $response->write($json_response);
+
+});
 // Run app
 $app->run();

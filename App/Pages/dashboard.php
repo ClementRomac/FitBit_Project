@@ -101,7 +101,7 @@
                             <p class="date"> <span id="dashboard-calDate">Chargement...</span></p>
                         </div>
                         <div class="blockRecord-floorValue">
-                            <p class="catTitle walkC">Etage</p>
+                            <p class="catTitle walkC">Étages</p>
                             <p class="date"> <span id="dashboard-floorValue">Chargement...</span></p>
                             <p class="date"> <span id="dashboard-floorDate">Chargement...</span></p>
                         </div>
@@ -147,7 +147,7 @@
             getData("imc");
             getData("sleep_quality");
             getData("records");
-            
+
             function renderChart (location) {
                 if(location == 'weight'){
                     $("#dashboard-weight").text(JSON.parse(localStorage[''+location+''])[0].weight);
@@ -173,6 +173,36 @@
                 else if(location == 'sleep_quality'){
                     var quality = JSON.parse(localStorage[''+location+'']).sleep_quality;
                     $("#dashboard-sleep-quality").text((quality >= 0 ? "+ " : "") + quality + " %");
+                }
+                else if(location == 'records'){
+                    var step_record = JSON.parse(localStorage[''+location+''])[5];
+                    var distance_record = JSON.parse(localStorage[''+location+''])[6];
+                    var calories_record = JSON.parse(localStorage[''+location+''])[4];
+                    var floor_record = JSON.parse(localStorage[''+location+''])[7];
+                    
+                    $("#dashboard-footValue").text(step_record.record);
+                    if(step_record.nbr_record == 1)
+                        $("#dashboard-footDate").text("le "+step_record.date);
+                    else
+                        $("#dashboard-footDate").text(step_record.nbr_record+ " fois");
+
+                    $("#dashboard-kmValue").text(distance_record.record+" Km");
+                    if(distance_record.nbr_record == 1)
+                        $("#dashboard-kmDate").text("le "+distance_record.date);
+                    else
+                        $("#dashboard-kmDate").text(distance_record.nbr_record+ " fois");
+
+                    $("#dashboard-calValue").text(calories_record.record+" Kj");
+                    if(calories_record.nbr_record == 1)
+                        $("#dashboard-calDate").text("le "+calories_record.date);
+                    else
+                        $("#dashboard-calDate").text(calories_record.nbr_record+ " fois");
+
+                    $("#dashboard-floorValue").text(floor_record.record);
+                    if(floor_record.nbr_record == 1)
+                        $("#dashboard-floorDate").text("le "+floor_record.date);
+                    else
+                        $("#dashboard-floorDate").text(floor_record.nbr_record+ " fois");
                 }
             }
         </script>

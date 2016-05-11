@@ -28,6 +28,10 @@ body{
     font-family: 'roboto_fin'
 }
 
+#lign{
+    display: none;
+}
+
 /********** INDEX **********/
 #homepage{
     text-align: center;
@@ -99,6 +103,12 @@ header h1{
     margin-left: 5%;
 }
 
+@media screen and (max-width: 700px) { 
+    header h1{
+        font-size: 1.5em;
+    }
+}
+
 .date{
     color: white;
     text-align: center;
@@ -166,6 +176,22 @@ header h1{
 
 .large-tile-bottom .right{
     float: right;
+}
+
+@media screen and (max-width: 700px) {
+    .large-tile-bottom .left{
+        float: none;
+    }
+    .large-tile-bottom .right{
+        float: none;    }
+    .large-tile-bottom{
+    }
+    a{
+        text-decoration: none;
+    }
+    [class*='large-tile-']{
+        padding-bottom: 50px;
+    }
 }
 
 .large-text{
@@ -349,6 +375,12 @@ ul{
     }
 }
 
+@media screen and (max-width: 700px) {
+    .conteneur h2{
+        font-size: 3em;
+    }
+}
+
 .header-chart [class*='img-']{
     margin-top: 40px;
     height: 50%;
@@ -477,10 +509,6 @@ button{
 .catTitle{
     font-size: 3em;
     font-family: "roboto_lig";
-}
-
-#lign{
-    display: none;
 }
 
 @media screen and (max-width: 1050px) {

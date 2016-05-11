@@ -146,12 +146,8 @@
             getData("sleep");
             getData("imc");
             getData("sleep_quality");
-
-            getData("steps");
-            getData("sleep");
-            getData("imc");
-            getData("sleep_quality");
-
+            getData("records");
+            
             function renderChart (location) {
                 if(location == 'weight'){
                     $("#dashboard-weight").text(JSON.parse(localStorage[''+location+''])[0].weight);

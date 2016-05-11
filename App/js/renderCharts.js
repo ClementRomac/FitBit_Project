@@ -22,7 +22,7 @@ function renderSleep(sleep_array, renderContainer){
             renderTo: renderContainer
         },
         title: {
-            text: 'Temps de sommeil / Eveil'
+            text: 'Temps de sommeil / Éveil'
         },
         xAxis: [{
             categories: myCategories,
@@ -127,7 +127,7 @@ function renderSleep(sleep_array, renderContainer){
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
         },
         series: [{
-            name: 'Eveil',
+            name: 'Éveil',
             type: 'column',
             yAxis: 1,
             data: awakeData

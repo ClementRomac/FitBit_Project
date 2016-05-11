@@ -80,6 +80,33 @@
                         </div>
                     </div>
                 </a>
+
+                <div id="records">
+                    <h1 class="title">Records</h1>
+                    <div class="blocValue">
+                        <div class="blockRecord-footValue">
+                            <p class="catTitle walkC">Pas</p>
+                            <p class="date"> <span id="dashboard-footValue">Chargement...</span></p>
+                            <p class="date"> <span id="dashboard-footDate">Chargement...</span></p>
+                        </div>
+                        <div class="blockRecord-kmValue">
+                            <p class="catTitle walkC">Distance</p>
+                            <p class="date"> <span id="dashboard-kmValue">Chargement...</span></p>
+                            <p class="date"> <span id="dashboard-kmDate">Chargement...</span></p>
+                        </div>
+                        <div class="blockRecord-calValue">
+                            <p class="catTitle weightC">Calories</p>
+                            <p class="date"> <span id="dashboard-calValue">Chargement...</span></p>
+                            <p class="date"> <span id="dashboard-calDate">Chargement...</span></p>
+                        </div>
+                        <div class="blockRecord-floorValue">
+                            <p class="catTitle walkC">Etage</p>
+                            <p class="date"> <span id="dashboard-floorValue">Chargement...</span></p>
+                            <p class="date"> <span id="dashboard-floorDate">Chargement...</span></p>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
             </div>
             <div id="menu">
                 <div class="part-name">
@@ -114,6 +141,11 @@
         
         <script type="text/javascript">
             getData("weight");
+            getData("steps");
+            getData("sleep");
+            getData("imc");
+            getData("sleep_quality");
+
             getData("steps");
             getData("sleep");
             getData("imc");

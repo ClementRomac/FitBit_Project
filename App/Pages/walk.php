@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
         <script   src="../js/zepto.min.js"></script> 
-        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="../js/highcharts.js"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
         <script type="text/javascript" src="../js/renderCharts.js"></script>
     </head>
@@ -26,8 +26,8 @@
 
                 <h2 class="walkC"> Aujourd'hui </h2>
 
-                    <p>Nombre de pas : <span class="space"></span> <span id="steps_value">500</span></p>
-                    <p>Evolution par rapport à hier : <span class="space"></span> <span id="steps_variation">+10%</span></p>
+                    <p>Nombre de pas : <span class="space"></span> <span id="steps_value">Chargement...</span></p>
+                    <p>Evolution (hier) : <span class="space"></span> <span id="steps_variation">Chargement...</span></p>
 
                 <h2 class="walkC">Distance / Pas</h2>
 

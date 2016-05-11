@@ -4,8 +4,7 @@
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
         <script   src="../js/zepto.min.js"></script> 
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script src="../js/highcharts.js"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
         <script type="text/javascript" src="../js/renderCharts.js"></script>
     </head>
@@ -27,8 +26,8 @@
 
             <h2 class="sleepC"> Aujourd'hui </h2>
 
-                <p>Dormi pendant : <span class="space"></span> <span id="sleep_value">6h 52min</span> </p>
-                <p>Qualité de sommeil : <span class="space"></span> Bon | 8.5/10</p>
+                <p>Dormi pendant : <span class="space"></span> <span id="sleep_value">Chargement...</span> </p>
+                <p>Qualité de sommeil : <span class="space"></span> <span id="sleep_quality">Chargement...</span></p>
 
             <h2 class="sleepC">Durée du sommeil</h2>
 
@@ -76,6 +75,9 @@
             minutes = ((data%1)*60).toFixed(0);
             heures = data-data%1;
             $("#sleep_value").text(heures+"h "+minutes+"min");
+
+            quality = JSON.parse(localStorage['sleep_quality']).sleep_quality;
+            $("#sleep_quality").text((quality >= 0 ? "+ " : "") + quality + " %");
         }
 
         $("#container_sleep").on('click', function(e){

@@ -4,9 +4,9 @@
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
         <script   src="../js/zepto.min.js"></script> 
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/highcharts-more.js"></script>
-        <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+        <script src="../js/highcharts.js"></script>
+        <script src="../js/highcharts-more.js"></script>
+        <script src="../js/solid-gauge.js"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
         <script type="text/javascript" src="../js/renderCharts.js"></script>
     </head>
@@ -29,7 +29,7 @@
             <div class="conteneur">
 
                 <h2 class="weightC">Aujourd'hui</h2>
-                    <p>Poids : <span class="space"></span> <span id="weight_value">80</span> Kg</p>
+                    <p>Poids : <span class="space"></span> <span id="weight_value">Chargement...</span> Kg</p>
 
                 <h2 class="weightC">Historique du poids</h2>
 

@@ -23,8 +23,8 @@
 
             <h2 class="helpC"> Aide </h2>
 
-            <p>La police d'écriture Roboto et ses variantes appartienent à Google.</p>
-            <p>Les icones suivantes sont à la propriétés de leurs créateur :</p>
+            <p>La police d'écriture Roboto et ses variantes appartiennent à Google.</p>
+            <p>Les icônes suivantes sont à la propriété de leur créateurs :</p>
             <br>
             <p>Freepik :</p>
             <p>- Hamburger</p>

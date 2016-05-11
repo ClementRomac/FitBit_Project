@@ -178,6 +178,22 @@ header h1{
     font-size: 2.3em;
 }
 
+@media screen and (max-width: 800px) {
+    [class*='small-tile-']{
+        width: 100%;
+        clear: both;
+    }
+    .small-tile-walk{
+        margin-left: 0;
+    }
+    .large-tile-bottom .large-text{
+        font-size: 2em;
+    }
+    .large-tile-bottom .small-text{
+        font-size: 2em;
+    }
+}
+
 #faded{
     background-color: rgba(0,0,0,0.5);
     z-index: 5;
@@ -324,6 +340,15 @@ ul{
     font-family: "roboto_fin";
 }
 
+@media screen and (max-width: 850px) {
+    .header-chart h1{
+        font-size: 1.5em;
+    }
+    .conteneur h2{
+        font-size: 4em;
+    }
+}
+
 .header-chart [class*='img-']{
     margin-top: 40px;
     height: 50%;
@@ -370,6 +395,14 @@ button{
     font-size: 2em;
     margin-right: 20px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 730px) {
+    button{
+        font-size: 1.5em;
+        margin-right: 10px;
+        width: 130px;
+    }
 }
 
 .button-sleep{
@@ -438,10 +471,25 @@ button{
     float: left;
     text-align: center;
     margin: 0 auto;
-    width: 25%
+    width: 25%;
 }
 
 .catTitle{
     font-size: 3em;
     font-family: "roboto_lig";
+}
+
+#lign{
+    display: none;
+}
+
+@media screen and (max-width: 1050px) {
+    #lign{
+        display: block;
+        clear: both;
+    }
+    [class*='blockRecord-']{
+        width: 50%;
+        margin-bottom: 20px;
+    }
 }

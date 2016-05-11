@@ -94,6 +94,7 @@
                             <p class="date"> <span id="dashboard-kmValue">Chargement...</span></p>
                             <p class="date"> <span id="dashboard-kmDate">Chargement...</span></p>
                         </div>
+                        <div id="lign"></div>
                         <div class="blockRecord-calValue">
                             <p class="catTitle weightC">Calories</p>
                             <p class="date"> <span id="dashboard-calValue">Chargement...</span></p>

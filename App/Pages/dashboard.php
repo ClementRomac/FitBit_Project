@@ -3,25 +3,30 @@
         <title>FitiBit</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
-        <script   src="../js/zepto.min.js"></script> 
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"   
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
+        <script>
+        $(function(){
+            $(document.body).click(function(){
+                isTheMenu = (jQuery.grep($(event.target).parents(), function( n, i ) {
+                                return ( n.id == "menu");
+                            }).length != 0);
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script>
-    $(document).ready(function(){
-        $('.img-menu').click(function(e){
-            $("#faded").css("display", "block");
-            $("#menu").toggle("slow");
-            e.stopPropagation(); // Prevent bubbling
-        });
-        $('#content').click(function(e){
-            $("#menu").toggle("hide").promise().done(function(){
-                $("#menu").css("display", "none");
-                $("#faded").css("display", "none");
+                isTheMenuContext = ($(event.target).parents()['context'].id == 'menu');
+
+                if (!isTheMenu && !isTheMenuContext && $('#menu').css('display') != 'none') {
+                    $("#menu").toggle("hide").promise().done(function(){
+                        $("#faded").css("display", "none");
+                    });
+                }
+                else if($('#menu').css('display') == 'none' && event.target.className == 'img-menu'){
+                    $("#faded").css("display","block");
+                    $("#menu").toggle("slow");
+                }
             });
         });
-    });
-    </script>
+        </script>
     
     </head>
     <body>
@@ -68,7 +73,7 @@
                                 <p class="small-text"> Heures de sommeil </p>
                             </div>
                             <div class="right">
-                                <p class="large-text"> +8% </p>
+                                <p class="large-text"> <span id="dashboard-sleep-quality">+8%</span> </p>
                                 <p class="small-text"> Qualité de sommeil </p>
                             </div>
                             <div style="clear:both"></div>
@@ -111,10 +116,15 @@
             getData("weight");
             getData("steps");
             getData("sleep");
+            getData("imc");
+            getData("sleep_quality");
 
             function renderChart (location) {
                 if(location == 'weight'){
                     $("#dashboard-weight").text(JSON.parse(localStorage[''+location+''])[0].weight);
+                }
+                else if(location == 'imc'){
+                    $("#dashboard-imc").text(JSON.parse(localStorage[''+location+''])[0].imc);
                 }
                 else if(location == 'steps'){
                     var steps_today = JSON.parse(localStorage[''+location+''])[0].steps;
@@ -130,6 +140,10 @@
                     minutes = ((data%1)*60).toFixed(0);
                     heures = data-data%1;
                     $("#dashboard-sleep").text(heures+"h "+minutes+"min");
+                }
+                else if(location == 'sleep_quality'){
+                    var quality = JSON.parse(localStorage[''+location+'']).sleep_quality;
+                    $("#dashboard-sleep-quality").text((quality >= 0 ? "+ " : "") + quality + " %");
                 }
             }
         </script>

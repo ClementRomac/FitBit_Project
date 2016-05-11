@@ -9,11 +9,13 @@
         <script>
         $(function(){
             $(document.body).click(function(){
-                isTheMenu = jQuery.grep($(event.target).parents(), function( n, i ) {
-                  return ( n.id == "menu");
-                });
+                isTheMenu = (jQuery.grep($(event.target).parents(), function( n, i ) {
+                                return ( n.id == "menu");
+                            }).length != 0);
 
-                if (isTheMenu.length == 0 && $('#menu').css('display') != 'none') {
+                isTheMenuContext = ($(event.target).parents()['context'].id == 'menu');
+
+                if (!isTheMenu && !isTheMenuContext && $('#menu').css('display') != 'none') {
                     $("#menu").toggle("hide").promise().done(function(){
                         $("#faded").css("display", "none");
                     });

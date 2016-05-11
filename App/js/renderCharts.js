@@ -9,7 +9,6 @@ function renderSleep(sleep_array, renderContainer){
     for (var i = 0; i <= sleep_length; i++) {
         myCategories[i] = awake[''+sleep_length-i+''].date;
     };
-    
     var sleepData = [];
     for (var i = 0; i <= sleep_length; i++) {
         sleepData[i] = sleep[''+sleep_length-i+''].time;
@@ -18,13 +17,12 @@ function renderSleep(sleep_array, renderContainer){
     for (var i = 0; i <= awake_length; i++) {
         awakeData[i] = awake[''+awake_length-i+''].time;
     };
-    var test = 0;
     new Highcharts.Chart({
         chart: {
             renderTo: renderContainer
         },
         title: {
-            text: 'Temps de sommeil / Eveil'
+            text: 'Temps de sommeil / Éveil'
         },
         xAxis: [{
             categories: myCategories,
@@ -129,7 +127,7 @@ function renderSleep(sleep_array, renderContainer){
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
         },
         series: [{
-            name: 'Eveil',
+            name: 'Éveil',
             type: 'column',
             yAxis: 1,
             data: awakeData
@@ -167,7 +165,7 @@ function renderWalk(walk_array, renderContainer){
             renderTo: renderContainer
         },
         title: {
-            text: 'Nombre de pas / Distance parcouru'
+            text: 'Nombre de pas / Distance parcourue'
         },
         xAxis: [{
             categories: myCategories,
@@ -188,7 +186,7 @@ function renderWalk(walk_array, renderContainer){
             }
         }, { // Secondary yAxis
             title: {
-                text: 'Distance parcouru',
+                text: 'Distance parcourue',
                 style: {
                     color: Highcharts.getOptions().colors[0]
                 }
@@ -214,7 +212,7 @@ function renderWalk(walk_array, renderContainer){
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
         },
         series: [{
-            name: 'Distance parcouru',
+            name: 'Distance parcourue',
             type: 'column',
             yAxis: 1,
             data: distanceData,
@@ -298,7 +296,7 @@ function renderActivity(activityLocation, renderContainer){
                     
                     if (heures == 0)
                         if (minutes == 0 || minutes == 1)
-                            result = minutes+' minute';
+                            result = minutes+' heure';
                         else
                             result = minutes+' minutes';
                     else if (minutes == 0)
@@ -350,7 +348,7 @@ function renderActivity(activityLocation, renderContainer){
         },
         series: [{
             type: 'column',
-            name: 'Sedentaire',
+            name: 'Sédentaire',
             yAxis: 1,
             data: sedentary
         }, {
@@ -365,7 +363,7 @@ function renderActivity(activityLocation, renderContainer){
             data: active
         }, {
             type: 'column',
-            name: 'Trés active',
+            name: 'Très active',
             yAxis: 1,
             data: very_active
         }, {
@@ -421,6 +419,7 @@ function renderWeight(weightLocation, renderContainer){
             valueSuffix: ' Kg'
         },
         series: [{
+            showInLegend: false,
             name: 'Poids',
             data: myData
         }]

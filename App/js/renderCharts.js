@@ -9,7 +9,6 @@ function renderSleep(sleep_array, renderContainer){
     for (var i = 0; i <= sleep_length; i++) {
         myCategories[i] = awake[''+sleep_length-i+''].date;
     };
-    
     var sleepData = [];
     for (var i = 0; i <= sleep_length; i++) {
         sleepData[i] = sleep[''+sleep_length-i+''].time;
@@ -18,7 +17,6 @@ function renderSleep(sleep_array, renderContainer){
     for (var i = 0; i <= awake_length; i++) {
         awakeData[i] = awake[''+awake_length-i+''].time;
     };
-    var test = 0;
     new Highcharts.Chart({
         chart: {
             renderTo: renderContainer
@@ -298,7 +296,7 @@ function renderActivity(activityLocation, renderContainer){
                     
                     if (heures == 0)
                         if (minutes == 0 || minutes == 1)
-                            result = minutes+' minute';
+                            result = minutes+' heure';
                         else
                             result = minutes+' minutes';
                     else if (minutes == 0)

@@ -418,3 +418,30 @@ button{
     color: #000;
     text-decoration: none;
 }
+
+#records{
+    margin: 20px auto;
+}
+
+#records .title{
+    color: #FFF;
+    font-size: 4em;
+}
+
+.blocValue{
+    width: 90%;
+    margin-left: 5%;
+    padding-bottom: 5%; 
+}
+
+[class*='blockRecord-']{
+    float: left;
+    text-align: center;
+    margin: 0 auto;
+    width: 25%
+}
+
+.catTitle{
+    font-size: 3em;
+    font-family: "roboto_lig";
+}

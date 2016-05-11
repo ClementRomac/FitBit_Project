@@ -27,7 +27,7 @@
                 <h2 class="walkC"> Aujourd'hui </h2>
 
                     <p>Nombre de pas : <span class="space"></span> <span id="steps_value">Chargement...</span></p>
-                    <p>Evolution (hier) : <span class="space"></span> <span id="steps_variation">Chargement...</span></p>
+                    <p>Évolution (hier) : <span class="space"></span> <span id="steps_variation">Chargement...</span></p>
 
                 <h2 class="walkC">Distance / Pas</h2>
 

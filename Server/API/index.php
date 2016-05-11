@@ -5,7 +5,7 @@ require_once 'vendor/autoload.php';
 // Create and configure Slim app
 $app = new \Slim\App;
 
-// Cross Request
+// Allow Cross Request
 $corsOptions = array(
     "origin" => "*",
     "exposeHeaders" => array("Content-Type", "X-Requested-With", "X-authentication", "X-client"),
@@ -21,10 +21,6 @@ $pdo = new \Slim\PDO\Database('mysql:host=mysql-fitbitproject.alwaysdata.net;dbn
 $container = $app->getContainer();
 
 // Define app routes
-
-$app->get('/', function ($request, $response, $args) {
- 	return $response->write("SLIM OK");
-});
 
 /******* WEIGHT *******/
 $app->get('/weight', function ($request, $response, $args) {

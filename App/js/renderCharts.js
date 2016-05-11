@@ -167,7 +167,7 @@ function renderWalk(walk_array, renderContainer){
             renderTo: renderContainer
         },
         title: {
-            text: 'Nombre de pas / Distance parcouru'
+            text: 'Nombre de pas / Distance parcourue'
         },
         xAxis: [{
             categories: myCategories,
@@ -188,7 +188,7 @@ function renderWalk(walk_array, renderContainer){
             }
         }, { // Secondary yAxis
             title: {
-                text: 'Distance parcouru',
+                text: 'Distance parcourue',
                 style: {
                     color: Highcharts.getOptions().colors[0]
                 }
@@ -214,7 +214,7 @@ function renderWalk(walk_array, renderContainer){
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
         },
         series: [{
-            name: 'Distance parcouru',
+            name: 'Distance parcourue',
             type: 'column',
             yAxis: 1,
             data: distanceData,
@@ -350,7 +350,7 @@ function renderActivity(activityLocation, renderContainer){
         },
         series: [{
             type: 'column',
-            name: 'Sedentaire',
+            name: 'Sédentaire',
             yAxis: 1,
             data: sedentary
         }, {
@@ -365,7 +365,7 @@ function renderActivity(activityLocation, renderContainer){
             data: active
         }, {
             type: 'column',
-            name: 'Trés active',
+            name: 'Très active',
             yAxis: 1,
             data: very_active
         }, {
@@ -421,6 +421,7 @@ function renderWeight(weightLocation, renderContainer){
             valueSuffix: ' Kg'
         },
         series: [{
+            showInLegend: false,
             name: 'Poids',
             data: myData
         }]

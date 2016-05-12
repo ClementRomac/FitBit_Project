@@ -11,11 +11,11 @@ function renderSleep(sleep_array, renderContainer){
     };
     var sleepData = [];
     for (var i = 0; i <= sleep_length; i++) {
-        sleepData[i] = sleep[''+sleep_length-i+''].time;
+        sleepData[i] = parseFloat(sleep[''+sleep_length-i+''].time);
     };
     var awakeData = [];
     for (var i = 0; i <= awake_length; i++) {
-        awakeData[i] = awake[''+awake_length-i+''].time;
+        awakeData[i] = parseFloat(awake[''+awake_length-i+''].time);
     };
     new Highcharts.Chart({
         chart: {
@@ -152,12 +152,12 @@ function renderWalk(walk_array, renderContainer){
 
     var stepsData = [];
     for (var i = 0; i <= steps_length; i++) {
-        stepsData[i] = steps[''+steps_length-i+''].steps;
+        stepsData[i] = parseFloat(steps[''+steps_length-i+''].steps);
     };
 
     var distanceData = [];
     for (var i = 0; i <= distance_length; i++) {
-        distanceData[i] = distance[''+distance_length-i+''].distance;
+        distanceData[i] = parseFloat(distance[''+distance_length-i+''].distance);
     };
 
     new Highcharts.Chart({
@@ -234,27 +234,27 @@ function renderActivity(activityLocation, renderContainer){
 
     var sedentary = [];
     for (var i = 0; i <= activity_length; i++) {
-        sedentary[i] = activity[''+activity_length-i+''].time;
+        sedentary[i] = parseFloat(activity[''+activity_length-i+''].time);
     };
 
     var mobile = [];
     for (var i = 0; i <= activity_length; i++) {
-        mobile[i] = activity[''+((activity_length*2)+1)-i+''].time;
+        mobile[i] = parseFloat(activity[''+((activity_length*2)+1)-i+''].time);
     };
 
     var active = [];
     for (var i = 0; i <= activity_length; i++) {
-        active[i] = activity[''+((activity_length*3)+2)-i+''].time;
+        active[i] = parseFloat(activity[''+((activity_length*3)+2)-i+''].time);
     };
 
     var very_active = [];
     for (var i = 0; i <= activity_length; i++) {
-        very_active[i] = activity[''+((activity_length*4)+3)-i+''].time;
+        very_active[i] = parseFloat(activity[''+((activity_length*4)+3)-i+''].time);
     };
 
     var calories = [];
     for (var i = 0; i <= activity_length; i++) {
-        calories[i] = activity[''+((activity_length*5)+4)-i+''].time;
+        calories[i] = parseFloat(activity[''+((activity_length*5)+4)-i+''].time);
     };
 
     var myCategories = [];
@@ -391,7 +391,7 @@ function renderWeight(weightLocation, renderContainer){
     
     var myData = [];
     for (var i = 0; i <= weights_length; i++) {
-        myData[i] = weights[''+weights_length-i+''].weight;
+        myData[i] = parseFloat(weights[''+weights_length-i+''].weight);
     };
 
     new Highcharts.Chart({
@@ -427,7 +427,7 @@ function renderWeight(weightLocation, renderContainer){
 }
 
 function renderImc(imcLocation, renderContainer){
-    var imc = (JSON.parse(localStorage[''+imcLocation+'']))[0].imc
+    var imc = parseFloat((JSON.parse(localStorage[''+imcLocation+'']))[0].imc)
 
     var gaugeOptions = {
 

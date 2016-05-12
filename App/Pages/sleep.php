@@ -36,7 +36,7 @@
                     <button id="2" class="button-sleep" onclick="changeSleepLocation('sleep/week', 2)">Semaines</button>
                     <button id="3" class="button-sleep" onclick="changeSleepLocation('sleep/month', 3)">Mois</button>
                 </div>
-				<div id="container_sleep" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+				<div id="container_sleep" style="min-width: 310px; height: 400px; margin: 0 auto">Chargement...</div>
         </div>
     </div>
  <script type="text/javascript">
@@ -45,6 +45,9 @@
         setHeaderInfos();
 
         function changeSleepLocation(newLocation, id){
+            $("#container_sleep").text("Chargement...");
+            $('button').removeClass("active-sleep");
+            $('#'+id).addClass("active-sleep")
             if(newLocation == 'sleep'){
                 getData('sleep');
                 getData('awake');
@@ -57,8 +60,6 @@
                 getData('sleep/month');
                 getData('awake/month');
             }
-            $('button').removeClass("active-sleep");
-            $('#'+id).addClass("active-sleep")
         }
         function renderChart(location) {
             if(location == "sleep" || location == "sleep/week" || location == "sleep/month"){

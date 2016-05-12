@@ -1,8 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="html">
     <head>
         <title>FitiBit</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
+        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon"/>
         <script   src="../js/zepto.min.js"></script> 
     </head>
     <body>

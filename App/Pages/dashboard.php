@@ -1,8 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="html">
     <head>
         <title>FitiBit</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
+        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon"/>
         <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
         <script>

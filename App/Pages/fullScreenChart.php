@@ -16,13 +16,14 @@
     session_start();
     if (!isset($_SESSION['user']))
         header('Location: ../index.php');
+    if(empty($_POST)) 
+        header('Location: dashboard.php');
     ?>
     <a><div class="img-back"><img src="../img/backB.png" alt="back" alt="Retour" title="Retour"> <span>Retour</span></div></a>
     <div id="container_full_screen" class="center" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 <script type="text/javascript">
     var post_parameters = <?php echo json_encode($_POST); ?>;
-
     if(Object.keys(post_parameters)[0] == "sleep"){
         renderSleep(post_parameters, "container_full_screen");
         $('a').attr('href', 'sleep.php');
@@ -40,6 +41,9 @@
         else if(chart_location == "weight/week" || chart_location == "weight/month" || chart_location == "weight/year"){
             renderWeight(chart_location, "container_full_screen");
             $('a').attr('href', 'weight.php');
+        }
+        else{
+            window.location.replace('dashboard.php');
         }
     }
 </script>

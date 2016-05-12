@@ -3,8 +3,7 @@
         <title>FitiBit</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
-        <script src="https://code.jquery.com/jquery-2.2.3.min.js"   
-            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
         <script>
         $(function(){
@@ -32,9 +31,8 @@
     <body>
     <?php
         session_start();
-        if (!isset($_SESSION['user'])){
+        if (!isset($_SESSION['user']))
             header('Location: ../index.php');
-        }
     ?>
         <div id="content">
             <div id="faded"></div>
@@ -47,16 +45,14 @@
             <div class="tile-container">
                 <a href="weight.php">
                     <div class="small-tile-weight">
-                        <img src="../img/weightW.png" class="img-tile" 
-                            title="icon-weight" alt="icone du poids">
+                        <img src="../img/weightW.png" class="img-tile" title="icon-weight" alt="icone du poids">
                         <p> <span id="dashboard-weight" class="large-text" >Chargement...</span> <span class="small-text">Kg</span></p>
                         <p> <span id="dashboard-imc" class="large-text" >Chargement...</span> <span class="small-text">IMC</span></p>
                     </div>
                 </a>
                 <a href="walk.php">
                     <div class="small-tile-walk">
-                        <img src="../img/footW.png" class="img-tile" 
-                            title="icon-walk" alt="icone de l'activité">
+                        <img src="../img/footW.png" class="img-tile" title="icon-walk" alt="icone de l'activité">
                         <p> <span id="dashboard-steps" class="large-text" >Chargement...</span> <span class="small-text"> Pas</span></p>
                         <p> <span id="dashboard-steps-variation" class="small-text">Chargement...</span></p>
                     </div>
@@ -65,8 +61,7 @@
 
                 <a href="sleep.php">
                     <div class="large-tile-sleep">
-                        <img src="../img/nightW.png" class="img-tile" 
-                            title="icon-sleep" alt="icone du sommeil">
+                        <img src="../img/nightW.png" class="img-tile" title="icon-sleep" alt="icone du sommeil">
                         <div class="large-tile-bottom">
                             <div class="left">
                                 <p class="large-text"> <span id="dashboard-sleep">Chargement...</span> </p>
@@ -111,7 +106,7 @@
             </div>
             <div id="menu">
                 <div class="part-name">
-                    <img src="../img/avatar.png" class="img-profil">
+                    <img src="../img/avatar.png" class="img-profil" alt="Avatar" title="Avatar">
                     <div class="nom-prenom">
                         <h2>Prenom</h2>
                         <h3>Nom</h3>
@@ -149,12 +144,10 @@
             getData("records");
 
             function renderChart (location) {
-                if(location == 'weight'){
+                if(location == 'weight')
                     $("#dashboard-weight").text(JSON.parse(localStorage[''+location+''])[0].weight);
-                }
-                else if(location == 'imc'){
+                else if(location == 'imc')
                     $("#dashboard-imc").text(JSON.parse(localStorage[''+location+''])[0].imc);
-                }
                 else if(location == 'steps'){
                     var steps_today = JSON.parse(localStorage[''+location+''])[0].steps;
                     var steps_yesterday = JSON.parse(localStorage[''+location+''])[1].steps;

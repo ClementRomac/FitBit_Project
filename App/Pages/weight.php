@@ -13,9 +13,8 @@
     <body>
     <?php
     session_start();
-    if (!isset($_SESSION['user'])){
+    if (!isset($_SESSION['user']))
         header('Location: ../index.php');
-    }
     ?>
         <div class="chart-page-container">
 
@@ -61,12 +60,10 @@
         }
 
         function renderChart(ChartLocation) {
-            if(ChartLocation == "weight/week" || ChartLocation == "weight/month" || ChartLocation == "weight/year"){
+            if(ChartLocation == "weight/week" || ChartLocation == "weight/month" || ChartLocation == "weight/year")
                 renderWeight(ChartLocation, "container_weight");
-            }
-            else if(ChartLocation == "imc"){
+            else if(ChartLocation == "imc")
                 renderImc(ChartLocation, "container_imc");
-            }
         }
 
         function setHeaderInfos(){

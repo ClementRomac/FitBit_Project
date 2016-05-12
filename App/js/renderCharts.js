@@ -525,7 +525,7 @@ function fullScreenChart(chartLocation, container){
 
     if(!clicked_part_span && !clicked_part_image){
         var i = 0;
-        if(typeof(chartLocation) == "object"){
+        if(typeof(chartLocation) == "object"){ //for the charts with 2 api call
             i = Object.keys(chartLocation).length - 1;
         }else{
             chartLocation = {"key" : chartLocation};
@@ -534,11 +534,11 @@ function fullScreenChart(chartLocation, container){
         var input = "";
         for (j = 0; j <= i; j++) {
             var key = Object.keys(chartLocation)[j];
-            input+= '<input type="text" name="'+key+'" value="'+chartLocation[key]+'"/>';
+            input+= '<input type="text" name="'+key+'" value="'+chartLocation[key]+'"/>'; // create an input for each data
         };
         
         var form = $('<form action="fullScreenChart.php" method="post" style="display:none">'+input+'</form>');
         $('body').append(form);
-        form.submit();
+        form.submit(); // send the POST request
     }
 }

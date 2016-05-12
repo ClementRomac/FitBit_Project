@@ -8,6 +8,12 @@
         <script src="js/zepto.min.js"></script> 
     </head>
     <body>
+        <?php
+            session_start();
+            if (isset($_SESSION['user']))
+                header('Location: pages/dashboard.php');
+            else{
+        ?>
         <div id="homepage">
             <h1>FitBit</h1>    
             <p class="small">Votre santé au delà de vos limites</p>    
@@ -20,4 +26,5 @@
         </div>
         <script type="text/javascript" src="js/login.js"></script>
     </body>
+    <?php } ?>
 </html>

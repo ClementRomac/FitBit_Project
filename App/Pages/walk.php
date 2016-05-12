@@ -36,7 +36,7 @@
                         <button id ="2" class="button-walk" onclick="changeWalkLocation('walk/week', 2)">Semaines</button>
                         <button id ="3" class="button-walk" onclick="changeWalkLocation('walk/month', 3)">Mois</button>
                     </div>
-                    <div id="container_walk" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    <div id="container_walk" style="min-width: 310px; height: 400px; margin: 0 auto">Chargement...</div>
                     
                 <h2 class="walkC">Activité</h2>
 
@@ -45,7 +45,7 @@
                         <button id ="5" class="button-activity" onclick="changeActivityLocation('activity/week', 5)">Semaines</button>
                         <button id ="6" class="button-activity" onclick="changeActivityLocation('activity/month', 6)">Mois</button>
                     </div>
-                    <div id="container_activity" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    <div id="container_activity" style="min-width: 310px; height: 400px; margin: 0 auto">Chargement...</div>
             </div>
         </div>
         <script type="text/javascript">
@@ -56,6 +56,9 @@
         setHeaderInfos();
 
         function changeWalkLocation(newLocation, id){
+            $("#container_walk").text("Chargement...");
+            $('button').removeClass("active-walk");
+            $('#'+id).addClass("active-walk");
             if(newLocation == 'walk'){
                 getData('steps');
                 getData('distance');
@@ -68,15 +71,13 @@
                 getData('steps/month');
                 getData('distance/month');
             }
-
-            $('button').removeClass("active-walk");
-            $('#'+id).addClass("active-walk")
         }
 
         function changeActivityLocation(newLocation, id){
-            getData(newLocation)
+            $("#container_activity").text("Chargement...");
             $('button').removeClass("active-activity");
             $('#'+id).addClass("active-activity");
+            getData(newLocation)
             location_activity = newLocation;
         }
 

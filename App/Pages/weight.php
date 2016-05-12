@@ -38,11 +38,11 @@
                         <button id ="2" class="button-weight" onclick="changeWeightLocation('weight/month', 2)">Deux mois</button>
                         <button id ="3" class="button-weight" onclick="changeWeightLocation('weight/year', 3)">Années</button>
                     </div>
-                    <div id="container_weight" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    <div id="container_weight" style="min-width: 310px; height: 400px; margin: 0 auto">Chargement...</div>
                     
                 <h2 class="weightC">IMC</h2>
 
-                    <div id="container_imc" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    <div id="container_imc" style="min-width: 310px; height: 400px; margin: 0 auto">Chargement...</div>
             </div>
         </div>
 
@@ -53,9 +53,10 @@
         setHeaderInfos();
 
         function changeWeightLocation(newLocation, id){
-            getData(newLocation);
+            $("#container_weight").text("Chargement...");
             $('button').removeClass("active-weight");
             $('#'+id).addClass("active-weight");
+            getData(newLocation);
             location_weight = newLocation;
         }
 

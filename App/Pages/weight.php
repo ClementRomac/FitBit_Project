@@ -59,17 +59,16 @@
             location_weight = newLocation;
         }
 
-        function renderChart(location) {
-            if(location == "weight/week" || location == "weight/month" || location == "weight/year")
-                renderWeight(location, "container_weight");
-            else if(location == "imc")
-                renderImc(location, "container_imc");
+        function renderChart(ChartLocation) {
+            if(ChartLocation == "weight/week" || ChartLocation == "weight/month" || ChartLocation == "weight/year")
+                renderWeight(ChartLocation, "container_weight");
+            else if(ChartLocation == "imc")
+                renderImc(ChartLocation, "container_imc");
         }
 
         function setHeaderInfos(){
             $("#weight_value").text(JSON.parse(localStorage['weight'])[0].weight);
         }
-
 
         $("#container_weight").on('click', function(e){
             fullScreenChart(location_weight, e);

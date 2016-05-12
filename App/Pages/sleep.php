@@ -46,7 +46,7 @@
         function changeSleepLocation(newLocation, id){
             $("#container_sleep").text("Chargement...");
             $('button').removeClass("active-sleep");
-            $('#'+id).addClass("active-sleep")
+            $('#'+id).addClass("active-sleep");
             if(newLocation == 'sleep'){
                 getData('sleep');
                 getData('awake');
@@ -60,14 +60,16 @@
                 getData('awake/month');
             }
         }
-        function renderChart(location) {
-            if(location == "sleep" || location == "sleep/week" || location == "sleep/month")
-                sleep['sleep'] = location;
-            else if(location == "awake" || location == "awake/week" || location == "awake/month"){
-                sleep['awake'] = location;
+
+        function renderChart(ChartLocation) {
+            if(ChartLocation == "sleep" || ChartLocation == "sleep/week" || ChartLocation == "sleep/month")
+                sleep['sleep'] = ChartLocation;
+            else if(ChartLocation == "awake" || ChartLocation == "awake/week" || ChartLocation == "awake/month"){
+                sleep['awake'] = ChartLocation;
                 renderSleep(sleep, "container_sleep");
             }
         }
+
         function setHeaderInfos(){
             data = JSON.parse(localStorage['sleep'])[0].time;
             data = Math.round(data*100)/100;

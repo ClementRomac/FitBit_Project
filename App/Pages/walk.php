@@ -80,15 +80,15 @@
             location_activity = newLocation;
         }
 
-        function renderChart(location) {
-            if(location == "steps" || location == "steps/week" || location == "steps/month")
-                walk['steps'] = location;
-            else if(location == "distance" || location == "distance/week" || location == "distance/month"){
-                walk['distance'] = location;
+        function renderChart(ChartLocation) {
+            if(ChartLocation == "steps" || ChartLocation == "steps/week" || ChartLocation == "steps/month")
+                walk['steps'] = ChartLocation;
+            else if(ChartLocation == "distance" || ChartLocation == "distance/week" || ChartLocation == "distance/month"){
+                walk['distance'] = ChartLocation;
                 renderWalk(walk, "container_walk");
             }
-            else if(location == "activity" || location == "activity/week" || location == "activity/month" )
-                renderActivity(location, "container_activity");
+            else if(ChartLocation == "activity" || ChartLocation == "activity/week" || ChartLocation == "activity/month" )
+                renderActivity(ChartLocation, "container_activity");
         }
 
         function setHeaderInfos(){

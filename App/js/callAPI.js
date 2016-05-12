@@ -10,8 +10,6 @@ function getData(dataLocation){
                 localStorage[''+dataLocation+''] = data; // put it in cache
                 renderChart(dataLocation); 
             }
-            else
-                $("#error_message").text("Une erreur est survenue");
         });
     }
 }

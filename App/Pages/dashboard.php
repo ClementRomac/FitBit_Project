@@ -3,8 +3,7 @@
         <title>FitiBit</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
-        <script src="https://code.jquery.com/jquery-2.2.3.min.js"   
-            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../js/callAPI.js"></script>
         <script>
         $(function(){
@@ -32,9 +31,8 @@
     <body>
     <?php
         session_start();
-        if (!isset($_SESSION['user'])){
+        if (!isset($_SESSION['user']))
             header('Location: ../index.php');
-        }
     ?>
         <div id="content">
             <div id="faded"></div>
@@ -146,12 +144,10 @@
             getData("records");
 
             function renderChart (location) {
-                if(location == 'weight'){
+                if(location == 'weight')
                     $("#dashboard-weight").text(JSON.parse(localStorage[''+location+''])[0].weight);
-                }
-                else if(location == 'imc'){
+                else if(location == 'imc')
                     $("#dashboard-imc").text(JSON.parse(localStorage[''+location+''])[0].imc);
-                }
                 else if(location == 'steps'){
                     var steps_today = JSON.parse(localStorage[''+location+''])[0].steps;
                     var steps_yesterday = JSON.parse(localStorage[''+location+''])[1].steps;

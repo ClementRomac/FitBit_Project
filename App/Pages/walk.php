@@ -11,9 +11,8 @@
     <body>
     <?php
     session_start();
-    if (!isset($_SESSION['user'])){
+    if (!isset($_SESSION['user']))
         header('Location: ../index.php');
-    }
     ?>
         <div class="chart-page-container">
             <header class="header-chart walkB">
@@ -82,16 +81,14 @@
         }
 
         function renderChart(location) {
-            if(location == "steps" || location == "steps/week" || location == "steps/month"){
+            if(location == "steps" || location == "steps/week" || location == "steps/month")
                 walk['steps'] = location;
-            }
             else if(location == "distance" || location == "distance/week" || location == "distance/month"){
                 walk['distance'] = location;
                 renderWalk(walk, "container_walk");
             }
-            else if(location == "activity" || location == "activity/week" || location == "activity/month" ){
+            else if(location == "activity" || location == "activity/week" || location == "activity/month" )
                 renderActivity(location, "container_activity");
-            }
         }
 
         function setHeaderInfos(){

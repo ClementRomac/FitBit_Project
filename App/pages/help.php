@@ -8,9 +8,8 @@
     <body>
     <?php
     session_start();
-    if (!isset($_SESSION['user'])){
+    if (!isset($_SESSION['user']))
         header('Location: ../index.php');
-    }
     ?>
     <div class="chart-page-container">
         <header class="header-chart helpB">

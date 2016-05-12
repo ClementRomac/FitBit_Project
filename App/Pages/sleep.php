@@ -11,9 +11,8 @@
     <body>
     <?php
     session_start();
-    if (!isset($_SESSION['user'])){
+    if (!isset($_SESSION['user']))
         header('Location: ../index.php');
-    }
     ?>
     <div class="chart-page-container">
         <header class="header-chart sleepB">
@@ -62,9 +61,8 @@
             }
         }
         function renderChart(location) {
-            if(location == "sleep" || location == "sleep/week" || location == "sleep/month"){
+            if(location == "sleep" || location == "sleep/week" || location == "sleep/month")
                 sleep['sleep'] = location;
-            }
             else if(location == "awake" || location == "awake/week" || location == "awake/month"){
                 sleep['awake'] = location;
                 renderSleep(sleep, "container_sleep");

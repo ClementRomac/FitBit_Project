@@ -326,6 +326,7 @@ ul{
     font-family: "roboto_lig";
     padding-bottom: 20px;
     min-height: 100%;
+    height: 100vh;
 }
 
 .sleepB{

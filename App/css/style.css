@@ -73,13 +73,14 @@ input[type='submit']{
     text-align: center;
     color: #c0392b;
     font-size: 50px;
+    padding-top: 50px;
 }
 
 /********** DASHBOARD **********/
 #content{
     background-color: #262626;
-    min-height:100%;
-    height:auto;
+    min-height: 100%;
+    height: auto;
     position: relative;
 }
 
@@ -124,7 +125,7 @@ header h1{
 }
 
 [class*='small-tile-']{
-    float:left;
+    float: left;
     text-align: center;
     height: 400px;
     width: 48%;
@@ -161,13 +162,13 @@ header h1{
 
 .img-tile {
     margin: 40px 0;
-    height:40%;
+    height: 40%;
 }
 
 .large-tile-bottom{
     width: 90%;
     height: 40%;
-    margin:0 5%;
+    margin: 0 5%;
 }
 
 .large-tile-bottom .left{
@@ -183,8 +184,7 @@ header h1{
         float: none;
     }
     .large-tile-bottom .right{
-        float: none;    }
-    .large-tile-bottom{
+        float: none;    
     }
     a{
         text-decoration: none;
@@ -226,14 +226,14 @@ header h1{
     position: absolute;
     width: 100%;
     min-height: 100%;
-    height:auto;
+    height: auto;
     display: none;
 }
 /** menu **/
 #menu{
     width: 70%;
     background-color: #FFF;
-    height:100%;
+    height: 100%;
     display: none;
     top: 0;
     z-index: 10;
@@ -320,6 +320,7 @@ ul{
 }
 
 /********** CHART PAGE **********/
+
 .chart-page-container{
     background-color: #262626;
     font-family: "roboto_lig";
@@ -330,7 +331,6 @@ ul{
 .sleepB{
     background-color: #34495e;
 }
-
 .walkB{
     background-color: #27ae60;
 }
@@ -480,7 +480,7 @@ button{
 }
 .bg_custom img{
     width: 50px;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 .bg_custom span{
     font-size: 2em;
@@ -489,6 +489,8 @@ button{
     color: #000;
     text-decoration: none;
 }
+
+/********** RECORDS **********/
 
 #records{
     margin: 20px auto;

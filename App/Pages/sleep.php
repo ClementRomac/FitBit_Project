@@ -26,7 +26,7 @@
             <h2 class="sleepC"> Aujourd'hui </h2>
 
                 <p>Dormi pendant : <span class="space"></span> <span id="sleep_value">Chargement...</span> </p>
-                <p>Qualité de sommeil : <span class="space"></span> <span id="sleep_quality">Chargement...</span></p>
+                <p>Qualité de sommeil (semaine) : <span class="space"></span> <span id="sleep_quality">Chargement...</span></p>
 
             <h2 class="sleepC">Durée du sommeil</h2>
 

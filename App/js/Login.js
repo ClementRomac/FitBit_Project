@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $("#submit").click(function(e){
         e.preventDefault();
@@ -16,7 +15,6 @@ $(document).ready(function(){
                     $("#resultat").html("<p class='erreur'>Erreur lors de la connexion...</p>");
             }
         );
-
     });
 
 });

@@ -1,12 +1,12 @@
 # FitBit_Project
 
-authors:
-	-Pierre LEROY
-	-Axel MASSET
-	-Nathan PREVOST
-	-Cédric PREZELIN
-	-Clément ROMAC
+- Authors:
+	- Pierre LEROY
+	- Axel MASSET
+	- Nathan PREVOST
+	- Cédric PREZELIN
+	- Clément ROMAC
 
-Subject :
-School project concerning IoT and Mobile Web Development courses. 
+- Subject :
+School project concerning IoT and Mobile Web Development classes. 
 This is a mobile application for visualizing fitbit data.

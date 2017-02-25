@@ -9,4 +9,4 @@
 
 - Subject :
 School project concerning IoT and Mobile Web Development classes. 
-This is a mobile application for visualizing fitbit data.
+This is a mobile web application for visualizing fitbit data.
